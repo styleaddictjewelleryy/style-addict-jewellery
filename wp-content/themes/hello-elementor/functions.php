@@ -267,10 +267,3 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 /*View Cart and Checkout Redirection Code*/
 add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
 add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
-
-/**
- * Hostinger Git Auto-Deploy Verification Test
- */
-add_action( 'wp_head', function() {
-	echo "\n<!-- Hostinger Git Auto-Deploy: Active & Working -->\n";
-}, 999 );
