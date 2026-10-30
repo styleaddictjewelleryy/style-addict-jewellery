@@ -1,0 +1,33 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor and IDE configurations
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# WordPress logs and backups
+*.log
+debug.log
+error_log
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+*.bak
+
+# Environment / Secret credentials
+.env
+.env.*
+wp-config.php
+*.pem
+*.key
+
+# WordPress temporary & cache directories (if added later)
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/

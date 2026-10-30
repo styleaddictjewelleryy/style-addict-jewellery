@@ -1,0 +1,2128 @@
+{
+    "packages": [
+        {
+            "name": "doctrine/inflector",
+            "version": "1.4.4",
+            "version_normalized": "1.4.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9",
+                "reference": "4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^8.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+            },
+            "time": "2021-04-16T17:34:40+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector",
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
+            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
+            "keywords": [
+                "inflection",
+                "inflector",
+                "lowercase",
+                "manipulation",
+                "php",
+                "plural",
+                "singular",
+                "strings",
+                "uppercase",
+                "words"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/inflector/issues",
+                "source": "https://github.com/doctrine/inflector/tree/1.4.4"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../doctrine/inflector"
+        },
+        {
+            "name": "instawp/connect-helpers",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InstaWP/connect-helpers.git",
+                "reference": "34e9bdeb65e07a926dbeef41f90fac8a5a50a312"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InstaWP/connect-helpers/zipball/34e9bdeb65e07a926dbeef41f90fac8a5a50a312",
+                "reference": "34e9bdeb65e07a926dbeef41f90fac8a5a50a312",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.6",
+                "wp-cli/wp-config-transformer": "^1.3"
+            },
+            "time": "2024-05-02T13:07:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "InstaWP\\Connect\\Helpers\\": "src/"
+                }
+            },
+            "scripts": {
+                "build": [
+                    "composer dump-autoload"
+                ],
+                "build-nd": [
+                    "composer dump-autoload --no-dev"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sayan Datta",
+                    "email": "sayan@instawp.com"
+                }
+            ],
+            "description": "CLI Package for InstaWP Remote Features",
+            "support": {
+                "source": "https://github.com/InstaWP/connect-helpers/tree/1.0.0",
+                "issues": "https://github.com/InstaWP/connect-helpers/issues"
+            },
+            "install-path": "../instawp/connect-helpers"
+        },
+        {
+            "name": "mustache/mustache",
+            "version": "v2.14.2",
+            "version_normalized": "2.14.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/mustache.php.git",
+                "reference": "e62b7c3849d22ec55f3ec425507bf7968193a6cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/e62b7c3849d22ec55f3ec425507bf7968193a6cb",
+                "reference": "e62b7c3849d22ec55f3ec425507bf7968193a6cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.11",
+                "phpunit/phpunit": "~3.7|~4.0|~5.0"
+            },
+            "time": "2022-08-23T13:07:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Mustache": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Hileman",
+                    "email": "justin@justinhileman.info",
+                    "homepage": "http://justinhileman.com"
+                }
+            ],
+            "description": "A Mustache implementation in PHP.",
+            "homepage": "https://github.com/bobthecow/mustache.php",
+            "keywords": [
+                "mustache",
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/bobthecow/mustache.php/issues",
+                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.2"
+            },
+            "install-path": "../mustache/mustache"
+        },
+        {
+            "name": "newfold-labs/container",
+            "version": "1.2.2",
+            "version_normalized": "1.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/container.git",
+                "reference": "19bb75bb4a64a282f7d142fff9f3418177022851"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/container/zipball/19bb75bb4a64a282f7d142fff9f3418177022851",
+                "reference": "19bb75bb4a64a282f7d142fff9f3418177022851",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "time": "2022-08-26T17:23:54+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\Container\\": "includes"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A lightweight, PHP 7.0+ compatible, PSR-11 dependency injection container.",
+            "support": {
+                "source": "https://github.com/newfold-labs/container/tree/1.2.2"
+            },
+            "install-path": "../newfold-labs/container"
+        },
+        {
+            "name": "newfold-labs/wp-module-activation",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-activation.git",
+                "reference": "4f6affda709af0078c82ceb7ac308990f0abec5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/4f6affda709af0078c82ceb7ac308990f0abec5a",
+                "reference": "4f6affda709af0078c82ceb7ac308990f0abec5a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-04-23T20:45:04+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Activation\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                },
+                {
+                    "name": "Evan Mullins",
+                    "email": "evanrm@gmail.com"
+                },
+                {
+                    "name": "Al Ani",
+                    "email": "hey@alani.dev"
+                }
+            ],
+            "description": "A Module for handling WordPress brand plugins activations",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-activation/tree/1.0.2",
+                "issues": "https://github.com/newfold-labs/wp-module-activation/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-activation"
+        },
+        {
+            "name": "newfold-labs/wp-module-ai",
+            "version": "1.1.9",
+            "version_normalized": "1.1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-ai.git",
+                "reference": "961dc65294b3b4a2c5cc4d2694bcff521cbd3ef8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/961dc65294b3b4a2c5cc4d2694bcff521cbd3ef8",
+                "reference": "961dc65294b3b4a2c5cc4d2694bcff521cbd3ef8",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.4.18"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-05-20T17:10:20+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\AI\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@bluehost.com"
+                }
+            ],
+            "description": "A module for providing artificial intelligence capabilities.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.1.9",
+                "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-ai"
+        },
+        {
+            "name": "newfold-labs/wp-module-atomic",
+            "version": "1.3.0",
+            "version_normalized": "1.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-atomic.git",
+                "reference": "8207104d63db8775b4b0c2a22d1bb016df0d82bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-atomic/zipball/8207104d63db8775b4b0c2a22d1bb016df0d82bb",
+                "reference": "8207104d63db8775b4b0c2a22d1bb016df0d82bb",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-context": "^1.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.3"
+            },
+            "time": "2024-05-31T16:25:56+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Atomic\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "A module to customize a brand plugin for wp cloud environments.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-atomic/tree/1.3.0",
+                "issues": "https://github.com/newfold-labs/wp-module-atomic/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-atomic"
+        },
+        {
+            "name": "newfold-labs/wp-module-coming-soon",
+            "version": "1.2.5",
+            "version_normalized": "1.2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
+                "reference": "36da71998930ffc6fcb13d2ea082b82507a284b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/36da71998930ffc6fcb13d2ea082b82507a284b2",
+                "reference": "36da71998930ffc6fcb13d2ea082b82507a284b2",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": ">=2.4.18",
+                "wp-forge/wp-upgrade-handler": "^1.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-19T19:13:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\ComingSoon\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "Coming Soon module for WordPress sites.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/1.2.5",
+                "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-coming-soon"
+        },
+        {
+            "name": "newfold-labs/wp-module-context",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-context.git",
+                "reference": "fb57e927df45ef33573fe7f429ef1e088b0a6df0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-context/zipball/fb57e927df45ef33573fe7f429ef1e088b0a6df0",
+                "reference": "fb57e927df45ef33573fe7f429ef1e088b0a6df0",
+                "shasum": ""
+            },
+            "require": {
+                "wp-forge/helpers": "^2.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-05-23T20:34:28+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Context\\": "includes"
+                },
+                "files": [
+                    "includes/functions.php",
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "Newfold module to determine context for various brands and platforms.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-context/tree/1.0.1",
+                "issues": "https://github.com/newfold-labs/wp-module-context/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-context"
+        },
+        {
+            "name": "newfold-labs/wp-module-data",
+            "version": "2.5.3",
+            "version_normalized": "2.5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-data.git",
+                "reference": "6c0941bc9ac3d18820f924de8c4afe58bb421782"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/6c0941bc9ac3d18820f924de8c4afe58bb421782",
+                "reference": "6c0941bc9ac3d18820f924de8c4afe58bb421782",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "newfold-labs/wp-module-loader": "^1.0",
+                "wp-forge/helpers": "^2.0",
+                "wp-forge/wp-query-builder": "^1.0",
+                "wp-forge/wp-upgrade-handler": "^1.0",
+                "wpscholar/url": "^1.2"
+            },
+            "require-dev": {
+                "10up/wp_mock": "^0.4.2",
+                "bluehost/bluehost-wordpress-plugin": "*",
+                "brianhenryie/composer-phpstorm": "*",
+                "johnpbloch/wordpress": "*",
+                "kporras07/composer-symlinks": "^1.2",
+                "lucatume/wp-browser": "^3",
+                "newfold-labs/wp-php-standards": "^1.2",
+                "wpackagist-plugin/woocommerce": "*"
+            },
+            "time": "2024-06-19T17:34:08+00:00",
+            "type": "library",
+            "extra": {
+                "symlinks": {
+                    ".": "wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-data"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Data\\": [
+                        "tests/phpunit/includes/",
+                        "tests/wpunit/includes"
+                    ]
+                },
+                "classmap": [
+                    "wordpress"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "cs-changes": [
+                    "updated_files=$( git status | grep '\\(new file\\|modified\\):\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); echo \"\\nChecking\"$(git status | grep '\\(new file\\|modified\\):\\s.*.php$' | tail -n+2 | wc -l)\" files\"; phpcbf $(echo $updated_files); phpcs $(echo $updated_files);"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ],
+                "create-symlinks": [
+                    "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+                ],
+                "post-install-cmd": [
+                    "@create-symlinks"
+                ],
+                "post-update-cmd": [
+                    "@create-symlinks"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Newfold Data Module",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.5.3",
+                "issues": "https://github.com/newfold-labs/wp-module-data/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-data"
+        },
+        {
+            "name": "newfold-labs/wp-module-deactivation",
+            "version": "1.2.1",
+            "version_normalized": "1.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-deactivation.git",
+                "reference": "7aa6aa4e9b594929c9c4f3088320b5db6b537ee5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/7aa6aa4e9b594929c9c4f3088320b5db6b537ee5",
+                "reference": "7aa6aa4e9b594929c9c4f3088320b5db6b537ee5",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.0.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-19T18:29:23+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Deactivation\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                },
+                {
+                    "name": "Evan Mullins",
+                    "email": "evanrm@gmail.com"
+                },
+                {
+                    "name": "Al Ani",
+                    "email": "hey@alani.dev"
+                }
+            ],
+            "description": "A Module for handling WordPress brand plugins and modules deactivations",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.2.1",
+                "issues": "https://github.com/newfold-labs/wp-module-deactivation/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-deactivation"
+        },
+        {
+            "name": "newfold-labs/wp-module-ecommerce",
+            "version": "v1.3.31",
+            "version_normalized": "1.3.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                "reference": "24ef99c9b697f2c30172a95c5f6fa0470b9b2604"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/24ef99c9b697f2c30172a95c5f6fa0470b9b2604",
+                "reference": "24ef99c9b697f2c30172a95c5f6fa0470b9b2604",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-installer": "^1.1.4",
+                "newfold-labs/wp-module-onboarding-data": "^1.1.8"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "@stable",
+                "wp-cli/i18n-command": "@stable",
+                "wp-cli/wp-cli-bundle": "@stable"
+            },
+            "time": "2024-05-20T12:40:55+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "i18n": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                ],
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Beyond",
+                    "email": "team-spartans@newfold.com"
+                }
+            ],
+            "description": "Brand Agnostic eCommerce Experience",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/v1.3.31",
+                "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-ecommerce"
+        },
+        {
+            "name": "newfold-labs/wp-module-facebook",
+            "version": "v1.0.9",
+            "version_normalized": "1.0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                "reference": "5526497969f6a3fc4d4b2fa728ee1c9c52d132b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/5526497969f6a3fc4d4b2fa728ee1c9c52d132b8",
+                "reference": "5526497969f6a3fc4d4b2fa728ee1c9c52d132b8",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.3.1",
+                "newfold-labs/wp-module-loader": "^1.0.10"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-05T11:02:38+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Beyond",
+                    "email": "team-spartans@newfold.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-facebook/tree/v1.0.9",
+                "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-facebook"
+        },
+        {
+            "name": "newfold-labs/wp-module-features",
+            "version": "1.4.2",
+            "version_normalized": "1.4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-features.git",
+                "reference": "0424ca66ed275371a372b139d1c2f81652181b01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-features/zipball/0424ca66ed275371a372b139d1c2f81652181b01",
+                "reference": "0424ca66ed275371a372b139d1c2f81652181b01",
+                "shasum": ""
+            },
+            "require": {
+                "wp-forge/wp-options": "^1.1.1"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.3"
+            },
+            "time": "2024-06-20T19:10:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Features\\": "includes"
+                },
+                "files": [
+                    "includes/functions.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "homepage": "https://wpscholar.com"
+                },
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "A module for providing an interface for features.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-features/tree/1.4.2",
+                "issues": "https://github.com/newfold-labs/wp-module-features/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-features"
+        },
+        {
+            "name": "newfold-labs/wp-module-global-ctb",
+            "version": "1.0.13",
+            "version_normalized": "1.0.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-global-ctb.git",
+                "reference": "f27fc58ca74df9d6ef0aca4d5e3603f48fd17f05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-global-ctb/zipball/f27fc58ca74df9d6ef0aca4d5e3603f48fd17f05",
+                "reference": "f27fc58ca74df9d6ef0aca4d5e3603f48fd17f05",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-25T00:12:44+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\GlobalCTB\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "Newfold module for 'Click to Buy' functionality in brand plugins",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-global-ctb/tree/1.0.13",
+                "issues": "https://github.com/newfold-labs/wp-module-global-ctb/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-global-ctb"
+        },
+        {
+            "name": "newfold-labs/wp-module-help-center",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                "reference": "da9d0d08d5067285c7d36d31b8db58434af2184e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/da9d0d08d5067285c7d36d31b8db58434af2184e",
+                "reference": "da9d0d08d5067285c7d36d31b8db58434af2184e",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-ai": "^1.1.9",
+                "newfold-labs/wp-module-data": "^2.5.0",
+                "newfold-labs/wp-module-features": "^1.4.1"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "@stable"
+            },
+            "time": "2024-05-29T14:37:29+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Faizaan Mohammed",
+                    "email": "faizaan.md@newfold.com"
+                }
+            ],
+            "description": "HelpCenter",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.0.0",
+                "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-help-center"
+        },
+        {
+            "name": "newfold-labs/wp-module-install-checker",
+            "version": "1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-install-checker.git",
+                "reference": "9d43e916b8c4e752b45c868b41340b84bcb686a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/9d43e916b8c4e752b45c868b41340b84bcb686a6",
+                "reference": "9d43e916b8c4e752b45c868b41340b84bcb686a6",
+                "shasum": ""
+            },
+            "time": "2024-01-31T18:12:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\InstallChecker\\": "includes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "homepage": "https://wpscholar.com"
+                }
+            ],
+            "description": "A module that handles checking a WordPress installation to see if it is a fresh install and to fetch the estimated installation date.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.0.3",
+                "issues": "https://github.com/newfold-labs/wp-module-install-checker/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-install-checker"
+        },
+        {
+            "name": "newfold-labs/wp-module-installer",
+            "version": "1.1.4",
+            "version_normalized": "1.1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-installer.git",
+                "reference": "2f1289336d1f49c18a95b05aa7279c12471d3bd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/2f1289336d1f49c18a95b05aa7279c12471d3bd6",
+                "reference": "2f1289336d1f49c18a95b05aa7279c12471d3bd6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-03-19T09:53:55+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah.wood@newfold.com"
+                }
+            ],
+            "description": "An installer for WordPress plugins and themes.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.1.4",
+                "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-installer"
+        },
+        {
+            "name": "newfold-labs/wp-module-loader",
+            "version": "1.0.10",
+            "version_normalized": "1.0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-loader.git",
+                "reference": "8ab6725a6b3bc9ed10b89127f09bcb3e81f795c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/8ab6725a6b3bc9ed10b89127f09bcb3e81f795c6",
+                "reference": "8ab6725a6b3bc9ed10b89127f09bcb3e81f795c6",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/container": "^1.2",
+                "wp-forge/collection": "^1.0",
+                "wp-forge/fluent": "^1.0",
+                "wp-forge/wp-options": "^1.0"
+            },
+            "time": "2022-10-03T20:07:41+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\ModuleLoader\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php",
+                    "includes/functions.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.10",
+                "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-loader"
+        },
+        {
+            "name": "newfold-labs/wp-module-marketplace",
+            "version": "2.3.0",
+            "version_normalized": "2.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
+                "reference": "2d5064b3a935246f4e05f826b97663bdaa251d3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/2d5064b3a935246f4e05f826b97663bdaa251d3e",
+                "reference": "2d5064b3a935246f4e05f826b97663bdaa251d3e",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.5.2"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-18T05:06:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Marketplace\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                },
+                {
+                    "name": "Evan Mullins",
+                    "email": "evanrm@gmail.com"
+                }
+            ],
+            "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/2.3.0",
+                "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-marketplace"
+        },
+        {
+            "name": "newfold-labs/wp-module-migration",
+            "version": "v1.0.7",
+            "version_normalized": "1.0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-migration.git",
+                "reference": "48ae5be126f080220c58e5b607355dc52dfcc575"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/48ae5be126f080220c58e5b607355dc52dfcc575",
+                "reference": "48ae5be126f080220c58e5b607355dc52dfcc575",
+                "shasum": ""
+            },
+            "require": {
+                "instawp/connect-helpers": "1.0.0",
+                "newfold-labs/wp-module-loader": "^1.0.10"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-06-20T21:06:00+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Migration\\": "includes/"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "i18n": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                ],
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Beyond",
+                    "email": "team-spartans@newfold.com"
+                }
+            ],
+            "description": "Initiates the migration process",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-migration/tree/v1.0.7",
+                "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-migration"
+        },
+        {
+            "name": "newfold-labs/wp-module-notifications",
+            "version": "1.3.0",
+            "version_normalized": "1.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-notifications.git",
+                "reference": "2e0474d648bafadb6367e7323ed898b429bc0ef2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/2e0474d648bafadb6367e7323ed898b429bc0ef2",
+                "reference": "2e0474d648bafadb6367e7323ed898b429bc0ef2",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.0.0",
+                "wp-forge/collection": "^1.0",
+                "wp-forge/helpers": "^2.0",
+                "wpscholar/url": "^1.2"
+            },
+            "time": "2024-04-30T04:47:27+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewFoldLabs\\WP\\Module\\Notifications\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A module for managing Newfold in-site notifications.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.3.0",
+                "issues": "https://github.com/newfold-labs/wp-module-notifications/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-notifications"
+        },
+        {
+            "name": "newfold-labs/wp-module-onboarding",
+            "version": "2.3.4",
+            "version_normalized": "2.3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
+                "reference": "243277e79a3bd42f16b4d186f4575bf46fea67c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/243277e79a3bd42f16b4d186f4575bf46fea67c7",
+                "reference": "243277e79a3bd42f16b4d186f4575bf46fea67c7",
+                "shasum": ""
+            },
+            "require": {
+                "mustache/mustache": "^2.14",
+                "newfold-labs/wp-module-facebook": "^1.0",
+                "newfold-labs/wp-module-migration": "^1.0",
+                "newfold-labs/wp-module-onboarding-data": "^1.1",
+                "newfold-labs/wp-module-patterns": "^1.0",
+                "wp-cli/wp-config-transformer": "^1.3",
+                "wp-forge/helpers": "^2.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2",
+                "wp-cli/i18n-command": "^2.4.3",
+                "wp-phpunit/wp-phpunit": "^6.2",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-14T13:15:51+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Onboarding\\": "includes/"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "lint": [
+                    "vendor/bin/phpcs . --standard=Newfold"
+                ],
+                "clean": [
+                    "vendor/bin/phpcbf . --standard=Newfold"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Ryan",
+                    "email": "dave@bluehost.com"
+                }
+            ],
+            "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.3.4",
+                "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-onboarding"
+        },
+        {
+            "name": "newfold-labs/wp-module-onboarding-data",
+            "version": "1.1.12",
+            "version_normalized": "1.1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
+                "reference": "efce79142be2deb7382b0c500a17be75fc9a5708"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/efce79142be2deb7382b0c500a17be75fc9a5708",
+                "reference": "efce79142be2deb7382b0c500a17be75fc9a5708",
+                "shasum": ""
+            },
+            "require": {
+                "mustache/mustache": "^2.14",
+                "newfold-labs/wp-module-ai": "^1.1",
+                "newfold-labs/wp-module-coming-soon": "^1.2",
+                "newfold-labs/wp-module-data": "^2.0",
+                "newfold-labs/wp-module-install-checker": "^1.0",
+                "newfold-labs/wp-module-installer": "^1.1",
+                "newfold-labs/wp-module-patterns": "^1.0",
+                "newfold-labs/wp-module-performance": "^1.4",
+                "wp-forge/wp-upgrade-handler": "^1.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2",
+                "wp-cli/i18n-command": "^2.4.3"
+            },
+            "time": "2024-06-14T12:45:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Onboarding\\Data\\": "includes/"
+                },
+                "files": [
+                    "includes/I18n.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "arunshenoy99",
+                    "email": "devarunshenoy99@gmail.com"
+                }
+            ],
+            "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.1.12",
+                "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-onboarding-data"
+        },
+        {
+            "name": "newfold-labs/wp-module-patterns",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-patterns.git",
+                "reference": "89c05ae08ebffe28521c876eb839a7bc9b60d02a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/89c05ae08ebffe28521c876eb839a7bc9b60d02a",
+                "reference": "89c05ae08ebffe28521c876eb839a7bc9b60d02a",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.5.1",
+                "newfold-labs/wp-module-features": "^1.4"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.2"
+            },
+            "time": "2024-05-29T16:10:58+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "lint": [
+                    "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                ],
+                "clean": [
+                    "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hristina Conjic",
+                    "email": "hristina.conjic@newfold.com"
+                }
+            ],
+            "description": "WordPress Cloud Patterns",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.0.0",
+                "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-patterns"
+        },
+        {
+            "name": "newfold-labs/wp-module-performance",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                "reference": "91021b0f90e8a778fc7b96e71d1d4b25c1eebdfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/91021b0f90e8a778fc7b96e71d1d4b25c1eebdfb",
+                "reference": "91021b0f90e8a778fc7b96e71d1d4b25c1eebdfb",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-context": "^1.0",
+                "newfold-labs/wp-module-features": "^1.3",
+                "wp-forge/collection": "^1.0.2",
+                "wp-forge/wp-htaccess-manager": "^1.0",
+                "wpscholar/url": "^1.2.2"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.3"
+            },
+            "time": "2024-05-29T15:57:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                },
+                "files": [
+                    "includes/PerformanceFeature.php",
+                    "includes/functions.php",
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A module for managing caching functionality.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.0.0",
+                "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-performance"
+        },
+        {
+            "name": "newfold-labs/wp-module-runtime",
+            "version": "v1.0.11",
+            "version_normalized": "1.0.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-runtime.git",
+                "reference": "fe58c1d7db085b84214b90449314d6392ec966f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-runtime/zipball/fe58c1d7db085b84214b90449314d6392ec966f6",
+                "reference": "fe58c1d7db085b84214b90449314d6392ec966f6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "@stable",
+                "wp-cli/i18n-command": "@stable",
+                "wp-cli/wp-cli-bundle": "@stable"
+            },
+            "time": "2024-05-06T07:16:26+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Runtime\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf --standard=phpcs.xml ."
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Beyond",
+                    "email": "team-spartans@newfold.com"
+                }
+            ],
+            "description": "Runtime for Newfold WP modules and plugins",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-runtime/tree/v1.0.11",
+                "issues": "https://github.com/newfold-labs/wp-module-runtime/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-runtime"
+        },
+        {
+            "name": "newfold-labs/wp-module-secure-passwords",
+            "version": "1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-secure-passwords.git",
+                "reference": "00d5502e4037cd9d18de3d7ab91fc12d31cef0c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-secure-passwords/zipball/00d5502e4037cd9d18de3d7ab91fc12d31cef0c3",
+                "reference": "00d5502e4037cd9d18de3d7ab91fc12d31cef0c3",
+                "shasum": ""
+            },
+            "require-dev": {
+                "bluehost/wp-php-standards": "^1.1",
+                "wp-phpunit/wp-phpunit": "^5.9",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-01-31T18:14:24+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=Bluehost"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=Bluehost -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Desrosiers",
+                    "email": "jonathan.desrosiers@newfold.com"
+                }
+            ],
+            "description": "Prevents passwords exposed in data breaches from being used and encourages better password hygiene.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-secure-passwords/tree/1.1.1",
+                "issues": "https://github.com/newfold-labs/wp-module-secure-passwords/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-secure-passwords"
+        },
+        {
+            "name": "newfold-labs/wp-module-sso",
+            "version": "1.0.5",
+            "version_normalized": "1.0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-sso.git",
+                "reference": "3281a2a73b6d74bcb01ab8cde01854ed064ba5a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/3281a2a73b6d74bcb01ab8cde01854ed064ba5a7",
+                "reference": "3281a2a73b6d74bcb01ab8cde01854ed064ba5a7",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": ">=2.1"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "time": "2024-04-18T19:11:14+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewFoldLabs\\WP\\Module\\SSO\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@bluehost.com"
+                }
+            ],
+            "description": "Single sign-on functionality for Newfold WordPress sites.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-sso/tree/1.0.5",
+                "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-sso"
+        },
+        {
+            "name": "newfold-labs/wp-module-staging",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-staging.git",
+                "reference": "dae822eec83521f6538844877ee98e637004514d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/dae822eec83521f6538844877ee98e637004514d",
+                "reference": "dae822eec83521f6538844877ee98e637004514d",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-context": "^1.0",
+                "newfold-labs/wp-module-features": "^1.3.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.2"
+            },
+            "time": "2024-05-29T14:18:17+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Staging\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "Newfold module for staging functionality in brand plugins",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.0.0",
+                "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
+            },
+            "install-path": "../newfold-labs/wp-module-staging"
+        },
+        {
+            "name": "wp-cli/wp-config-transformer",
+            "version": "v1.3.5",
+            "version_normalized": "1.3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/wp-config-transformer.git",
+                "reference": "202aa80528939159d52bc4026cee5453aec382db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/202aa80528939159d52bc4026cee5453aec382db",
+                "reference": "202aa80528939159d52bc4026cee5453aec382db",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "wp-cli/wp-cli-tests": "^4.0"
+            },
+            "time": "2023-11-10T14:28:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/WPConfigTransformer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frankie Jarrett",
+                    "email": "fjarrett@gmail.com"
+                }
+            ],
+            "description": "Programmatically edit a wp-config.php file.",
+            "homepage": "https://github.com/wp-cli/wp-config-transformer",
+            "support": {
+                "issues": "https://github.com/wp-cli/wp-config-transformer/issues",
+                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.3.5"
+            },
+            "install-path": "../wp-cli/wp-config-transformer"
+        },
+        {
+            "name": "wp-forge/collection",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/collection.git",
+                "reference": "e304ddc0130d466dcc55e3a8dee79f0d745ca47a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/collection/zipball/e304ddc0130d466dcc55e3a8dee79f0d745ca47a",
+                "reference": "e304ddc0130d466dcc55e3a8dee79f0d745ca47a",
+                "shasum": ""
+            },
+            "time": "2022-08-26T17:42:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\Collection\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A PHP utility class for manipulating collections.",
+            "support": {
+                "issues": "https://github.com/wp-forge/collection/issues",
+                "source": "https://github.com/wp-forge/collection/tree/1.0.2"
+            },
+            "install-path": "../wp-forge/collection"
+        },
+        {
+            "name": "wp-forge/fluent",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/fluent.git",
+                "reference": "b7d6e54f86bd2bbc229faeefd2772f1f1354ad8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/fluent/zipball/b7d6e54f86bd2bbc229faeefd2772f1f1354ad8c",
+                "reference": "b7d6e54f86bd2bbc229faeefd2772f1f1354ad8c",
+                "shasum": ""
+            },
+            "time": "2022-08-26T17:38:37+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\Fluent\\": "includes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "An instance of the Laravel Fluent class for use with WordPress.",
+            "support": {
+                "issues": "https://github.com/wp-forge/fluent/issues",
+                "source": "https://github.com/wp-forge/fluent/tree/1.0.1"
+            },
+            "install-path": "../wp-forge/fluent"
+        },
+        {
+            "name": "wp-forge/helpers",
+            "version": "2.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/helpers.git",
+                "reference": "28ebc09a3390dbff427270a4ed2b93395e8b9b78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/helpers/zipball/28ebc09a3390dbff427270a4ed2b93395e8b9b78",
+                "reference": "28ebc09a3390dbff427270a4ed2b93395e8b9b78",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.3",
+                "ext-mbstring": "*"
+            },
+            "time": "2022-01-06T13:10:47+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "includes/functions.php"
+                ],
+                "psr-4": {
+                    "WP_Forge\\Helpers\\": "includes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A collection of helpers for WordPress and PHP development.",
+            "support": {
+                "issues": "https://github.com/wp-forge/helpers/issues",
+                "source": "https://github.com/wp-forge/helpers/tree/2.0"
+            },
+            "install-path": "../wp-forge/helpers"
+        },
+        {
+            "name": "wp-forge/wp-htaccess-manager",
+            "version": "1.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-htaccess-manager.git",
+                "reference": "f1fac7af85c0d75a211a5d0e73cd43a7d62debe8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-htaccess-manager/zipball/f1fac7af85c0d75a211a5d0e73cd43a7d62debe8",
+                "reference": "f1fac7af85c0d75a211a5d0e73cd43a7d62debe8",
+                "shasum": ""
+            },
+            "time": "2022-04-01T16:21:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "includes/functions.php"
+                ],
+                "psr-4": {
+                    "WP_Forge\\WP_Htaccess_Manager\\": "includes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A helper library for making changes to .htaccess files in WordPress.",
+            "support": {
+                "issues": "https://github.com/wp-forge/wp-htaccess-manager/issues",
+                "source": "https://github.com/wp-forge/wp-htaccess-manager/tree/1.0"
+            },
+            "install-path": "../wp-forge/wp-htaccess-manager"
+        },
+        {
+            "name": "wp-forge/wp-options",
+            "version": "1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-options.git",
+                "reference": "511b1c5e626582dd4c3c1b5602e7a20352dabc1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-options/zipball/511b1c5e626582dd4c3c1b5602e7a20352dabc1b",
+                "reference": "511b1c5e626582dd4c3c1b5602e7a20352dabc1b",
+                "shasum": ""
+            },
+            "time": "2024-05-10T14:57:37+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\Options\\": "includes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A WordPress helper class for managing plugin options.",
+            "support": {
+                "issues": "https://github.com/wp-forge/wp-options/issues",
+                "source": "https://github.com/wp-forge/wp-options/tree/1.1.1"
+            },
+            "install-path": "../wp-forge/wp-options"
+        },
+        {
+            "name": "wp-forge/wp-query-builder",
+            "version": "1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-query-builder.git",
+                "reference": "34959e5618969afd8350a8206744a7810d9f253b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-query-builder/zipball/34959e5618969afd8350a8206744a7810d9f253b",
+                "reference": "34959e5618969afd8350a8206744a7810d9f253b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "time": "2023-04-29T19:26:54+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\QueryBuilder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A lightweight and efficient SQL query builder for WordPress.",
+            "keywords": [
+                "database",
+                "query builder",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-forge/wp-query-builder/issues",
+                "source": "https://github.com/wp-forge/wp-query-builder/tree/1.0.3"
+            },
+            "install-path": "../wp-forge/wp-query-builder"
+        },
+        {
+            "name": "wp-forge/wp-update-handler",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-update-handler.git",
+                "reference": "4dbc5e0dd4dfbb5808f9d53b1b3afd65c3db7435"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-update-handler/zipball/4dbc5e0dd4dfbb5808f9d53b1b3afd65c3db7435",
+                "reference": "4dbc5e0dd4dfbb5808f9d53b1b3afd65c3db7435",
+                "shasum": ""
+            },
+            "require": {
+                "wp-forge/helpers": "^2.0"
+            },
+            "require-dev": {
+                "wpscholar/phpcs-standards-wpscholar": "^1.0"
+            },
+            "time": "2024-02-16T18:07:08+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\WPUpdateHandler\\": "includes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A WordPress package for updating custom plugins and themes based on an API response from a custom update server.",
+            "support": {
+                "issues": "https://github.com/wp-forge/wp-update-handler/issues",
+                "source": "https://github.com/wp-forge/wp-update-handler/tree/1.0.2"
+            },
+            "install-path": "../wp-forge/wp-update-handler"
+        },
+        {
+            "name": "wp-forge/wp-upgrade-handler",
+            "version": "1.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-upgrade-handler.git",
+                "reference": "b0a7f4c66710f95b4c5702fea3af505ea72fb215"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-upgrade-handler/zipball/b0a7f4c66710f95b4c5702fea3af505ea72fb215",
+                "reference": "b0a7f4c66710f95b4c5702fea3af505ea72fb215",
+                "shasum": ""
+            },
+            "time": "2020-05-21T00:04:44+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\UpgradeHandler\\": "includes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "A drop-in library for handling upgrade routines in WordPress plugins and themes.",
+            "support": {
+                "issues": "https://github.com/wp-forge/wp-upgrade-handler/issues",
+                "source": "https://github.com/wp-forge/wp-upgrade-handler/tree/1.0"
+            },
+            "install-path": "../wp-forge/wp-upgrade-handler"
+        },
+        {
+            "name": "wpscholar/url",
+            "version": "1.2.2",
+            "version_normalized": "1.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpscholar/url.git",
+                "reference": "c339972ed8e6876f1cfacbc512c6205db63645d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpscholar/url/zipball/c339972ed8e6876f1cfacbc512c6205db63645d0",
+                "reference": "c339972ed8e6876f1cfacbc512c6205db63645d0",
+                "shasum": ""
+            },
+            "time": "2020-10-27T20:10:04+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "wpscholar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com",
+                    "homepage": "http://wpscholar.com"
+                }
+            ],
+            "description": "A PHP class for parsing and manipulating URLs.",
+            "support": {
+                "issues": "https://github.com/wpscholar/url/issues",
+                "source": "https://github.com/wpscholar/url/tree/1.2.2"
+            },
+            "install-path": "../wpscholar/url"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}
