@@ -24,10 +24,14 @@ error_log
 .env
 .env.*
 wp-config.php
+wp-config-*.php
 *.pem
 *.key
 
-# WordPress temporary & cache directories (if added later)
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
+# Ignore full site core files if ever added
+wp-admin/
+wp-includes/
+wp-content/
+uploads/
+cache/
+upgrade/
