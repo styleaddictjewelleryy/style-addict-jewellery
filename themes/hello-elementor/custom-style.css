@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.5.0
+ * Version: 2.6.0
  */
 
 /* ==========================================================================
@@ -552,21 +552,40 @@ p,
     transform: scale(1.05) !important;
 }
 
-/* Clean Natural Containers (No borders, no box-shadows, no container hover highlights) */
-.elementor-inner-section .elementor-column > .elementor-element-populated,
-.elementor-section .elementor-column > .elementor-element-populated,
+/* Clean Natural Containers (No borders, no box-shadows on generic columns) */
+.elementor-inner-section:not(.elementor-element-2edfe301) .elementor-column > .elementor-element-populated,
+.elementor-section:not(.elementor-element-2edfe301) .elementor-column > .elementor-element-populated,
 .elementor-28 .elementor-column > .elementor-element-populated {
     border: none !important;
     box-shadow: none !important;
     transform: none !important;
 }
 
-.elementor-inner-section .elementor-column:hover > .elementor-element-populated,
-.elementor-section .elementor-column:hover > .elementor-element-populated,
+.elementor-inner-section:not(.elementor-element-2edfe301) .elementor-column:hover > .elementor-element-populated,
+.elementor-section:not(.elementor-element-2edfe301) .elementor-column:hover > .elementor-element-populated,
 .elementor-28 .elementor-column:hover > .elementor-element-populated {
     border: none !important;
     box-shadow: none !important;
     transform: none !important;
+}
+
+/* Category Cards (Pendant, Bracelet, Ear Rings, Jewellery Sets) - Lift a bit on hover */
+.elementor-element-2edfe301 .elementor-column > .elementor-element-populated {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.elementor-element-2edfe301 .elementor-column:hover > .elementor-element-populated {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 14px 28px rgba(82, 50, 40, 0.12) !important;
+}
+
+.elementor-element-2edfe301 .elementor-image-box-img img {
+    transition: transform 0.3s ease !important;
+}
+
+.elementor-element-2edfe301 .elementor-column:hover .elementor-image-box-img img {
+    transform: scale(1.08) !important;
 }
 
 /* Category Card Titles */
