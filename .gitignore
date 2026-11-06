@@ -29,9 +29,9 @@ wp-config-*.php
 *.key
 
 # Ignore full site core files if ever added
-wp-admin/
-wp-includes/
-wp-content/
-uploads/
-cache/
-upgrade/
+/wp-admin/
+/wp-includes/
+/wp-content/
+/uploads/
+/cache/
+/upgrade/
