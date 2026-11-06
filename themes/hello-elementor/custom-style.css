@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.3.0
+ * Version: 2.4.0
  */
 
 /* ==========================================================================
@@ -20,10 +20,10 @@ body.woocommerce-page {
 
 
 /* ==========================================================================
-   2. FLOATING HEADER FIXES & ALIGNMENT
+   2. FLOATING HEADER & CENTERED LOGO
    ========================================================================== */
 
-/* Header Row & Outer Container Vertical Centering */
+/* Header Outer Container Vertical Centering */
 .elementor-26 .elementor-element.elementor-element-7f787e09 > .elementor-element-populated {
     display: flex !important;
     align-items: center !important;
@@ -31,7 +31,7 @@ body.woocommerce-page {
     min-height: 72px !important;
 }
 
-/* Header Container: Flex row with perfectly centered middle column */
+/* Header Container: Flex row with mathematically centered logo column */
 .elementor-26 .elementor-element.elementor-element-66e23d96 > .elementor-container {
     display: flex !important;
     flex-direction: row !important;
@@ -54,18 +54,82 @@ body.woocommerce-page {
     align-items: center !important;
 }
 
-.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a {
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item {
     color: #2D1F1B !important;
     font-weight: 500 !important;
     transition: color 0.3s ease !important;
 }
 
-.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a:hover,
-.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item-active {
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item:hover,
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item.elementor-item-active {
     color: #B55D44 !important;
 }
 
-/* Logo Column (Center - Exact Dead Center) */
+/* 2.1 SHOP DROPDOWN WITH ICON PREFIXES & LUXURY CARD STYLING */
+.elementor-nav-menu--dropdown {
+    border-radius: 12px !important;
+    box-shadow: 0 12px 32px rgba(45, 31, 27, 0.12) !important;
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    padding: 10px 0 !important;
+    background-color: #FFFFFF !important;
+    min-width: 190px !important;
+}
+
+.elementor-nav-menu--dropdown a.elementor-sub-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 9px 20px !important;
+    color: #2D1F1B !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: all 0.25s ease !important;
+    width: 100% !important;
+}
+
+.elementor-nav-menu--dropdown a.elementor-sub-item:hover {
+    color: #D44332 !important;
+    background-color: #FAF4F2 !important;
+}
+
+.elementor-nav-menu--dropdown a.elementor-sub-item::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.elementor-nav-menu--dropdown a.elementor-sub-item:hover::before {
+    transform: scale(1.18) !important;
+}
+
+/* Specific Dropdown Icon Prefixes */
+.elementor-nav-menu--dropdown .menu-item-153 a::before,
+.elementor-nav-menu--dropdown a[href*="pendant"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3c0 7 6 11 6 11s6-4 6-11'/%3E%3Ccircle cx='12' cy='18' r='3' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+}
+
+.elementor-nav-menu--dropdown .menu-item-162 a::before,
+.elementor-nav-menu--dropdown a[href*="bracelet"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='12' rx='9' ry='6'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+}
+
+.elementor-nav-menu--dropdown .menu-item-163 a::before,
+.elementor-nav-menu--dropdown a[href*="ear-rings"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='11,11 8,17 14,17' fill='%23B55D44'/%3E%3Cpath d='M16 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='19,11 16,17 22,17' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+}
+
+.elementor-nav-menu--dropdown .menu-item-333 a::before,
+.elementor-nav-menu--dropdown a[href*="jewellery-sets"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+}
+
+/* 2.2 LOGO COLUMN (DEAD CENTER) */
 .elementor-26 .elementor-element.elementor-element-4f831267 {
     flex: 0 0 auto !important;
     display: flex !important;
@@ -116,7 +180,7 @@ body.woocommerce-page {
     margin: 0 auto !important;
 }
 
-/* Right Header Column: Force horizontal row with neat spacing */
+/* 2.3 RIGHT HEADER ACTIONS (WISHLIST, CART, MY ACCOUNT) */
 .elementor-26 .elementor-element.elementor-element-557bf102 {
     flex: 1 1 0 !important;
     display: flex !important;
@@ -132,8 +196,157 @@ body.woocommerce-page {
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 16px !important;
+    gap: 18px !important;
     width: 100% !important;
+}
+
+/* Header Wishlist Icon */
+.elementor-26 .elementor-element.elementor-element-f1caf06 {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-f1caf06 > .elementor-widget-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #3D312E !important;
+    font-size: 21px !important;
+    transition: color 0.3s ease, transform 0.2s ease !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon:hover {
+    color: #D44332 !important;
+    transform: scale(1.14) !important;
+}
+
+/* Header Cart Button: MATCH WISHLIST ICON DESIGN (Clean outline bag icon, no solid brown pill) */
+.elementor-26 .elementor-element.elementor-element-5d52351 {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-button-wrapper {
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-5d52351 a#elementor-menu-cart__toggle_button,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle_button,
+.elementor-26 .elementor-element.elementor-element-5d52351 a.elementor-button {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Hide price amount in header cart to match clean wishlist icon */
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-button-text {
+    display: none !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-button-icon {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-5d52351 svg.e-font-icon-svg {
+    width: 22px !important;
+    height: 22px !important;
+    fill: #3D312E !important;
+    color: #3D312E !important;
+    transition: fill 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-5d52351:hover svg.e-font-icon-svg,
+.elementor-26 .elementor-element.elementor-element-5d52351 a:hover svg.e-font-icon-svg {
+    fill: #D44332 !important;
+    color: #D44332 !important;
+    transform: scale(1.14) !important;
+}
+
+/* Cart Counter Bubble */
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-button-icon-qty {
+    background-color: #D44332 !important;
+    color: #FFFFFF !important;
+    border-radius: 50% !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    min-width: 17px !important;
+    height: 17px !important;
+    line-height: 17px !important;
+    text-align: center !important;
+    padding: 0 4px !important;
+    box-shadow: 0 2px 6px rgba(212, 67, 50, 0.45) !important;
+}
+
+/* Header Login / My Account Button */
+.elementor-26 .elementor-element.elementor-element-6a4d0c5,
+.elementor-26 .elementor-element.elementor-element-19add787 {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button,
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button,
+.elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button,
+.elementor-26 .elementor-element.elementor-element-19add787 .elementor-button {
+    margin: 0 !important;
+    padding: 8px 18px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    color: #FFFFFF !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.28) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button:hover,
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button:hover,
+.elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button:hover,
+.elementor-26 .elementor-element.elementor-element-19add787 .elementor-button:hover {
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* Symmetrical desktop column widths for 100% centered logo alignment */
@@ -170,123 +383,17 @@ body.woocommerce-page {
     }
 }
 
-/* 2.1 Header Wishlist Icon */
-.elementor-26 .elementor-element.elementor-element-f1caf06 {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    width: auto !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-f1caf06 > .elementor-widget-container {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #3D312E !important;
-    font-size: 20px !important;
-    transition: color 0.3s ease, transform 0.2s ease !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon:hover {
-    color: #B55D44 !important;
-    transform: scale(1.12) !important;
-}
-
-/* 2.2 Header Cart Widget */
-.elementor-26 .elementor-element.elementor-element-5d52351 {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    width: auto !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle {
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-5d52351 a#elementor-menu-cart__toggle_button {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    border-radius: 25px !important;
-    transition: all 0.3s ease !important;
-}
-
-/* 2.3 Header Login / Sign-in Button */
-.elementor-26 .elementor-element.elementor-element-6a4d0c5,
-.elementor-26 .elementor-element.elementor-element-19add787 {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-    width: auto !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-6a4d0c5 > .elementor-widget-container,
-.elementor-26 .elementor-element.elementor-element-19add787 > .elementor-widget-container {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button,
-.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button,
-.elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button,
-.elementor-26 .elementor-element.elementor-element-19add787 .elementor-button {
-    margin: 0 !important;
-    padding: 8px 18px !important;
-    border-radius: 30px !important;
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
-    color: #FFFFFF !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    white-space: nowrap !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 7px !important;
-    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.28) !important;
-    border: none !important;
-    transition: all 0.3s ease !important;
-}
-
-.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button:hover,
-.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button:hover,
-.elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button:hover,
-.elementor-26 .elementor-element.elementor-element-19add787 .elementor-button:hover {
-    background: linear-gradient(135deg, #3D261E 0%, #2A1710 100%) !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 6px 18px rgba(42, 23, 16, 0.35) !important;
-    transform: translateY(-2px) !important;
-}
-
 
 /* ==========================================================================
-   3. SITE-WIDE BUTTON COLOR ENHANCEMENT (MATCHING SIGN-IN BUTTON)
-      Preserving original layout/design but applying rich terracotta/rose-gold
+   3. SITE-WIDE BUTTON STYLING & VIBRANT RED HOVER
+      (Warm terracotta default -> Vibrant Red hover #D44332, not blackish)
    ========================================================================== */
 
-/* All Elementor Buttons, Submit Buttons & Form Actions */
-.elementor-button,
-.elementor-button:visited,
-a.elementor-button,
-button.elementor-button,
+/* All Buttons Default State */
+.elementor-button:not(.elementor-menu-cart__toggle_button),
+.elementor-button:visited:not(.elementor-menu-cart__toggle_button),
+a.elementor-button:not(.elementor-menu-cart__toggle_button),
+button.elementor-button:not(.elementor-menu-cart__toggle_button),
 .elementor-widget-button a.elementor-button,
 .elementor-widget-form .elementor-button,
 .elementor-widget-form button[type="submit"],
@@ -312,13 +419,13 @@ button.elementor-button,
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
 }
 
-/* Button Hover State - Deep Luxury Espresso */
-.elementor-button:hover,
-.elementor-button:focus,
-a.elementor-button:hover,
-a.elementor-button:focus,
-button.elementor-button:hover,
-button.elementor-button:focus,
+/* All Buttons Hover State: VIBRANT LUXURY RED (Never blackish) */
+.elementor-button:hover:not(.elementor-menu-cart__toggle_button),
+.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
+a.elementor-button:hover:not(.elementor-menu-cart__toggle_button),
+a.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
+button.elementor-button:hover:not(.elementor-menu-cart__toggle_button),
+button.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
 .elementor-widget-button a.elementor-button:hover,
 .elementor-widget-button a.elementor-button:focus,
 .elementor-widget-form .elementor-button:hover,
@@ -337,23 +444,52 @@ button.elementor-button:focus,
 .tinv-wishlist .tinvwl-to-cart:hover,
 .tinv-wishlist button.button:hover,
 .tinv-wishlist a.button:hover {
-    background: linear-gradient(135deg, #3D261E 0%, #2A1710 100%) !important;
-    background-color: #3D261E !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background-color: #D44332 !important;
     color: #FFFFFF !important;
-    box-shadow: 0 6px 18px rgba(42, 23, 16, 0.35) !important;
+    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
     transform: translateY(-2px) !important;
 }
 
 
 /* ==========================================================================
-   4. SITE-WIDE TYPOGRAPHY (ALL PAGES & FOOTER)
+   4. HERO SECTION & TYPOGRAPHY ENHANCEMENTS
    ========================================================================== */
 
-/* 4.1 Subtitles & Overlines (e.g. "WHO WE ARE", "WELCOME...", Category badges) */
-.elementor h6.elementor-heading-title,
-.elementor-widget-heading h6,
-.elementor-heading-title.elementor-size-small,
-.elementor-element-1e28c3dc .elementor-heading-title {
+/* Hero "Welcome to Style Addict!" - Highly visible crisp white on dark photo background */
+.elementor-element.elementor-element-b1a1a30 .elementor-heading-title,
+.elementor-element-b1a1a30 h6.elementor-heading-title {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    display: inline-block !important;
+    margin-bottom: 10px !important;
+}
+
+/* "Discover Collections" Header & Description (Dark, bold and highly legible) */
+.elementor-element.elementor-element-1c9ef285 .elementor-heading-title,
+.elementor-element-1c9ef285 div.elementor-heading-title {
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    letter-spacing: -0.3px !important;
+}
+
+.elementor-element.elementor-element-57865b09 p,
+.elementor-element-57865b09 span {
+    color: #3D312E !important;
+    font-weight: 500 !important;
+    line-height: 1.7 !important;
+    font-size: 15px !important;
+}
+
+/* General Overlines & Subtitles */
+.elementor h6.elementor-heading-title:not(.elementor-element-b1a1a30 *),
+.elementor-element-1e28c3dc .elementor-heading-title,
+.elementor-widget-heading h6:not(.elementor-element-b1a1a30 *) {
     color: #B55D44 !important;
     font-weight: 700 !important;
     letter-spacing: 2px !important;
@@ -362,7 +498,7 @@ button.elementor-button:focus,
     margin-bottom: 8px !important;
 }
 
-/* 4.2 Main Section & Page Headlines (High Contrast Deep Warm Bronze/Espresso) */
+/* Main Section & Page Headlines */
 h1, h2, h3, h4,
 .elementor h1, .elementor h2, .elementor h3, .elementor h4,
 .elementor h1.elementor-heading-title,
@@ -380,7 +516,7 @@ h1, h2, h3, h4,
     letter-spacing: -0.2px !important;
 }
 
-/* 4.3 Body Paragraphs, Text Editors, Descriptions */
+/* Body Paragraphs & Text */
 p,
 .elementor p,
 .elementor-widget-text-editor p,
@@ -394,7 +530,75 @@ p,
 
 
 /* ==========================================================================
-   5. FOOTER SPECIFIC ENHANCEMENTS
+   5. PRODUCT CARDS & VIBRANT WISHLIST BUTTON
+   ========================================================================== */
+
+/* Add to Wishlist Button on Product Cards: Vibrant Color */
+.tinv-wishlist .tinvwl_add_to_wishlist_button,
+.tinvwl_add_to_wishlist_button,
+.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+    color: #B55D44 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: color 0.3s ease, transform 0.2s ease !important;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button:hover,
+.tinvwl_add_to_wishlist_button:hover,
+.tinvwl_add_to_wishlist_button:hover .tinvwl_add_to_wishlist-text,
+.tinvwl_add_to_wishlist_button:hover.tinvwl-icon-heart:before {
+    color: #D44332 !important;
+    transform: scale(1.05) !important;
+}
+
+/* Category Cards Flat Professional Styling (No 3D jumps) */
+.elementor-inner-section .elementor-column > .elementor-element-populated {
+    border-radius: 12px !important;
+    border: 1px solid rgba(181, 93, 68, 0.12) !important;
+    box-shadow: 0 4px 16px rgba(45, 31, 27, 0.05) !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    transform: none !important; /* Professional flat layout, not 3D */
+}
+
+.elementor-inner-section .elementor-column:hover > .elementor-element-populated {
+    border-color: rgba(181, 93, 68, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(45, 31, 27, 0.08) !important;
+    transform: none !important; /* Kept clean without 3D lift */
+}
+
+/* Category Card Titles */
+.elementor h5 a,
+.elementor-widget-heading h5 a,
+.elementor-widget-image-box .elementor-image-box-title,
+.elementor-widget-image-box .elementor-image-box-title a {
+    color: #2D1F1B !important;
+    font-weight: 600 !important;
+    transition: color 0.3s ease !important;
+}
+
+.elementor h5 a:hover,
+.elementor-widget-heading h5 a:hover,
+.elementor-widget-image-box .elementor-image-box-title a:hover {
+    color: #D44332 !important;
+}
+
+/* WooCommerce Product Price & Titles */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h2,
+.woocommerce div.product .product_title {
+    color: #2D1F1B !important;
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price {
+    color: #B55D44 !important;
+    font-weight: 600 !important;
+}
+
+
+/* ==========================================================================
+   6. FOOTER ENHANCEMENTS (VIBRANT SOCIAL ICONS & COPYRIGHT)
    ========================================================================== */
 
 /* Footer Box Titles ("Customer Service", "EXCLUSIVE CONTENT:", "Store", "Newsletter") */
@@ -408,7 +612,7 @@ p,
     font-weight: 600 !important;
 }
 
-/* Footer Descriptions & Contact Text (No longer faded) */
+/* Footer Descriptions & Contact Text */
 .elementor-28 p,
 .elementor-28 span,
 .elementor-28 .elementor-icon-box-description,
@@ -432,6 +636,50 @@ p,
     font-weight: 500 !important;
 }
 
+/* Footer Social Icons: VIBRANT COLOR & HOVER */
+.elementor-widget-social-icons .elementor-social-icon,
+.elementor-element-37708728 .elementor-social-icon,
+.elementor-element-6bc58925 .elementor-social-icon {
+    background-color: transparent !important;
+    color: #B55D44 !important;
+    fill: #B55D44 !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-widget-social-icons .elementor-social-icon svg,
+.elementor-element-37708728 .elementor-social-icon svg,
+.elementor-element-6bc58925 .elementor-social-icon svg {
+    fill: #B55D44 !important;
+    color: #B55D44 !important;
+    width: 20px !important;
+    height: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-widget-social-icons .elementor-social-icon:hover,
+.elementor-element-37708728 .elementor-social-icon:hover,
+.elementor-element-6bc58925 .elementor-social-icon:hover {
+    color: #D44332 !important;
+    fill: #D44332 !important;
+    transform: scale(1.2) translateY(-2px) !important;
+}
+
+.elementor-widget-social-icons .elementor-social-icon:hover svg,
+.elementor-element-37708728 .elementor-social-icon:hover svg,
+.elementor-element-6bc58925 .elementor-social-icon:hover svg {
+    fill: #D44332 !important;
+    color: #D44332 !important;
+}
+
+/* Footer Copyright Text: Crisp & Vibrant */
+.elementor-element-503537d2 .elementor-heading-title,
+.elementor-28 .elementor-element-503537d2 div {
+    color: #4A352F !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+}
+
 /* Footer Newsletter Input Field */
 .elementor-field-group .elementor-field-textual {
     background-color: #F8F5F2 !important;
@@ -446,71 +694,4 @@ p,
     border-color: #B55D44 !important;
     box-shadow: 0 0 0 2px rgba(181, 93, 68, 0.15) !important;
     outline: none !important;
-}
-
-/* Footer Copyright & Social Links */
-.elementor-28 .elementor-social-icon {
-    background-color: transparent !important;
-    color: #523C36 !important;
-    transition: color 0.3s ease, transform 0.2s ease !important;
-}
-
-.elementor-28 .elementor-social-icon:hover {
-    color: #B55D44 !important;
-    transform: scale(1.15) !important;
-}
-
-
-/* ==========================================================================
-   6. CATEGORY CARDS & PRODUCT CARDS (HOME & ALL PAGES)
-   ========================================================================== */
-
-/* Category boxes smooth interaction */
-.elementor-element-3c0f6db,
-.elementor-element-64a6f23,
-.elementor-element-5494cb3,
-.elementor-element-3e6f9a0,
-.elementor-top-column:has(.elementor-widget-image-box),
-.elementor-inner-column:has(.elementor-widget-image-box) {
-    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-}
-
-/* Category Card Titles */
-.elementor h5 a,
-.elementor-widget-heading h5 a,
-.elementor-widget-image-box .elementor-image-box-title,
-.elementor-widget-image-box .elementor-image-box-title a {
-    color: #2D1F1B !important;
-    font-weight: 600 !important;
-    transition: color 0.3s ease !important;
-}
-
-.elementor h5 a:hover,
-.elementor-widget-heading h5 a:hover,
-.elementor-widget-image-box .elementor-image-box-title a:hover {
-    color: #B55D44 !important;
-}
-
-/* Elevated hover card feel */
-.elementor-inner-section .elementor-column > .elementor-element-populated {
-    border-radius: 12px !important;
-    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-}
-
-.elementor-inner-section .elementor-column:hover > .elementor-element-populated {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 12px 28px rgba(82, 50, 40, 0.1) !important;
-}
-
-/* WooCommerce Product Price & Titles */
-.woocommerce ul.products li.product .woocommerce-loop-product__title,
-.woocommerce ul.products li.product h2,
-.woocommerce div.product .product_title {
-    color: #2D1F1B !important;
-}
-
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price {
-    color: #B55D44 !important;
-    font-weight: 600 !important;
 }
