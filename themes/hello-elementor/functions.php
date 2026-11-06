@@ -276,7 +276,7 @@ function style_addict_enqueue_luxury_styles() {
 		'style-addict-luxury',
 		get_template_directory_uri() . '/custom-style.css',
 		[],
-		'1.0.2'
+		'1.0.3'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'style_addict_enqueue_luxury_styles', 999 );
