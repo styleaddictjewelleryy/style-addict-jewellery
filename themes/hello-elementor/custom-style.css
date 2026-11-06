@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.4.0
+ * Version: 2.5.0
  */
 
 /* ==========================================================================
@@ -552,19 +552,21 @@ p,
     transform: scale(1.05) !important;
 }
 
-/* Category Cards Flat Professional Styling (No 3D jumps) */
-.elementor-inner-section .elementor-column > .elementor-element-populated {
-    border-radius: 12px !important;
-    border: 1px solid rgba(181, 93, 68, 0.12) !important;
-    box-shadow: 0 4px 16px rgba(45, 31, 27, 0.05) !important;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
-    transform: none !important; /* Professional flat layout, not 3D */
+/* Clean Natural Containers (No borders, no box-shadows, no container hover highlights) */
+.elementor-inner-section .elementor-column > .elementor-element-populated,
+.elementor-section .elementor-column > .elementor-element-populated,
+.elementor-28 .elementor-column > .elementor-element-populated {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
-.elementor-inner-section .elementor-column:hover > .elementor-element-populated {
-    border-color: rgba(181, 93, 68, 0.3) !important;
-    box-shadow: 0 6px 20px rgba(45, 31, 27, 0.08) !important;
-    transform: none !important; /* Kept clean without 3D lift */
+.elementor-inner-section .elementor-column:hover > .elementor-element-populated,
+.elementor-section .elementor-column:hover > .elementor-element-populated,
+.elementor-28 .elementor-column:hover > .elementor-element-populated {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 /* Category Card Titles */
