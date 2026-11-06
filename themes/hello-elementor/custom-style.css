@@ -1,11 +1,26 @@
 /**
- * Style Addict Jewellery - Custom Luxury Styling & Typography Enhancements
+ * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.1.0
+ * Version: 2.2.0
  */
 
 /* ==========================================================================
-   1. FLOATING HEADER FIXES & ALIGNMENT
+   1. GLOBAL SITE-WIDE ATMOSPHERE & BACKGROUND (ALL PAGES)
+   ========================================================================== */
+
+body,
+body.page,
+body.single,
+body.archive,
+body.woocommerce,
+body.woocommerce-page {
+    background-color: #FAF7F5 !important;
+    color: #3D312E;
+}
+
+
+/* ==========================================================================
+   2. FLOATING HEADER FIXES & ALIGNMENT
    ========================================================================== */
 
 /* Header Row & Outer Container Vertical Centering */
@@ -22,7 +37,7 @@
     width: 100% !important;
 }
 
-/* Nav Menu Vertical Centering */
+/* Nav Menu Vertical Centering & Luxury Styling */
 .elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu--main {
     display: flex !important;
     align-items: center !important;
@@ -52,7 +67,6 @@
     width: auto !important;
 }
 
-/* Expand the right column width on desktop so elements fit comfortably */
 @media (min-width: 1025px) {
     .elementor-26 .elementor-element.elementor-element-557bf102 {
         width: 32% !important;
@@ -65,7 +79,7 @@
     }
 }
 
-/* 1.1 Wishlist Icon Widget */
+/* 2.1 Header Wishlist Icon */
 .elementor-26 .elementor-element.elementor-element-f1caf06 {
     margin: 0 !important;
     padding: 0 !important;
@@ -97,7 +111,7 @@
     transform: scale(1.12) !important;
 }
 
-/* 1.2 Cart Widget */
+/* 2.2 Header Cart Widget */
 .elementor-26 .elementor-element.elementor-element-5d52351 {
     margin: 0 !important;
     padding: 0 !important;
@@ -123,7 +137,7 @@
     transition: all 0.3s ease !important;
 }
 
-/* 1.3 Login / My Account Button (both IDs to guarantee match) */
+/* 2.3 Header Login / Sign-in Button */
 .elementor-26 .elementor-element.elementor-element-6a4d0c5,
 .elementor-26 .elementor-element.elementor-element-19add787 {
     margin: 0 !important;
@@ -173,14 +187,82 @@
 
 
 /* ==========================================================================
-   2. TYPOGRAPHY ENHANCEMENTS (VIBRANT & LEGIBLE CONTRAST)
+   3. SITE-WIDE BUTTON COLOR ENHANCEMENT (MATCHING SIGN-IN BUTTON)
+      Preserving original layout/design but applying rich terracotta/rose-gold
    ========================================================================== */
 
-/* Overline Subtitles (e.g., "WHO WE ARE", "WELCOME TO STYLE ADDICT!") */
+/* All Elementor Buttons, Submit Buttons & Form Actions */
+.elementor-button,
+.elementor-button:visited,
+a.elementor-button,
+button.elementor-button,
+.elementor-widget-button a.elementor-button,
+.elementor-widget-form .elementor-button,
+.elementor-widget-form button[type="submit"],
+.e-form__buttons button,
+/* WooCommerce Buttons */
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #place_order,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
+/* Wishlist & Theme Buttons */
+.tinv-wishlist .tinvwl-to-cart,
+.tinv-wishlist button.button,
+.tinv-wishlist a.button {
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background-color: #B55D44 !important;
+    color: #FFFFFF !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.25) !important;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+}
+
+/* Button Hover State - Deep Luxury Espresso */
+.elementor-button:hover,
+.elementor-button:focus,
+a.elementor-button:hover,
+a.elementor-button:focus,
+button.elementor-button:hover,
+button.elementor-button:focus,
+.elementor-widget-button a.elementor-button:hover,
+.elementor-widget-button a.elementor-button:focus,
+.elementor-widget-form .elementor-button:hover,
+.elementor-widget-form button[type="submit"]:hover,
+.e-form__buttons button:hover,
+/* WooCommerce Button Hover */
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #place_order:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce a.button.alt:hover,
+/* Wishlist Button Hover */
+.tinv-wishlist .tinvwl-to-cart:hover,
+.tinv-wishlist button.button:hover,
+.tinv-wishlist a.button:hover {
+    background: linear-gradient(135deg, #3D261E 0%, #2A1710 100%) !important;
+    background-color: #3D261E !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 18px rgba(42, 23, 16, 0.35) !important;
+    transform: translateY(-2px) !important;
+}
+
+
+/* ==========================================================================
+   4. SITE-WIDE TYPOGRAPHY (ALL PAGES & FOOTER)
+   ========================================================================== */
+
+/* 4.1 Subtitles & Overlines (e.g. "WHO WE ARE", "WELCOME...", Category badges) */
 .elementor h6.elementor-heading-title,
-.elementor .elementor-element-1e28c3dc .elementor-heading-title,
-.elementor .elementor-widget-heading h6,
-.elementor-heading-title.elementor-size-small {
+.elementor-widget-heading h6,
+.elementor-heading-title.elementor-size-small,
+.elementor-element-1e28c3dc .elementor-heading-title {
     color: #B55D44 !important;
     font-weight: 700 !important;
     letter-spacing: 2px !important;
@@ -189,37 +271,110 @@
     margin-bottom: 8px !important;
 }
 
-/* Main Section Headlines (Transforms faded/washed-out pink to rich, deep warm espresso) */
+/* 4.2 Main Section & Page Headlines (High Contrast Deep Warm Bronze/Espresso) */
+h1, h2, h3, h4,
+.elementor h1, .elementor h2, .elementor h3, .elementor h4,
 .elementor h1.elementor-heading-title,
 .elementor h2.elementor-heading-title,
 .elementor h3.elementor-heading-title,
 .elementor h4.elementor-heading-title,
-.elementor .elementor-element-2b92f5ab .elementor-heading-title,
-.elementor .elementor-widget-heading h1,
-.elementor .elementor-widget-heading h2,
-.elementor .elementor-widget-heading h3 {
+.elementor-widget-heading h1,
+.elementor-widget-heading h2,
+.elementor-widget-heading h3,
+.elementor-widget-heading h4,
+.entry-title,
+.product_title {
     color: #2D1F1B !important;
     font-weight: 600 !important;
     letter-spacing: -0.2px !important;
-    line-height: 1.25 !important;
 }
 
-/* Body Paragraphs & Descriptions (Rich, readable warm charcoal instead of pale gray) */
+/* 4.3 Body Paragraphs, Text Editors, Descriptions */
+p,
+.elementor p,
 .elementor-widget-text-editor p,
 .elementor-widget-text-editor span,
 .elementor .elementor-text-editor,
-.elementor-element-77130467 p {
+.entry-content p,
+.woocommerce-product-details__short-description p {
     color: #3D312E !important;
     line-height: 1.75 !important;
-    font-size: 15px !important;
 }
 
 
 /* ==========================================================================
-   3. CATEGORY CARDS & INTERACTION POLISH
+   5. FOOTER SPECIFIC ENHANCEMENTS
    ========================================================================== */
 
-/* Category boxes (Pendant, Bracelet, Ear Rings, Jewellery Sets) */
+/* Footer Box Titles ("Customer Service", "EXCLUSIVE CONTENT:", "Store", "Newsletter") */
+.elementor-28 h4.elementor-heading-title,
+.elementor-28 h5.elementor-heading-title,
+.elementor-28 .elementor-icon-box-title,
+.elementor-28 .elementor-icon-box-title span,
+.elementor-icon-box-title,
+.elementor-icon-box-title span {
+    color: #2D1F1B !important;
+    font-weight: 600 !important;
+}
+
+/* Footer Descriptions & Contact Text (No longer faded) */
+.elementor-28 p,
+.elementor-28 span,
+.elementor-28 .elementor-icon-box-description,
+.elementor-icon-box-description {
+    color: #3D312E !important;
+    line-height: 1.7 !important;
+}
+
+/* Footer Contact Icons (Location, Email, Phone) */
+.elementor-28 .elementor-icon-list-icon i,
+.elementor-28 .elementor-icon-list-icon svg,
+.elementor-icon-list-icon i,
+.elementor-icon-list-icon svg {
+    color: #B55D44 !important;
+    fill: #B55D44 !important;
+}
+
+.elementor-28 .elementor-icon-list-text,
+.elementor-icon-list-text {
+    color: #3D312E !important;
+    font-weight: 500 !important;
+}
+
+/* Footer Newsletter Input Field */
+.elementor-field-group .elementor-field-textual {
+    background-color: #F8F5F2 !important;
+    border: 1px solid rgba(181, 93, 68, 0.25) !important;
+    color: #2D1F1B !important;
+    border-radius: 6px !important;
+    padding: 10px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-field-group .elementor-field-textual:focus {
+    border-color: #B55D44 !important;
+    box-shadow: 0 0 0 2px rgba(181, 93, 68, 0.15) !important;
+    outline: none !important;
+}
+
+/* Footer Copyright & Social Links */
+.elementor-28 .elementor-social-icon {
+    background-color: transparent !important;
+    color: #523C36 !important;
+    transition: color 0.3s ease, transform 0.2s ease !important;
+}
+
+.elementor-28 .elementor-social-icon:hover {
+    color: #B55D44 !important;
+    transform: scale(1.15) !important;
+}
+
+
+/* ==========================================================================
+   6. CATEGORY CARDS & PRODUCT CARDS (HOME & ALL PAGES)
+   ========================================================================== */
+
+/* Category boxes smooth interaction */
 .elementor-element-3c0f6db,
 .elementor-element-64a6f23,
 .elementor-element-5494cb3,
@@ -229,7 +384,7 @@
     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-/* Category Card Titles (h5 links) */
+/* Category Card Titles */
 .elementor h5 a,
 .elementor-widget-heading h5 a,
 .elementor-widget-image-box .elementor-image-box-title,
@@ -245,7 +400,7 @@
     color: #B55D44 !important;
 }
 
-/* Subtle luxury card styling on category columns */
+/* Elevated hover card feel */
 .elementor-inner-section .elementor-column > .elementor-element-populated {
     border-radius: 12px !important;
     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
@@ -256,38 +411,15 @@
     box-shadow: 0 12px 28px rgba(82, 50, 40, 0.1) !important;
 }
 
-
-/* ==========================================================================
-   4. LUXURY BUTTONS & CTA ENHANCEMENTS
-   ========================================================================== */
-
-/* "Discover more" button & theme action links */
-.elementor-button.elementor-size-sm,
-.elementor-button.elementor-size-md,
-.elementor-widget-button .elementor-button {
-    border-radius: 30px !important;
-    transition: all 0.3s ease !important;
+/* WooCommerce Product Price & Titles */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h2,
+.woocommerce div.product .product_title {
+    color: #2D1F1B !important;
 }
 
-/* Hero & Story Accent Links (e.g. Discover More) */
-.elementor-element a.elementor-button:not(.elementor-menu-cart__toggle_button) {
-    letter-spacing: 0.5px !important;
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price {
+    color: #B55D44 !important;
     font-weight: 600 !important;
-}
-
-
-/* ==========================================================================
-   5. LUXURY SUBTLE BACKGROUND ATMOSPHERE
-   ========================================================================== */
-
-/* Soft warm background tone that preserves the rose-gold branding */
-body.home {
-    background-color: #FAF7F5 !important;
-}
-
-/* Soft luxury glow on the main story section */
-.elementor-element.elementor-element-606d01f9 {
-    background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F5 100%) !important;
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
 }
