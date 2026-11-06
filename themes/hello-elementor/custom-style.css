@@ -1,0 +1,194 @@
+/**
+ * Style Addict Jewellery - Custom Luxury Aesthetic Enhancements
+ * Improves typography contrast, rich warm accents, and subtle luxury depth
+ */
+
+/* ==========================================================================
+   1. GLOBAL COLOR & TYPOGRAPHY ENHANCEMENTS
+   ========================================================================== */
+:root {
+  --e-global-color-primary: #2A1E1A !important;
+  --e-global-color-secondary: #4A342E !important;
+  --e-global-color-text: #3D3330 !important;
+  --e-global-color-accent: #B26955 !important;
+}
+
+body {
+  background-color: #FAF7F5 !important;
+  color: #3D3330 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   2. HEADINGS - CRISP, RICH, VIBRANT
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.elementor-heading-title,
+.entry-title,
+.site-title {
+  color: #2A1E1A !important;
+  letter-spacing: -0.01em;
+}
+
+/* Specific enhancement for story headline and large titles */
+.elementor-widget-heading h1.elementor-heading-title,
+.elementor-widget-heading h2.elementor-heading-title {
+  color: #2A1E1A !important;
+  text-rendering: optimizeLegibility;
+}
+
+/* Overline tags / Pre-titles (e.g. "WHO WE ARE") */
+.elementor-heading-title:has(+ h2),
+h6.elementor-heading-title,
+.elementor-widget-heading .elementor-heading-title:contains('WHO WE ARE') {
+  color: #B26955 !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+}
+
+/* ==========================================================================
+   3. PARAGRAPHS & BODY TEXT - HIGH READABILITY & CONTRAST
+   ========================================================================== */
+p,
+.elementor-text-editor,
+.elementor-widget-text-editor p,
+.woocommerce-product-details__short-description p {
+  color: #3D3330 !important;
+  line-height: 1.8 !important;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   4. CATEGORY BOXES & FEATURE CARDS (Pendant, Bracelet, Ear Rings, etc.)
+   ========================================================================== */
+/* Soft luxury styling for category cards */
+.elementor-element-6210f0ec,
+.elementor-element-590339bd,
+.elementor-element-5b47af9,
+.elementor-element-444ef619,
+.elementor-widget-image-box,
+.elementor-widget-icon-box {
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.35s ease !important;
+}
+
+/* Subtle elevation and card border for the top category items */
+.elementor-widget-image-box .elementor-image-box-wrapper,
+.elementor-widget-icon-box .elementor-icon-box-wrapper {
+  background: #FFFFFF;
+  border: 1px solid rgba(195, 165, 156, 0.35);
+  border-radius: 12px;
+  padding: 24px 16px;
+  box-shadow: 0 8px 24px rgba(66, 44, 38, 0.05);
+  transition: all 0.35s ease;
+}
+
+.elementor-widget-image-box .elementor-image-box-wrapper:hover,
+.elementor-widget-icon-box .elementor-icon-box-wrapper:hover {
+  transform: translateY(-5px);
+  border-color: rgba(178, 105, 85, 0.6);
+  box-shadow: 0 16px 36px rgba(66, 44, 38, 0.12);
+}
+
+.elementor-widget-image-box .elementor-image-box-title,
+.elementor-widget-icon-box .elementor-icon-box-title {
+  color: #2A1E1A !important;
+  font-weight: 600 !important;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   5. BUTTONS & CALL-TO-ACTIONS ("Shop Now!", Add to Cart)
+   ========================================================================== */
+a.elementor-button,
+.elementor-button,
+.button.add_to_cart_button,
+.woocommerce button.button {
+  background-color: #B26955 !important;
+  color: #FFFFFF !important;
+  border-radius: 30px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px;
+  padding: 12px 28px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 14px rgba(178, 105, 85, 0.3) !important;
+}
+
+a.elementor-button:hover,
+.elementor-button:hover,
+.button.add_to_cart_button:hover,
+.woocommerce button.button:hover {
+  background-color: #965342 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(178, 105, 85, 0.45) !important;
+}
+
+/* Text links like "Shop Now!" */
+a:not(.elementor-button) {
+  color: #B26955;
+  transition: color 0.2s ease;
+}
+
+a:not(.elementor-button):hover {
+  color: #8C4736;
+}
+
+/* ==========================================================================
+   6. WOOCOMMERCE PRODUCT CARDS
+   ========================================================================== */
+ul.products li.product {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(195, 165, 156, 0.25);
+  padding: 16px !important;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(66, 44, 38, 0.04);
+}
+
+ul.products li.product:hover {
+  transform: translateY(-6px);
+  border-color: rgba(178, 105, 85, 0.4);
+  box-shadow: 0 16px 32px rgba(66, 44, 38, 0.1);
+}
+
+ul.products li.product .woocommerce-loop-product__title {
+  color: #2A1E1A !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  padding: 10px 0 4px !important;
+}
+
+ul.products li.product .price {
+  color: #B26955 !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   7. NAVIGATION & HEADER POLISH
+   ========================================================================== */
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.site-navigation ul.menu > li > a,
+.elementor-nav-menu a {
+  color: #2A1E1A !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-navigation ul.menu > li > a:hover,
+.elementor-nav-menu a:hover {
+  color: #B26955 !important;
+}
+
+/* Custom logo sizing restraint */
+.custom-logo {
+  max-height: 85px;
+  width: auto;
+  object-fit: contain;
+}

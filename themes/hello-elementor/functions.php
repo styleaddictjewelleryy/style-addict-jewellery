@@ -267,3 +267,16 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 /*View Cart and Checkout Redirection Code*/
 add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
 add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
+
+/**
+ * Style Addict Jewellery - Enqueue Custom Luxury Stylesheet
+ */
+function style_addict_enqueue_luxury_styles() {
+	wp_enqueue_style(
+		'style-addict-luxury',
+		get_template_directory_uri() . '/custom-style.css',
+		[],
+		'1.0.2'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'style_addict_enqueue_luxury_styles', 999 );
