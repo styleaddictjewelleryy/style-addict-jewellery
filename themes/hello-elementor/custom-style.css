@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.7.0
+ * Version: 2.8.0
  */
 
 /* ==========================================================================
@@ -577,23 +577,56 @@ p,
     transform: none !important;
 }
 
-/* Category Cards (Pendant, Bracelet, Ear Rings, Jewellery Sets) - Lift a bit on hover */
-.elementor-element-2edfe301 .elementor-column > .elementor-element-populated {
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
+/* Category Cards (Pendant, Bracelet, Ear Rings, Jewellery Sets) - Smooth Slide Up on Hover */
+.elementor-element-2a4461bd,
+.elementor-element-18adc4f0,
+.elementor-element-2edfe301,
+.elementor-element-2edfe301 > .elementor-container {
+    overflow: visible !important;
+}
+
+.elementor-element-2edfe301 .elementor-column,
+.elementor-element-6210f0ec,
+.elementor-element-590339bd,
+.elementor-element-7ac009d5,
+.elementor-element-145733d6 {
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     cursor: pointer !important;
 }
 
-.elementor-element-2edfe301 .elementor-column:hover > .elementor-element-populated {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 14px 28px rgba(82, 50, 40, 0.12) !important;
+.elementor-element-2edfe301 .elementor-column > .elementor-element-populated,
+.elementor-element-6210f0ec > .elementor-element-populated,
+.elementor-element-590339bd > .elementor-element-populated,
+.elementor-element-7ac009d5 > .elementor-element-populated,
+.elementor-element-145733d6 > .elementor-element-populated {
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease !important;
+    cursor: pointer !important;
+    will-change: transform, box-shadow;
 }
 
+/* Hover State: Slide Up with Soft Luxury Shadow */
+.elementor-element-2edfe301 .elementor-column:hover > .elementor-element-populated,
+.elementor-element-6210f0ec:hover > .elementor-element-populated,
+.elementor-element-590339bd:hover > .elementor-element-populated,
+.elementor-element-7ac009d5:hover > .elementor-element-populated,
+.elementor-element-145733d6:hover > .elementor-element-populated {
+    transform: translateY(-12px) !important;
+    box-shadow: 0 18px 36px rgba(60, 40, 32, 0.16) !important;
+}
+
+/* Icon Subtle Float & Scale */
+.elementor-element-2edfe301 .elementor-image-box-img,
 .elementor-element-2edfe301 .elementor-image-box-img img {
-    transition: transform 0.3s ease !important;
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 .elementor-element-2edfe301 .elementor-column:hover .elementor-image-box-img img {
-    transform: scale(1.08) !important;
+    transform: scale(1.1) translateY(-2px) !important;
+}
+
+.elementor-element-2edfe301 .elementor-column:hover .elementor-image-box-title a,
+.elementor-element-2edfe301 .elementor-column:hover h5 a {
+    color: #D44332 !important;
 }
 
 /* Category Card Titles */
