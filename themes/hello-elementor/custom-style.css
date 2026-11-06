@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.2.0
+ * Version: 2.3.0
  */
 
 /* ==========================================================================
@@ -31,10 +31,21 @@ body.woocommerce-page {
     min-height: 72px !important;
 }
 
+/* Header Container: Flex row with perfectly centered middle column */
 .elementor-26 .elementor-element.elementor-element-66e23d96 > .elementor-container {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
+    justify-content: space-between !important;
     width: 100% !important;
+}
+
+/* Nav Menu Column (Left) */
+.elementor-26 .elementor-element.elementor-element-6e85e30d {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
 }
 
 /* Nav Menu Vertical Centering & Luxury Styling */
@@ -54,7 +65,65 @@ body.woocommerce-page {
     color: #B55D44 !important;
 }
 
+/* Logo Column (Center - Exact Dead Center) */
+.elementor-26 .elementor-element.elementor-element-4f831267 {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-4f831267 > .elementor-element-populated,
+.elementor-26 .elementor-element.elementor-element-4f831267 .elementor-widget-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-e461793 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-e461793 .elementor-widget-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-e461793 a {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-e461793 img {
+    display: block !important;
+    margin: 0 auto !important;
+}
+
 /* Right Header Column: Force horizontal row with neat spacing */
+.elementor-26 .elementor-element.elementor-element-557bf102 {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
 .elementor-26 .elementor-element.elementor-element-557bf102.elementor-column .elementor-widget-wrap,
 .elementor-26 .elementor-element.elementor-element-557bf102 > .elementor-element-populated,
 .elementor-26 .elementor-element.elementor-element-557bf102 .elementor-widget-wrap {
@@ -64,18 +133,40 @@ body.woocommerce-page {
     align-items: center !important;
     justify-content: flex-end !important;
     gap: 16px !important;
-    width: auto !important;
+    width: 100% !important;
 }
 
+/* Symmetrical desktop column widths for 100% centered logo alignment */
 @media (min-width: 1025px) {
-    .elementor-26 .elementor-element.elementor-element-557bf102 {
-        width: 32% !important;
-    }
     .elementor-26 .elementor-element.elementor-element-6e85e30d {
-        width: 48% !important;
+        width: 40% !important;
+        flex: 1 1 0 !important;
     }
     .elementor-26 .elementor-element.elementor-element-4f831267 {
         width: 20% !important;
+        flex: 0 0 20% !important;
+        margin: 0 auto !important;
+    }
+    .elementor-26 .elementor-element.elementor-element-557bf102 {
+        width: 40% !important;
+        flex: 1 1 0 !important;
+    }
+}
+
+/* Mobile & Tablet centered header layout */
+@media (max-width: 1024px) {
+    .elementor-26 .elementor-element.elementor-element-6e85e30d {
+        width: 25% !important;
+        flex: 0 0 25% !important;
+    }
+    .elementor-26 .elementor-element.elementor-element-4f831267 {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        margin: 0 auto !important;
+    }
+    .elementor-26 .elementor-element.elementor-element-557bf102 {
+        width: 25% !important;
+        flex: 0 0 25% !important;
     }
 }
 
