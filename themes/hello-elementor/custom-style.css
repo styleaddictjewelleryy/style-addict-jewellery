@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.8.0
+ * Version: 2.9.0
  */
 
 /* ==========================================================================
@@ -477,21 +477,37 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     text-shadow: none !important;
 }
 
-/* "Discover Collections" Header & Description (Dark, bold and highly legible) */
+/* "Discover Collections" Header & Subtitle (Larger, bold and impactful) */
 .elementor-element.elementor-element-1c9ef285 .elementor-heading-title,
 .elementor-element-1c9ef285 div.elementor-heading-title {
     color: #2D1F1B !important;
     font-weight: 700 !important;
-    font-size: 32px !important;
-    letter-spacing: -0.3px !important;
+    font-size: 46px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 8px !important;
 }
 
+.elementor-element.elementor-element-2b49b79b p,
+.elementor-element.elementor-element-2b49b79b span,
 .elementor-element.elementor-element-57865b09 p,
-.elementor-element-57865b09 span {
+.elementor-element.elementor-element-57865b09 span {
     color: #3D312E !important;
     font-weight: 500 !important;
-    line-height: 1.7 !important;
-    font-size: 15px !important;
+    line-height: 1.6 !important;
+    font-size: 20px !important;
+    letter-spacing: 0.2px !important;
+}
+
+@media (max-width: 767px) {
+    .elementor-element.elementor-element-1c9ef285 .elementor-heading-title,
+    .elementor-element-1c9ef285 div.elementor-heading-title {
+        font-size: 30px !important;
+    }
+    .elementor-element.elementor-element-2b49b79b p,
+    .elementor-element.elementor-element-2b49b79b span {
+        font-size: 16px !important;
+    }
 }
 
 /* General Overlines & Subtitles */
