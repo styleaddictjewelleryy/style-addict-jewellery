@@ -1,12 +1,14 @@
 /**
- * Style Addict Jewellery - Custom Header & Luxury Styling Enhancements
+ * Style Addict Jewellery - Custom Luxury Styling & Typography Enhancements
+ * Theme: Hello Elementor
+ * Version: 2.1.0
  */
 
 /* ==========================================================================
-   1. FLOATING HEADER FIXES (Wishlist, Cart, My Account Alignment)
+   1. FLOATING HEADER FIXES & ALIGNMENT
    ========================================================================== */
 
-/* Ensure the white floating header bar vertically centers its columns */
+/* Header Row & Outer Container Vertical Centering */
 .elementor-26 .elementor-element.elementor-element-7f787e09 > .elementor-element-populated {
     display: flex !important;
     align-items: center !important;
@@ -14,11 +16,27 @@
     min-height: 72px !important;
 }
 
-/* Ensure the container row aligns items centered */
 .elementor-26 .elementor-element.elementor-element-66e23d96 > .elementor-container {
     display: flex !important;
     align-items: center !important;
     width: 100% !important;
+}
+
+/* Nav Menu Vertical Centering */
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu--main {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a {
+    color: #2D1F1B !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a:hover,
+.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item-active {
+    color: #B55D44 !important;
 }
 
 /* Right Header Column: Force horizontal row with neat spacing */
@@ -57,22 +75,26 @@
     flex-shrink: 0 !important;
     width: auto !important;
 }
+
 .elementor-26 .elementor-element.elementor-element-f1caf06 > .elementor-widget-container {
     margin: 0 !important;
     padding: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
 }
+
 .elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #523C36 !important;
+    color: #3D312E !important;
+    font-size: 20px !important;
     transition: color 0.3s ease, transform 0.2s ease !important;
 }
+
 .elementor-26 .elementor-element.elementor-element-f1caf06 .elementor-icon:hover {
-    color: #C3A59C !important;
-    transform: scale(1.1) !important;
+    color: #B55D44 !important;
+    transform: scale(1.12) !important;
 }
 
 /* 1.2 Cart Widget */
@@ -85,6 +107,7 @@
     flex-shrink: 0 !important;
     width: auto !important;
 }
+
 .elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle {
     margin: 0 !important;
     display: inline-flex !important;
@@ -92,7 +115,16 @@
     justify-content: center !important;
 }
 
-/* 1.3 My Account Button */
+.elementor-26 .elementor-element.elementor-element-5d52351 a#elementor-menu-cart__toggle_button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 1.3 Login / My Account Button (both IDs to guarantee match) */
+.elementor-26 .elementor-element.elementor-element-6a4d0c5,
 .elementor-26 .elementor-element.elementor-element-19add787 {
     margin: 0 !important;
     padding: 0 !important;
@@ -101,16 +133,21 @@
     flex-shrink: 0 !important;
     width: auto !important;
 }
+
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 > .elementor-widget-container,
 .elementor-26 .elementor-element.elementor-element-19add787 > .elementor-widget-container {
     margin: 0 !important;
     padding: 0 !important;
 }
+
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button,
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button,
 .elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button,
 .elementor-26 .elementor-element.elementor-element-19add787 .elementor-button {
     margin: 0 !important;
-    padding: 9px 20px !important;
+    padding: 8px 18px !important;
     border-radius: 30px !important;
-    background-color: #B56B58 !important;
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
     color: #FFFFFF !important;
     font-size: 13px !important;
     font-weight: 600 !important;
@@ -118,20 +155,139 @@
     white-space: nowrap !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    box-shadow: 0 4px 12px rgba(181, 107, 88, 0.25) !important;
+    gap: 7px !important;
+    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.28) !important;
+    border: none !important;
     transition: all 0.3s ease !important;
 }
+
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 a.elementor-button:hover,
+.elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button:hover,
 .elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button:hover,
 .elementor-26 .elementor-element.elementor-element-19add787 .elementor-button:hover {
-    background-color: #523C36 !important;
+    background: linear-gradient(135deg, #3D261E 0%, #2A1710 100%) !important;
     color: #FFFFFF !important;
-    box-shadow: 0 6px 16px rgba(82, 60, 54, 0.3) !important;
+    box-shadow: 0 6px 18px rgba(42, 23, 16, 0.35) !important;
     transform: translateY(-2px) !important;
 }
 
-/* Nav Menu Vertical Centering */
-.elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu--main {
-    display: flex !important;
-    align-items: center !important;
+
+/* ==========================================================================
+   2. TYPOGRAPHY ENHANCEMENTS (VIBRANT & LEGIBLE CONTRAST)
+   ========================================================================== */
+
+/* Overline Subtitles (e.g., "WHO WE ARE", "WELCOME TO STYLE ADDICT!") */
+.elementor h6.elementor-heading-title,
+.elementor .elementor-element-1e28c3dc .elementor-heading-title,
+.elementor .elementor-widget-heading h6,
+.elementor-heading-title.elementor-size-small {
+    color: #B55D44 !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+}
+
+/* Main Section Headlines (Transforms faded/washed-out pink to rich, deep warm espresso) */
+.elementor h1.elementor-heading-title,
+.elementor h2.elementor-heading-title,
+.elementor h3.elementor-heading-title,
+.elementor h4.elementor-heading-title,
+.elementor .elementor-element-2b92f5ab .elementor-heading-title,
+.elementor .elementor-widget-heading h1,
+.elementor .elementor-widget-heading h2,
+.elementor .elementor-widget-heading h3 {
+    color: #2D1F1B !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px !important;
+    line-height: 1.25 !important;
+}
+
+/* Body Paragraphs & Descriptions (Rich, readable warm charcoal instead of pale gray) */
+.elementor-widget-text-editor p,
+.elementor-widget-text-editor span,
+.elementor .elementor-text-editor,
+.elementor-element-77130467 p {
+    color: #3D312E !important;
+    line-height: 1.75 !important;
+    font-size: 15px !important;
+}
+
+
+/* ==========================================================================
+   3. CATEGORY CARDS & INTERACTION POLISH
+   ========================================================================== */
+
+/* Category boxes (Pendant, Bracelet, Ear Rings, Jewellery Sets) */
+.elementor-element-3c0f6db,
+.elementor-element-64a6f23,
+.elementor-element-5494cb3,
+.elementor-element-3e6f9a0,
+.elementor-top-column:has(.elementor-widget-image-box),
+.elementor-inner-column:has(.elementor-widget-image-box) {
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Category Card Titles (h5 links) */
+.elementor h5 a,
+.elementor-widget-heading h5 a,
+.elementor-widget-image-box .elementor-image-box-title,
+.elementor-widget-image-box .elementor-image-box-title a {
+    color: #2D1F1B !important;
+    font-weight: 600 !important;
+    transition: color 0.3s ease !important;
+}
+
+.elementor h5 a:hover,
+.elementor-widget-heading h5 a:hover,
+.elementor-widget-image-box .elementor-image-box-title a:hover {
+    color: #B55D44 !important;
+}
+
+/* Subtle luxury card styling on category columns */
+.elementor-inner-section .elementor-column > .elementor-element-populated {
+    border-radius: 12px !important;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.elementor-inner-section .elementor-column:hover > .elementor-element-populated {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 28px rgba(82, 50, 40, 0.1) !important;
+}
+
+
+/* ==========================================================================
+   4. LUXURY BUTTONS & CTA ENHANCEMENTS
+   ========================================================================== */
+
+/* "Discover more" button & theme action links */
+.elementor-button.elementor-size-sm,
+.elementor-button.elementor-size-md,
+.elementor-widget-button .elementor-button {
+    border-radius: 30px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Hero & Story Accent Links (e.g. Discover More) */
+.elementor-element a.elementor-button:not(.elementor-menu-cart__toggle_button) {
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+}
+
+
+/* ==========================================================================
+   5. LUXURY SUBTLE BACKGROUND ATMOSPHERE
+   ========================================================================== */
+
+/* Soft warm background tone that preserves the rose-gold branding */
+body.home {
+    background-color: #FAF7F5 !important;
+}
+
+/* Soft luxury glow on the main story section */
+.elementor-element.elementor-element-606d01f9 {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F5 100%) !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
 }
