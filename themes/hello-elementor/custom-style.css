@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.0.0
+ * Version: 3.1.0
  */
 
 /* ==========================================================================
@@ -419,6 +419,21 @@ button.elementor-button:not(.elementor-menu-cart__toggle_button),
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
 }
 
+/* Ensure Button Text & Inner Spans are Pure White */
+.elementor-button:not(.elementor-menu-cart__toggle_button) *,
+.elementor-button:not(.elementor-menu-cart__toggle_button) .elementor-button-text,
+.elementor-button:not(.elementor-menu-cart__toggle_button) span,
+.e-form__buttons button .elementor-button-text,
+.e-form__buttons button span,
+.elementor-widget-form .elementor-button .elementor-button-text,
+.elementor-widget-form .elementor-button span,
+.elementor-28 .elementor-button .elementor-button-text,
+.elementor-28 .elementor-button span,
+.elementor-field-type-submit button .elementor-button-text,
+.elementor-field-type-submit button span {
+    color: #FFFFFF !important;
+}
+
 /* All Buttons Hover State: VIBRANT LUXURY RED (Never blackish) */
 .elementor-button:hover:not(.elementor-menu-cart__toggle_button),
 .elementor-button:focus:not(.elementor-menu-cart__toggle_button),
@@ -692,7 +707,7 @@ p,
 
 /* Footer Descriptions & Contact Text */
 .elementor-28 p,
-.elementor-28 span,
+.elementor-28 .elementor-text-editor span,
 .elementor-28 .elementor-icon-box-description,
 .elementor-icon-box-description {
     color: #3D312E !important;
