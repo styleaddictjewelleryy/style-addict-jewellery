@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 2.6.0
+ * Version: 2.7.0
  */
 
 /* ==========================================================================
@@ -456,17 +456,25 @@ button.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
    4. HERO SECTION & TYPOGRAPHY ENHANCEMENTS
    ========================================================================== */
 
-/* Hero "Welcome to Style Addict!" - Highly visible crisp white on dark photo background */
-.elementor-element.elementor-element-b1a1a30 .elementor-heading-title,
-.elementor-element-b1a1a30 h6.elementor-heading-title {
+/* Hero "Welcome to Style Addict!" - Red curved square with crisp white text */
+html body .elementor .elementor-element.elementor-element-b1a1a30 .elementor-heading-title,
+html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-title,
+.elementor-element.elementor-element-b1a1a30 h6.elementor-heading-title,
+.elementor-element.elementor-element-b1a1a30 .elementor-heading-title {
+    background: #C0392B !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
-    font-weight: 700 !important;
-    letter-spacing: 2.5px !important;
-    text-transform: uppercase !important;
-    font-size: 14px !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
     display: inline-block !important;
-    margin-bottom: 10px !important;
+    padding: 6px 16px !important;
+    border-radius: 8px !important; /* curved square */
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.4) !important;
+    margin-bottom: 12px !important;
+    text-shadow: none !important;
 }
 
 /* "Discover Collections" Header & Description (Dark, bold and highly legible) */
