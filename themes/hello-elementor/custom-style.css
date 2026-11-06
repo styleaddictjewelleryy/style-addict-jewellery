@@ -1,6 +1,6 @@
 /**
- * Style Addict Jewellery - Custom Luxury Aesthetic Enhancements
- * High-specificity rules to guarantee vibrant typography and rich contrast
+ * Style Addict Jewellery - Custom Luxury Aesthetic & Layout Enhancements
+ * High-specificity rules to guarantee vibrant typography, rich contrast, and full-width layout
  */
 
 /* ==========================================================================
@@ -24,12 +24,126 @@ body.elementor-page,
 body.elementor-kit-21 {
   background-color: #FAF7F5 !important;
   color: #3D3330 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   2. HEADINGS - ULTRA-CRISP & VIBRANT
+   2. FIX DEFAULT TEMPLATE / REMOVE 'HOME' TITLE
+   ========================================================================== */
+.home .page-header,
+.home h1.entry-title,
+.page-header h1.entry-title,
+header.page-header {
+  display: none !important;
+}
+
+.site-main {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.page-content,
+.entry-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   3. ELEMENTOR GRID & COLUMN SYSTEM (Fixes vertical stacking)
+   ========================================================================== */
+.elementor-section {
+  position: relative;
+  width: 100%;
+}
+
+.elementor-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  max-width: 1200px;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1200px;
+}
+
+.elementor-row {
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.elementor-column {
+  position: relative;
+  min-height: 1px;
+  display: flex;
+}
+
+.elementor-column.elementor-col-25 {
+  width: 25% !important;
+  flex: 0 0 25% !important;
+  max-width: 25% !important;
+}
+
+.elementor-column.elementor-col-33 {
+  width: 33.333% !important;
+  flex: 0 0 33.333% !important;
+  max-width: 33.333% !important;
+}
+
+.elementor-column.elementor-col-50 {
+  width: 50% !important;
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+}
+
+.elementor-column.elementor-col-66 {
+  width: 66.666% !important;
+  flex: 0 0 66.666% !important;
+  max-width: 66.666% !important;
+}
+
+.elementor-column.elementor-col-100 {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+.elementor-widget-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force hidden/invisible animation elements to be visible */
+.elementor-invisible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Mobile responsive columns */
+@media (max-width: 767px) {
+  .elementor-column.elementor-col-25,
+  .elementor-column.elementor-col-33,
+  .elementor-column.elementor-col-50 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   4. HEADINGS - ULTRA-CRISP & VIBRANT
    ========================================================================== */
 h1, h2, h3, h4, h5,
 .elementor-kit-21 h1,
@@ -45,7 +159,7 @@ h1.elementor-heading-title {
   letter-spacing: -0.01em;
 }
 
-/* Sub-headings / Overlines (e.g. "Who we are") */
+/* Sub-headings / Overlines (e.g. "Who we are", "Welcome to Style Addict!") */
 h6,
 .elementor-kit-21 h6,
 .elementor-widget-heading h6.elementor-heading-title,
@@ -57,7 +171,7 @@ h6.elementor-heading-title {
 }
 
 /* ==========================================================================
-   3. PARAGRAPHS & BODY TEXT
+   5. PARAGRAPHS & BODY TEXT
    ========================================================================== */
 p,
 .elementor-kit-21 p,
@@ -72,7 +186,7 @@ p,
 }
 
 /* ==========================================================================
-   4. CATEGORY BOXES & FEATURE CARDS (Pendant, Bracelet, Ear Rings, etc.)
+   6. CATEGORY BOXES & FEATURE CARDS (Pendant, Bracelet, Ear Rings, etc.)
    ========================================================================== */
 .elementor-widget-image-box .elementor-image-box-wrapper,
 .elementor-widget-icon-box .elementor-icon-box-wrapper {
@@ -80,6 +194,7 @@ p,
   border: 1px solid rgba(195, 165, 156, 0.45) !important;
   border-radius: 14px !important;
   padding: 24px 16px !important;
+  text-align: center;
   box-shadow: 0 8px 24px rgba(66, 44, 38, 0.05) !important;
   transition: all 0.35s ease !important;
 }
@@ -97,10 +212,11 @@ p,
 .elementor-widget-icon-box .elementor-icon-box-title a {
   color: #2A1E1A !important;
   font-weight: 600 !important;
+  text-decoration: none !important;
 }
 
 /* ==========================================================================
-   5. BUTTONS & CALL-TO-ACTIONS
+   7. BUTTONS & CALL-TO-ACTIONS
    ========================================================================== */
 a.elementor-button,
 .elementor-button,
@@ -112,6 +228,8 @@ a.elementor-button,
   font-weight: 600 !important;
   letter-spacing: 0.5px;
   padding: 12px 28px !important;
+  display: inline-block;
+  text-decoration: none !important;
   transition: all 0.3s ease !important;
   box-shadow: 0 4px 14px rgba(178, 105, 85, 0.35) !important;
 }
@@ -125,11 +243,11 @@ a.elementor-button:hover,
   box-shadow: 0 8px 20px rgba(178, 105, 85, 0.5) !important;
 }
 
-/* Links like "Discover more" / "Shop Now!" */
 .elementor-widget-text-editor a,
 .elementor-widget-heading a {
   color: #B26955 !important;
   font-weight: 600;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -139,7 +257,7 @@ a.elementor-button:hover,
 }
 
 /* ==========================================================================
-   6. WOOCOMMERCE PRODUCT CARDS
+   8. WOOCOMMERCE PRODUCT CARDS
    ========================================================================== */
 ul.products li.product {
   background: #FFFFFF !important;
@@ -168,15 +286,21 @@ ul.products li.product .price .amount {
 }
 
 /* ==========================================================================
-   7. HEADER POLISH
+   9. HEADER & LOGO POLISH
    ========================================================================== */
 .site-header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.98);
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(195, 165, 156, 0.2);
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
 }
 
 .custom-logo {
-  max-height: 85px !important;
+  max-height: 80px !important;
   width: auto !important;
   object-fit: contain !important;
 }
