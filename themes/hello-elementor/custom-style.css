@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.7.1
+ * Version: 3.8.0
  */
 
 /* ==========================================================================
@@ -1532,5 +1532,101 @@ p,
     text-align: center !important;
     margin-bottom: 8px !important;
 }
+
+/* ==========================================================================
+   11. LUXURY POLICY PAGES STYLING (PRIVACY, TERMS, SHIPPING, RETURNS)
+   ========================================================================== */
+.sa-policy-page {
+    max-width: 920px;
+    margin: 40px auto 60px auto;
+    padding: 44px 40px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid rgba(181, 93, 68, 0.12);
+    box-shadow: 0 10px 32px rgba(45, 31, 27, 0.05);
+    box-sizing: border-box;
+}
+
+.sa-policy-page h2 {
+    font-family: "Philosopher", serif !important;
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin: 0 0 18px 0 !important;
+    padding-bottom: 12px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+}
+
+.sa-policy-page h3 {
+    font-family: "Philosopher", serif !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    color: #B55D44 !important;
+    margin: 28px 0 12px 0 !important;
+}
+
+.sa-policy-page p,
+.sa-policy-page .sa-policy-intro {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 15px !important;
+    color: #4A3E3B !important;
+    line-height: 1.8 !important;
+    margin: 0 0 16px 0 !important;
+}
+
+.sa-policy-page .sa-policy-highlight {
+    background: #FAF7F5;
+    border-left: 4px solid #B55D44;
+    padding: 16px 22px;
+    border-radius: 0 10px 10px 0;
+    margin: 20px 0 24px 0;
+}
+
+.sa-policy-page .sa-policy-highlight p {
+    margin: 0 !important;
+    color: #382B27 !important;
+    font-weight: 500 !important;
+}
+
+.sa-policy-page ul,
+.sa-policy-page ol {
+    margin: 12px 0 20px 22px !important;
+    padding: 0 !important;
+}
+
+.sa-policy-page li {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 15px !important;
+    color: #4A3E3B !important;
+    line-height: 1.8 !important;
+    margin-bottom: 10px !important;
+}
+
+.sa-policy-page a {
+    color: #B55D44 !important;
+    text-decoration: underline !important;
+    transition: color 0.2s ease !important;
+}
+
+.sa-policy-page a:hover {
+    color: #8C3D28 !important;
+}
+
+@media (max-width: 767px) {
+    .sa-policy-page {
+        margin: 24px 15px 40px 15px;
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .sa-policy-page h2 {
+        font-size: 26px !important;
+    }
+
+    .sa-policy-page h3 {
+        font-size: 18px !important;
+    }
+}
+
 
 
