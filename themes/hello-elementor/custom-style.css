@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.5.0
+ * Version: 3.6.0
  */
 
 /* ==========================================================================
@@ -803,58 +803,62 @@ p,
     color: #D44332 !important;
 }
 
-/* WooCommerce Product Price & Titles */
+/* WooCommerce Product Titles */
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .woocommerce ul.products li.product h2,
 .woocommerce div.product .product_title {
     color: #2D1F1B !important;
 }
 
-/* Default / Regular Price */
-.woocommerce ul.products li.product .price,
-.woocommerce div.product p.price,
-.woocommerce div.product .price,
-.elementor-wc-products ul.products li.product .price {
-    color: #2D1F1B !important;
-    font-weight: 600 !important;
-}
-
-/* Original Regular Price (Strikethrough & Muted) */
-.woocommerce ul.products li.product .price del,
-.woocommerce div.product p.price del,
-.woocommerce div.product .price del,
-.elementor-wc-products ul.products li.product .price del,
-.price del,
-.price del .woocommerce-Price-amount,
-.price del bdi {
-    color: #928480 !important;
-    opacity: 0.75 !important;
-    font-weight: 400 !important;
-    font-size: 0.9em !important;
-    text-decoration: line-through !important;
-    margin-right: 6px !important;
-}
-
-/* Offer / Sale Price (Primary Red, Bold, Clean No Underline) */
-.woocommerce ul.products li.product .price ins,
-.woocommerce div.product p.price ins,
-.woocommerce div.product .price ins,
-.elementor-wc-products ul.products li.product .price ins,
-.woocommerce ul.products li.product .price ins .woocommerce-Price-amount,
-.woocommerce div.product p.price ins .woocommerce-Price-amount,
-.woocommerce div.product .price ins .woocommerce-Price-amount,
-.elementor-wc-products ul.products li.product .price ins .woocommerce-Price-amount,
-.woocommerce ul.products li.product .price ins bdi,
-.woocommerce div.product p.price ins bdi,
-.woocommerce div.product .price ins bdi,
-.elementor-wc-products ul.products li.product .price ins bdi,
+/* All Product Prices & Offer Prices (Brighter Red as Button BG Color #D44332) */
+.price,
+.price bdi,
+.price .amount,
+.price .woocommerce-Price-amount,
+.price .woocommerce-Price-currencySymbol,
 .price ins,
+.price ins *,
+.price ins bdi,
+.price ins .amount,
 .price ins .woocommerce-Price-amount,
-.price ins bdi {
-    color: #D44332 !important;
+.price ins .woocommerce-Price-currencySymbol,
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price *,
+.woocommerce div.product p.price,
+.woocommerce div.product p.price *,
+.woocommerce div.product .price,
+.woocommerce div.product .price *,
+.elementor-wc-products ul.products li.product .price,
+.elementor-wc-products ul.products li.product .price *,
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price,
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price * {
+    color: #D44332 !important; /* Brighter Luxury Red */
     font-weight: 700 !important;
     text-decoration: none !important;
-    font-size: 1.05em !important;
+}
+
+/* Strikethrough Original Price (Kept Muted Grey with Strikethrough) */
+.price del,
+.price del *,
+.price del .woocommerce-Price-amount,
+.price del .woocommerce-Price-currencySymbol,
+.price del bdi,
+.woocommerce ul.products li.product .price del,
+.woocommerce ul.products li.product .price del *,
+.woocommerce div.product p.price del,
+.woocommerce div.product p.price del *,
+.woocommerce div.product .price del,
+.woocommerce div.product .price del *,
+.elementor-wc-products ul.products li.product .price del,
+.elementor-wc-products ul.products li.product .price del *,
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price del,
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price del * {
+    color: #928480 !important;
+    opacity: 0.7 !important;
+    font-weight: 400 !important;
+    font-size: 0.88em !important;
+    text-decoration: line-through !important;
+    margin-right: 6px !important;
 }
 
 
