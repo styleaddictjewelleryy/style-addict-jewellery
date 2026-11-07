@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.10.1
+ * Version: 3.11.0
  */
 
 /* ==========================================================================
@@ -964,38 +964,83 @@ p,
     align-items: center !important;
     flex-wrap: wrap !important;
     gap: 8px 14px !important;
-    margin: 0 0 8px 0 !important;
+    margin: 0 0 10px 0 !important;
 }
 
 .sa-footer-policies a {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 12px !important;
+    font-family: "Plus Jakarta Sans", "Montserrat", sans-serif !important;
+    font-size: 12.5px !important;
     font-weight: 500 !important;
-    color: #7A6862 !important;
+    color: #6E625E !important;
     text-decoration: none !important;
-    transition: color 0.2s ease !important;
+    transition: all 0.2s ease !important;
 }
 
 .sa-footer-policies a:hover {
-    color: #B55D44 !important;
+    color: #D44332 !important;
     text-decoration: underline !important;
+    text-underline-offset: 3px !important;
 }
 
 .sa-footer-sep {
     color: #C8B8B2 !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
     user-select: none !important;
+}
+
+/* Footer Store Column Policy Links */
+.sa-footer-store-policies {
+    margin-top: 20px !important;
+    padding-top: 16px !important;
+    border-top: 1px solid rgba(181, 93, 68, 0.15) !important;
+}
+
+.sa-footer-subheading {
+    font-family: "Philosopher", serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin: 0 0 10px 0 !important;
+    letter-spacing: 0.3px !important;
+}
+
+.sa-footer-policy-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.sa-footer-policy-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sa-footer-policy-list a {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 13px !important;
+    color: #5C4D48 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+}
+
+.sa-footer-policy-list a:hover {
+    color: #D44332 !important;
+    transform: translateX(3px) !important;
 }
 
 @media (max-width: 767px) {
     .sa-footer-policies {
         justify-content: center !important;
-        margin: 10px 0 !important;
-        gap: 6px 10px !important;
+        margin: 14px 0 !important;
+        gap: 8px 12px !important;
     }
 
     .sa-footer-policies a {
-        font-size: 11px !important;
+        font-size: 12px !important;
     }
 }
 
@@ -1672,97 +1717,434 @@ p,
 }
 
 /* ==========================================================================
-   11. LUXURY POLICY PAGES STYLING (PRIVACY, TERMS, SHIPPING, RETURNS)
+   11. LUXURY POLICY PAGES STYLING (PRIVACY, TERMS, SHIPPING, RETURNS, CANCELLATION)
    ========================================================================== */
-.sa-policy-page {
-    max-width: 920px;
-    margin: 40px auto 60px auto;
-    padding: 44px 40px;
-    background: #FFFFFF;
-    border-radius: 18px;
-    border: 1px solid rgba(181, 93, 68, 0.12);
-    box-shadow: 0 10px 32px rgba(45, 31, 27, 0.05);
-    box-sizing: border-box;
+
+/* 11.1 Full Page Canvas Atmosphere */
+body.sa-policy-active-page,
+body.privacy-policy,
+body.page-id-3,
+body.page-id-674,
+body.page-id-656,
+body.page-id-678,
+body.page-id-686 {
+    background: #FAF7F5 !important;
 }
 
+/* 11.2 Central Luxury Policy Card */
+body.sa-policy-active-page main.site-main,
+body.privacy-policy main.site-main,
+body.page-id-3 main.site-main,
+body.page-id-674 main.site-main,
+body.page-id-656 main.site-main,
+body.page-id-678 main.site-main,
+body.page-id-686 main.site-main,
+.sa-policy-page {
+    max-width: 960px !important;
+    margin: 44px auto 88px auto !important;
+    padding: 56px 64px !important;
+    background: #FFFFFF !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    box-shadow: 0 16px 48px rgba(45, 31, 27, 0.05), 0 2px 8px rgba(45, 31, 27, 0.02) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* 11.3 Policy Header, Badge & Title */
+.sa-policy-header-decor {
+    text-align: center !important;
+    margin-bottom: 12px !important;
+}
+
+.sa-policy-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(212, 67, 50, 0.08) !important;
+    color: #D44332 !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(212, 67, 50, 0.15) !important;
+}
+
+body.sa-policy-active-page .page-header,
+body.privacy-policy .page-header,
+body.page-id-3 .page-header,
+body.page-id-674 .page-header,
+body.page-id-656 .page-header,
+body.page-id-678 .page-header,
+body.page-id-686 .page-header {
+    text-align: center !important;
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+body.sa-policy-active-page .entry-title,
+body.privacy-policy .entry-title,
+body.page-id-3 .entry-title,
+body.page-id-674 .entry-title,
+body.page-id-656 .entry-title,
+body.page-id-678 .entry-title,
+body.page-id-686 .entry-title,
 .sa-policy-page h2 {
     font-family: "Philosopher", serif !important;
-    font-size: 34px !important;
+    font-size: 38px !important;
     font-weight: 700 !important;
     color: #2D1F1B !important;
-    margin: 0 0 18px 0 !important;
-    padding-bottom: 12px !important;
-    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
-}
-
-.sa-policy-page h3 {
-    font-family: "Philosopher", serif !important;
-    font-size: 21px !important;
-    font-weight: 700 !important;
-    color: #B55D44 !important;
-    margin: 28px 0 12px 0 !important;
-}
-
-.sa-policy-page p,
-.sa-policy-page .sa-policy-intro {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 15px !important;
-    color: #4A3E3B !important;
-    line-height: 1.8 !important;
-    margin: 0 0 16px 0 !important;
-}
-
-.sa-policy-page .sa-policy-highlight {
-    background: #FAF7F5;
-    border-left: 4px solid #B55D44;
-    padding: 16px 22px;
-    border-radius: 0 10px 10px 0;
-    margin: 20px 0 24px 0;
-}
-
-.sa-policy-page .sa-policy-highlight p {
+    line-height: 1.25 !important;
     margin: 0 !important;
-    color: #382B27 !important;
-    font-weight: 500 !important;
-}
-
-.sa-policy-page ul,
-.sa-policy-page ol {
-    margin: 12px 0 20px 22px !important;
+    letter-spacing: -0.5px !important;
+    text-align: center !important;
+    border: none !important;
     padding: 0 !important;
 }
 
+/* 11.4 Decorative Diamond Divider */
+.sa-policy-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    margin: 18px auto 26px auto !important;
+    max-width: 240px !important;
+}
+
+.sa-divider-line {
+    flex: 1 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(181, 93, 68, 0.4), transparent) !important;
+}
+
+.sa-divider-gem {
+    color: #D44332 !important;
+    font-size: 14px !important;
+}
+
+/* 11.5 Interactive Policy Switcher Nav */
+.sa-policy-switcher-nav {
+    margin: 0 0 40px 0 !important;
+    padding: 12px 16px !important;
+    background: #FDFBF9 !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(181, 93, 68, 0.12) !important;
+}
+
+.sa-policy-switcher-scroll {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+}
+
+.sa-policy-tab {
+    display: inline-block !important;
+    padding: 8px 18px !important;
+    border-radius: 50px !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #5C4D48 !important;
+    text-decoration: none !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    transition: all 0.25s ease !important;
+}
+
+.sa-policy-tab:hover {
+    color: #D44332 !important;
+    border-color: #D44332 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(212, 67, 50, 0.15) !important;
+}
+
+.sa-policy-tab.sa-policy-tab-active {
+    background: #D44332 !important;
+    color: #FFFFFF !important;
+    border-color: #D44332 !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.3) !important;
+}
+
+/* 11.6 Section Headings within Policy Content */
+body.sa-policy-active-page .page-content h2,
+body.sa-policy-active-page .page-content h3,
+body.sa-policy-active-page .page-content h4,
+body.privacy-policy .page-content h2,
+body.privacy-policy .page-content h3,
+body.page-id-3 .page-content h2,
+body.page-id-3 .page-content h3,
+body.page-id-674 .page-content h2,
+body.page-id-674 .page-content h3,
+body.page-id-656 .page-content h2,
+body.page-id-656 .page-content h3,
+body.page-id-678 .page-content h2,
+body.page-id-678 .page-content h3,
+body.page-id-686 .page-content h2,
+body.page-id-686 .page-content h3,
+.sa-policy-page h3 {
+    font-family: "Philosopher", serif !important;
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    border-left: 3.5px solid #D44332 !important;
+    padding: 8px 16px !important;
+    background: linear-gradient(90deg, rgba(212, 67, 50, 0.05) 0%, transparent 100%) !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-size: 21px !important;
+    line-height: 1.35 !important;
+}
+
+/* 11.7 Body Paragraphs */
+body.sa-policy-active-page .page-content p,
+body.privacy-policy .page-content p,
+body.page-id-3 .page-content p,
+body.page-id-674 .page-content p,
+body.page-id-656 .page-content p,
+body.page-id-678 .page-content p,
+body.page-id-686 .page-content p,
+.sa-policy-page p,
+.sa-policy-page .sa-policy-intro {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 15.5px !important;
+    color: #4A3E39 !important;
+    line-height: 1.85 !important;
+    margin: 0 0 18px 0 !important;
+}
+
+/* 11.8 Lists & Items */
+body.sa-policy-active-page .page-content ul,
+body.sa-policy-active-page .page-content ol,
+body.privacy-policy .page-content ul,
+body.privacy-policy .page-content ol,
+body.page-id-3 .page-content ul,
+body.page-id-674 .page-content ul,
+body.page-id-656 .page-content ul,
+body.page-id-678 .page-content ul,
+body.page-id-686 .page-content ul,
+.sa-policy-page ul,
+.sa-policy-page ol {
+    margin: 14px 0 24px 22px !important;
+    padding: 0 !important;
+}
+
+body.sa-policy-active-page .page-content li,
+body.privacy-policy .page-content li,
+body.page-id-3 .page-content li,
+body.page-id-674 .page-content li,
+body.page-id-656 .page-content li,
+body.page-id-678 .page-content li,
+body.page-id-686 .page-content li,
 .sa-policy-page li {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
     font-size: 15px !important;
-    color: #4A3E3B !important;
+    color: #4A3E39 !important;
     line-height: 1.8 !important;
     margin-bottom: 10px !important;
 }
 
+/* 11.9 Bold Text & Links */
+body.sa-policy-active-page .page-content strong,
+body.sa-policy-active-page .page-content b,
+body.privacy-policy .page-content strong,
+body.page-id-3 .page-content strong,
+body.page-id-674 .page-content strong,
+body.page-id-656 .page-content strong,
+body.page-id-678 .page-content strong,
+body.page-id-686 .page-content strong {
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+}
+
+body.sa-policy-active-page .page-content a,
+body.privacy-policy .page-content a,
+body.page-id-3 .page-content a,
+body.page-id-674 .page-content a,
+body.page-id-656 .page-content a,
+body.page-id-678 .page-content a,
+body.page-id-686 .page-content a,
 .sa-policy-page a {
-    color: #B55D44 !important;
+    color: #D44332 !important;
     text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    font-weight: 600 !important;
     transition: color 0.2s ease !important;
 }
 
+body.sa-policy-active-page .page-content a:hover,
 .sa-policy-page a:hover {
-    color: #8C3D28 !important;
+    color: #B55D44 !important;
 }
 
+/* 11.10 Customer Support Card */
+.sa-policy-support-card {
+    margin-top: 48px !important;
+    padding: 28px 32px !important;
+    background: #FAF7F5 !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(181, 93, 68, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+
+.sa-support-icon {
+    font-size: 34px !important;
+    flex-shrink: 0 !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: #FFFFFF !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 14px rgba(45, 31, 27, 0.06) !important;
+}
+
+.sa-support-body h4 {
+    font-family: "Philosopher", serif !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin: 0 0 6px 0 !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.sa-support-body p {
+    font-size: 14.5px !important;
+    color: #5C4D48 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.6 !important;
+}
+
+.sa-support-links {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+}
+
+.sa-support-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 9px 20px !important;
+    border-radius: 50px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.sa-support-btn--email {
+    background: #D44332 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(212, 67, 50, 0.25) !important;
+}
+
+.sa-support-btn--email:hover {
+    background: #B55D44 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+}
+
+.sa-support-btn--phone {
+    background: #FFFFFF !important;
+    color: #2D1F1B !important;
+    border: 1px solid rgba(181, 93, 68, 0.25) !important;
+}
+
+.sa-support-btn--phone:hover {
+    border-color: #D44332 !important;
+    color: #D44332 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 11.11 Mobile Responsiveness */
 @media (max-width: 767px) {
+    body.sa-policy-active-page main.site-main,
+    body.privacy-policy main.site-main,
+    body.page-id-3 main.site-main,
+    body.page-id-674 main.site-main,
+    body.page-id-656 main.site-main,
+    body.page-id-678 main.site-main,
+    body.page-id-686 main.site-main,
     .sa-policy-page {
-        margin: 24px 15px 40px 15px;
-        padding: 24px 18px;
-        border-radius: 12px;
+        margin: 20px 14px 48px 14px !important;
+        padding: 32px 20px !important;
+        border-radius: 16px !important;
     }
 
+    body.sa-policy-active-page .entry-title,
+    body.privacy-policy .entry-title,
+    body.page-id-3 .entry-title,
+    body.page-id-674 .entry-title,
+    body.page-id-656 .entry-title,
+    body.page-id-678 .entry-title,
+    body.page-id-686 .entry-title,
     .sa-policy-page h2 {
         font-size: 26px !important;
     }
 
+    body.sa-policy-active-page .page-content h2,
+    body.sa-policy-active-page .page-content h3,
+    body.privacy-policy .page-content h2,
+    body.privacy-policy .page-content h3,
+    body.page-id-3 .page-content h2,
+    body.page-id-3 .page-content h3,
+    body.page-id-674 .page-content h2,
+    body.page-id-674 .page-content h3,
+    body.page-id-656 .page-content h2,
+    body.page-id-656 .page-content h3,
+    body.page-id-678 .page-content h2,
+    body.page-id-678 .page-content h3,
+    body.page-id-686 .page-content h2,
+    body.page-id-686 .page-content h3,
     .sa-policy-page h3 {
         font-size: 18px !important;
+        padding: 6px 12px !important;
+    }
+
+    .sa-policy-switcher-nav {
+        padding: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .sa-policy-tab {
+        padding: 6px 14px !important;
+        font-size: 12px !important;
+    }
+
+    .sa-policy-support-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 24px 18px !important;
+        gap: 16px !important;
+    }
+
+    .sa-support-icon {
+        margin: 0 auto !important;
+    }
+
+    .sa-support-links {
+        justify-content: center !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .sa-support-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
     }
 }
 

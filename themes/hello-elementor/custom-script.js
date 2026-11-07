@@ -352,19 +352,141 @@
                     '<div id="sa-footer-policies" class="sa-footer-policies">' +
                         '<a href="/privacy-policy/">Privacy Policy</a>' +
                         '<span class="sa-footer-sep">&bull;</span>' +
-                        '<a href="/terms-and-conditions/">Terms &amp; Conditions</a>' +
+                        '<a href="/terms-conditions/">Terms &amp; Conditions</a>' +
                         '<span class="sa-footer-sep">&bull;</span>' +
-                        '<a href="/shipping-policy/">Shipping Policy</a>' +
+                        '<a href="/shipping-delivery-policy/">Shipping &amp; Delivery</a>' +
                         '<span class="sa-footer-sep">&bull;</span>' +
                         '<a href="/refund-and-return-policy/">Refund &amp; Return Policy</a>' +
+                        '<span class="sa-footer-sep">&bull;</span>' +
+                        '<a href="/cancellation-policy/">Cancellation Policy</a>' +
                     '</div>';
                 
                 $copyrightCol.prepend(policiesHTML);
+            }
+
+            // Also add Quick Policy Links to Store Column in the footer
+            var $storeCol = $('.elementor-element-314f1659 .elementor-widget-wrap');
+            if ($storeCol.length && !$('#sa-footer-store-policies').length) {
+                var storePoliciesHTML = 
+                    '<div id="sa-footer-store-policies" class="sa-footer-store-policies">' +
+                        '<h6 class="sa-footer-subheading">Quick Policies</h6>' +
+                        '<ul class="sa-footer-policy-list">' +
+                            '<li><a href="/privacy-policy/">Privacy Policy</a></li>' +
+                            '<li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>' +
+                            '<li><a href="/shipping-delivery-policy/">Shipping &amp; Delivery</a></li>' +
+                            '<li><a href="/refund-and-return-policy/">Refund &amp; Return Policy</a></li>' +
+                            '<li><a href="/cancellation-policy/">Cancellation Policy</a></li>' +
+                        '</ul>' +
+                    '</div>';
+                $storeCol.append(storePoliciesHTML);
             }
         }
 
         initFooterPolicies();
         setTimeout(initFooterPolicies, 400);
+
+        /* ======================================================================
+           5. LUXURY POLICY PAGES STYLING & SWITCHER TABS
+           ====================================================================== */
+        function initPolicyPagesEnhancement() {
+            var path = window.location.pathname.replace(/\/$/, '') + '/';
+            var policyPages = [
+                { slug: '/privacy-policy/', title: 'Privacy Policy', short: 'Privacy Policy' },
+                { slug: '/terms-conditions/', title: 'Terms & Conditions', short: 'Terms & Conditions' },
+                { slug: '/shipping-delivery-policy/', title: 'Shipping & Delivery Policy', short: 'Shipping & Delivery' },
+                { slug: '/refund-and-return-policy/', title: 'Refund & Return Policy', short: 'Refund & Returns' },
+                { slug: '/cancellation-policy/', title: 'Cancellation Policy', short: 'Cancellation Policy' }
+            ];
+
+            var currentPolicy = null;
+            for (var i = 0; i < policyPages.length; i++) {
+                if (path === policyPages[i].slug || path.indexOf(policyPages[i].slug) !== -1 ||
+                    (policyPages[i].slug === '/terms-conditions/' && path.indexOf('/terms-and-conditions') !== -1)) {
+                    currentPolicy = policyPages[i];
+                    break;
+                }
+            }
+
+            var $body = $('body');
+            var isPolicy = currentPolicy !== null || 
+                           $body.hasClass('privacy-policy') || 
+                           $body.hasClass('page-id-3') || 
+                           $body.hasClass('page-id-674') || 
+                           $body.hasClass('page-id-656') || 
+                           $body.hasClass('page-id-678') || 
+                           $body.hasClass('page-id-686');
+
+            if (!isPolicy) return;
+
+            $body.addClass('sa-policy-active-page');
+            var $main = $('main.site-main, #content.site-main');
+            if (!$main.length) return;
+
+            // 1. Header decor (Luxury Badge & Diamond Divider)
+            var $header = $main.find('.page-header');
+            if ($header.length && !$('#sa-policy-header-decor').length) {
+                var badgeHTML = 
+                    '<div id="sa-policy-header-decor" class="sa-policy-header-decor">' +
+                        '<div class="sa-policy-badge">' +
+                            '<span class="sa-sparkle">&#10022;</span> STYLE ADDICT POLICIES &amp; LEGAL <span class="sa-sparkle">&#10022;</span>' +
+                        '</div>' +
+                    '</div>';
+                $header.prepend(badgeHTML);
+
+                var dividerHTML = 
+                    '<div class="sa-policy-divider">' +
+                        '<span class="sa-divider-line"></span>' +
+                        '<span class="sa-divider-gem">&#9830;</span>' +
+                        '<span class="sa-divider-line"></span>' +
+                    '</div>';
+                $header.append(dividerHTML);
+            }
+
+            // 2. Interactive Policy Navigation Tabs (Easy 1-click switching)
+            if ($header.length && !$('#sa-policy-switcher-nav').length) {
+                var tabsHTML = '<div id="sa-policy-switcher-nav" class="sa-policy-switcher-nav"><div class="sa-policy-switcher-scroll">';
+                for (var j = 0; j < policyPages.length; j++) {
+                    var p = policyPages[j];
+                    var isActive = (currentPolicy && currentPolicy.slug === p.slug) || (path.indexOf(p.slug) !== -1);
+                    if (!isActive && !currentPolicy) {
+                        if (p.slug === '/privacy-policy/' && ($body.hasClass('privacy-policy') || $body.hasClass('page-id-3'))) isActive = true;
+                        if (p.slug === '/terms-conditions/' && $body.hasClass('page-id-674')) isActive = true;
+                        if (p.slug === '/shipping-delivery-policy/' && $body.hasClass('page-id-656')) isActive = true;
+                        if (p.slug === '/refund-and-return-policy/' && $body.hasClass('page-id-678')) isActive = true;
+                        if (p.slug === '/cancellation-policy/' && $body.hasClass('page-id-686')) isActive = true;
+                    }
+                    var activeClass = isActive ? ' sa-policy-tab-active' : '';
+                    tabsHTML += '<a href="' + p.slug + '" class="sa-policy-tab' + activeClass + '">' + p.short + '</a>';
+                }
+                tabsHTML += '</div></div>';
+                $header.after(tabsHTML);
+            }
+
+            // 3. Customer Care Concierge Card at bottom of content
+            var $content = $main.find('.page-content');
+            if ($content.length && !$('#sa-policy-support-card').length) {
+                var supportHTML = 
+                    '<div id="sa-policy-support-card" class="sa-policy-support-card">' +
+                        '<div class="sa-support-icon">&#128142;</div>' +
+                        '<div class="sa-support-body">' +
+                            '<h4>Need Any Assistance or Clarification?</h4>' +
+                            '<p>Our dedicated customer concierge team is always delighted to assist you with any questions regarding our policies, orders, or handcrafted collections.</p>' +
+                            '<div class="sa-support-links">' +
+                                '<a href="mailto:styleaddictjewelleryy@gmail.com" class="sa-support-btn sa-support-btn--email">' +
+                                    '<span>&#9993;</span> styleaddictjewelleryy@gmail.com' +
+                                '</a>' +
+                                '<a href="tel:+919830836837" class="sa-support-btn sa-support-btn--phone">' +
+                                    '<span>&#9742;</span> +91 98308 36837 (9 AM &ndash; 6 PM)' +
+                                '</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                $content.append(supportHTML);
+            }
+        }
+
+        initPolicyPagesEnhancement();
+        setTimeout(initPolicyPagesEnhancement, 400);
 
         /* ======================================================================
            5. LUXURY SIDE-CART DRAWER & CHECKOUT ENHANCEMENTS
