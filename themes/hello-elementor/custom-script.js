@@ -277,5 +277,35 @@
 
         initSwarovskiProductAccordions();
         setTimeout(initSwarovskiProductAccordions, 500);
+
+        /* ======================================================================
+           4. FOOTER POLICY LINKS & COPYRIGHT AUTO-UPDATE
+           ====================================================================== */
+        function initFooterPolicies() {
+            var $copyrightWidget = $('.elementor-element-503537d2 .elementor-heading-title');
+            if ($copyrightWidget.length) {
+                var currentYear = new Date().getFullYear();
+                $copyrightWidget.html('&copy; ' + currentYear + ' STYLE ADDICT. All rights reserved.');
+            }
+
+            var $copyrightCol = $('.elementor-element-64c7b07a .elementor-widget-wrap');
+            if ($copyrightCol.length && !$('#sa-footer-policies').length) {
+                var policiesHTML = 
+                    '<div id="sa-footer-policies" class="sa-footer-policies">' +
+                        '<a href="/privacy-policy/">Privacy Policy</a>' +
+                        '<span class="sa-footer-sep">&bull;</span>' +
+                        '<a href="/terms-and-conditions/">Terms &amp; Conditions</a>' +
+                        '<span class="sa-footer-sep">&bull;</span>' +
+                        '<a href="/shipping-policy/">Shipping Policy</a>' +
+                        '<span class="sa-footer-sep">&bull;</span>' +
+                        '<a href="/refund-and-return-policy/">Refund &amp; Return Policy</a>' +
+                    '</div>';
+                
+                $copyrightCol.prepend(policiesHTML);
+            }
+        }
+
+        initFooterPolicies();
+        setTimeout(initFooterPolicies, 400);
     });
 })(jQuery);

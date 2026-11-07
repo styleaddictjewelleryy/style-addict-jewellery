@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.8.0
+ * Version: 3.8.1
  */
 
 /* ==========================================================================
@@ -955,6 +955,48 @@ p,
     font-weight: 600 !important;
     font-size: 13px !important;
     letter-spacing: 0.5px !important;
+}
+
+/* Footer Policy Navigation Links Bar */
+.sa-footer-policies {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 14px !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.sa-footer-policies a {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #7A6862 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.sa-footer-policies a:hover {
+    color: #B55D44 !important;
+    text-decoration: underline !important;
+}
+
+.sa-footer-sep {
+    color: #C8B8B2 !important;
+    font-size: 10px !important;
+    user-select: none !important;
+}
+
+@media (max-width: 767px) {
+    .sa-footer-policies {
+        justify-content: center !important;
+        margin: 10px 0 !important;
+        gap: 6px 10px !important;
+    }
+
+    .sa-footer-policies a {
+        font-size: 11px !important;
+    }
 }
 
 /* Footer Newsletter Input Field */
