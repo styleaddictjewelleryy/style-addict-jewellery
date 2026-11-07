@@ -190,6 +190,64 @@
                 }
             }
 
+            // 3.2 Insert Swarovski-Style Delivery & PIN Code Availability Checker
+            if (!$('.sa-pincode-checker').length) {
+                var pincodeHTML = 
+                    '<div class="sa-pincode-checker">' +
+                        '<div class="sa-pincode-header">' +
+                            '<span class="sa-pincode-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>' +
+                            '<span class="sa-pincode-label">Check Delivery &amp; Availability</span>' +
+                        '</div>' +
+                        '<div class="sa-pincode-form">' +
+                            '<input type="text" id="sa-pincode-input" class="sa-pincode-input" placeholder="Enter 6-digit PIN code" maxlength="6" inputmode="numeric" />' +
+                            '<button type="button" id="sa-pincode-btn" class="sa-pincode-btn">Check</button>' +
+                        '</div>' +
+                        '<div id="sa-pincode-result" class="sa-pincode-result"></div>' +
+                    '</div>';
+
+                var $cartWidget = $('.elementor-element-1a8255a, form.cart');
+                if ($cartWidget.length) {
+                    $cartWidget.first().before(pincodeHTML);
+                } else if ($('.sa-stock-badge').length) {
+                    $('.sa-stock-badge').after(pincodeHTML);
+                }
+            }
+
+            // Pincode check handling & persistence
+            function handlePincodeCheck() {
+                var val = $('#sa-pincode-input').val().trim();
+                var $res = $('#sa-pincode-result');
+                if (/^[1-9][0-9]{5}$/.test(val)) {
+                    try { localStorage.setItem('sa_pincode', val); } catch (e) {}
+                    $res.removeClass('sa-pincode-error').addClass('sa-pincode-success').html(
+                        '<span class="sa-pincode-check-icon">&check;</span> Express Insured Delivery available to <strong>' + val + '</strong> &bull; Dispatched in 24&ndash;48 hrs.'
+                    ).slideDown(200);
+                } else {
+                    $res.removeClass('sa-pincode-success').addClass('sa-pincode-error').html(
+                        'Please enter a valid 6-digit PIN code.'
+                    ).slideDown(200);
+                }
+            }
+
+            $(document).off('click.saPin').on('click.saPin', '#sa-pincode-btn', handlePincodeCheck);
+            $(document).off('keydown.saPin').on('keydown.saPin', '#sa-pincode-input', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handlePincodeCheck();
+                }
+            });
+
+            // Restore saved pincode
+            try {
+                var savedPin = localStorage.getItem('sa_pincode');
+                if (savedPin && /^[1-9][0-9]{5}$/.test(savedPin)) {
+                    $('#sa-pincode-input').val(savedPin);
+                    $('#sa-pincode-result').addClass('sa-pincode-success').html(
+                        '<span class="sa-pincode-check-icon">&check;</span> Express Insured Delivery available to <strong>' + savedPin + '</strong> &bull; Dispatched in 24&ndash;48 hrs.'
+                    ).show();
+                }
+            } catch (e) {}
+
             // 3.2 Extract description content from WooCommerce tabs
             var $descPanel = $('#tab-description');
             var descHTML = '';
