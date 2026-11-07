@@ -73,18 +73,31 @@
             var $gallery = $('.woocommerce-product-gallery');
             if (!$gallery.length) return;
 
-            var $mainImages = $gallery.find('.woocommerce-product-gallery__image img');
+            // CRITICAL BUG FIX: Only select original slides and explicitly exclude FlexSlider clones (:not(.clone)).
+            // FlexSlider clones the first and last slides for infinite sliding buffers.
+            // Querying .woocommerce-product-gallery__image directly matches clones, causing index 0
+            // to target the clone of the last image, shifting thumbnail images and causing mismatched clicks!
+            var $slides = $gallery.find('.woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:not(.clone)');
             var $thumbs = $gallery.find('.flex-control-thumbs li');
 
-            // Upgrade thumbnail resolution from 100x100 to crisp high-res (600px/large)
-            if ($thumbs.length && $mainImages.length) {
+            // Upgrade thumbnail resolution from 100x100 to crisp high-res (600px/large) matching the exact slide 1:1
+            if ($thumbs.length && $slides.length) {
                 $thumbs.each(function (index) {
-                    var $mainImg = $mainImages.eq(index);
-                    var highRes = $mainImg.attr('src') || $mainImg.attr('data-src') || $mainImg.attr('data-large_image');
+                    var $slide = $slides.eq(index);
+                    if (!$slide.length) return;
+
+                    var $mainImg = $slide.find('img').first();
+                    // Obtain the crisp 600px image or large image URL
+                    var highRes = $mainImg.attr('src') || $slide.find('a').attr('href') || $mainImg.attr('data-src') || $mainImg.attr('data-large_image');
+                    if (highRes && highRes.indexOf('data:image') === 0) {
+                        highRes = $slide.find('a').attr('href') || $mainImg.attr('data-large_image') || highRes;
+                    }
+
                     if (highRes) {
                         var $thumbImg = $(this).find('img');
                         if ($thumbImg.length && $thumbImg.attr('src') !== highRes) {
                             $thumbImg.attr('src', highRes);
+                            $thumbImg.removeAttr('srcset');
                         }
                     }
                 });
@@ -92,7 +105,8 @@
 
             // Sync active thumbnail state
             function syncActiveThumb() {
-                $gallery.find('.flex-control-thumbs li').each(function () {
+                var $allThumbs = $gallery.find('.flex-control-thumbs li');
+                $allThumbs.each(function () {
                     var $li = $(this);
                     if ($li.find('img').hasClass('flex-active')) {
                         $li.addClass('flex-active-thumb');
@@ -102,12 +116,45 @@
                 });
             }
 
-            // On thumbnail click: slide main preview and mark active
-            $gallery.off('click.swarovskiThumb').on('click.swarovskiThumb', '.flex-control-thumbs li', function () {
-                $gallery.find('.flex-control-thumbs li').removeClass('flex-active-thumb');
-                $(this).addClass('flex-active-thumb');
+            // On thumbnail click: slide main preview to the EXACT clicked slide index
+            $gallery.off('click.swarovskiThumb').on('click.swarovskiThumb', '.flex-control-thumbs li', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var $li = $(this);
+                var index = $li.index();
+                var flexslider = $gallery.data('flexslider');
+
+                if (flexslider && typeof flexslider.flexAnimate === 'function') {
+                    if (flexslider.currentSlide !== index) {
+                        flexslider.direction = (index > flexslider.currentSlide) ? 'next' : 'prev';
+                        flexslider.flexAnimate(index, flexslider.vars.pauseOnAction);
+                    }
+                } else if (typeof $gallery.flexslider === 'function') {
+                    $gallery.flexslider(index);
+                }
+
+                // Immediately update active styling
+                var $allThumbs = $gallery.find('.flex-control-thumbs li');
+                $allThumbs.removeClass('flex-active-thumb');
+                $allThumbs.find('img').removeClass('flex-active');
+
+                $li.addClass('flex-active-thumb');
+                $li.find('img').addClass('flex-active');
+
                 setTimeout(syncActiveThumb, 250);
             });
+
+            // Setup MutationObserver so whenever FlexSlider changes slide (e.g. touch swipe or auto),
+            // the active thumbnail border highlights synchronously
+            var thumbsContainer = $gallery.find('.flex-control-thumbs')[0];
+            if (thumbsContainer && !thumbsContainer._hasSwarovskiObserver) {
+                thumbsContainer._hasSwarovskiObserver = true;
+                var observer = new MutationObserver(function () {
+                    syncActiveThumb();
+                });
+                observer.observe(thumbsContainer, { attributes: true, subtree: true, attributeFilter: ['class'] });
+            }
 
             syncActiveThumb();
         }
