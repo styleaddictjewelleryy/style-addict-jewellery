@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.4.0
+ * Version: 3.5.0
  */
 
 /* ==========================================================================
@@ -1133,4 +1133,377 @@ p,
         margin-top: 14px !important;
     }
 }
+
+
+/* ==========================================================================
+   9. SWAROVSKI-STYLE LUXURY PRODUCT GALLERY (MAIN PREVIEW + 50% 2-COL THUMBNAILS)
+   ========================================================================== */
+
+/* Main Product Image Container */
+.woocommerce div.product div.images.woocommerce-product-gallery {
+    margin-bottom: 2em !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 10px 30px rgba(45, 31, 27, 0.08) !important;
+    border: 1px solid rgba(181, 93, 68, 0.12) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper:hover {
+    box-shadow: 0 16px 40px rgba(45, 31, 27, 0.13) !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image img {
+    border-radius: 14px !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+}
+
+/* Lightbox Zoom Trigger Icon (Top Right) */
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger {
+    top: 14px !important;
+    right: 14px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(45, 31, 27, 0.18) !important;
+    border-radius: 50% !important;
+    transition: all 0.25s ease !important;
+    z-index: 20 !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover {
+    transform: scale(1.1) !important;
+    background-color: #FAF4F2 !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger::before {
+    border-color: #B55D44 !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger::after {
+    background-color: #B55D44 !important;
+}
+
+/* 2-Column Grid of 50% Width Thumbnails Below Main Image (Row 1: 2 images, Row 2: 2 images, etc.) */
+.woocommerce div.product div.images .flex-control-thumbs {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    margin: 16px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li {
+    width: calc(50% - 7px) !important;
+    max-width: calc(50% - 7px) !important;
+    flex: 0 0 calc(50% - 7px) !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
+    border: 2px solid rgba(181, 93, 68, 0.15) !important;
+    box-shadow: 0 4px 14px rgba(45, 31, 27, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    opacity: 0.85 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+/* Thumbnail Hover State */
+.woocommerce div.product div.images .flex-control-thumbs li:hover {
+    border-color: #B55D44 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 24px rgba(181, 93, 68, 0.2) !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li:hover img {
+    opacity: 1 !important;
+    transform: scale(1.03) !important;
+}
+
+/* Active Thumbnail Highlight (Currently previewed in main image) */
+.woocommerce div.product div.images .flex-control-thumbs li img.flex-active {
+    opacity: 1 !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li.flex-active-thumb,
+.woocommerce div.product div.images .flex-control-thumbs li:has(img.flex-active) {
+    border-color: #B55D44 !important;
+    outline: 2px solid #B55D44 !important;
+    outline-offset: -2px !important;
+    box-shadow: 0 8px 22px rgba(181, 93, 68, 0.25) !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li.flex-active-thumb img,
+.woocommerce div.product div.images .flex-control-thumbs li:has(img.flex-active) img {
+    opacity: 1 !important;
+}
+
+/* Mobile Responsiveness for Gallery */
+@media (max-width: 767px) {
+    .woocommerce div.product div.images .flex-control-thumbs {
+        gap: 10px !important;
+        margin-top: 12px !important;
+    }
+
+    .woocommerce div.product div.images .flex-control-thumbs li {
+        width: calc(50% - 5px) !important;
+        max-width: calc(50% - 5px) !important;
+        flex: 0 0 calc(50% - 5px) !important;
+        border-radius: 10px !important;
+    }
+
+    .woocommerce div.product div.images .flex-control-thumbs li:hover {
+        transform: none !important;
+    }
+}
+
+
+/* ==========================================================================
+   10. SWAROVSKI-STYLE PRODUCT DETAILS & RIGHT-COLUMN ACCORDIONS
+   ========================================================================== */
+
+/* Single Product Title */
+.woocommerce div.product .product_title,
+.elementor-60 .elementor-element.elementor-element-2f06f660 .elementor-heading-title {
+    font-family: "Philosopher", serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: #2D1F1B !important;
+    margin-bottom: 8px !important;
+}
+
+/* Single Product "Sale!" Badge */
+.elementor-60 .elementor-element.elementor-element-3ed3e3c0 > .elementor-widget-container {
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    border-radius: 6px !important;
+    padding: 4px 14px !important;
+    display: inline-block !important;
+    box-shadow: 0 3px 10px rgba(181, 93, 68, 0.25) !important;
+    margin-bottom: 12px !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-3ed3e3c0 .elementor-heading-title {
+    color: #FFFFFF !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+}
+
+/* Single Product Price Container */
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price {
+    font-size: 26px !important;
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    margin: 8px 0 12px 0 !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price del {
+    font-size: 18px !important;
+    color: #928480 !important;
+    font-weight: 400 !important;
+    text-decoration: line-through !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price ins {
+    font-size: 26px !important;
+    color: #D44332 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+/* "In Stock" Luxury Live Badge */
+.sa-stock-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #2E7D32 !important;
+    margin: 4px 0 16px 0 !important;
+    letter-spacing: 0.3px !important;
+}
+
+.sa-stock-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #2E7D32 !important;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2) !important;
+    display: inline-block !important;
+    animation: saPulse 2s infinite !important;
+}
+
+@keyframes saPulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(46, 125, 50, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+}
+
+/* Quantity and Add to Cart Row */
+.elementor-60 .elementor-element.elementor-element-1a8255a form.cart {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin: 16px 0 !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-1a8255a .quantity .qty {
+    height: 48px !important;
+    width: 62px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(181, 93, 68, 0.3) !important;
+    background-color: #FAF7F5 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #2D1F1B !important;
+    text-align: center !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-1a8255a .cart button.single_add_to_cart_button,
+.elementor-60 .elementor-element.elementor-element-1a8255a .cart .button {
+    height: 48px !important;
+    padding: 0 32px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    color: #FFFFFF !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(181, 93, 68, 0.3) !important;
+    transition: all 0.3s ease !important;
+    flex: 1 1 200px !important;
+}
+
+.elementor-60 .elementor-element.elementor-element-1a8255a .cart button.single_add_to_cart_button:hover,
+.elementor-60 .elementor-element.elementor-element-1a8255a .cart .button:hover {
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    box-shadow: 0 6px 22px rgba(212, 67, 50, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Swarovski-Style Right-Column Accordions */
+.sa-product-accordions {
+    margin-top: 24px !important;
+    border-top: 1px solid rgba(181, 93, 68, 0.2) !important;
+    width: 100% !important;
+}
+
+.sa-accordion-item {
+    border-bottom: 1px solid rgba(181, 93, 68, 0.2) !important;
+    transition: background-color 0.25s ease !important;
+}
+
+.sa-accordion-header {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 4px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #2D1F1B !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    transition: color 0.25s ease !important;
+}
+
+.sa-accordion-header:hover {
+    color: #D44332 !important;
+}
+
+.sa-accordion-header .sa-accordion-icon {
+    font-family: monospace, sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #B55D44 !important;
+    line-height: 1 !important;
+    transition: color 0.25s ease !important;
+}
+
+.sa-accordion-header:hover .sa-accordion-icon {
+    color: #D44332 !important;
+}
+
+.sa-accordion-body {
+    padding: 0 4px 18px 4px !important;
+    color: #4A352F !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+.sa-accordion-content p {
+    margin-bottom: 10px !important;
+    color: #4A352F !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+.sa-accordion-list {
+    margin: 8px 0 0 18px !important;
+    padding: 0 !important;
+    list-style-type: disc !important;
+}
+
+.sa-accordion-list li {
+    margin-bottom: 6px !important;
+    color: #4A352F !important;
+    line-height: 1.6 !important;
+}
+
+/* Hide duplicate bottom full-width flat tabs section (now replaced by the Swarovski right-column accordions) */
+.elementor-60 .elementor-element.elementor-element-1d32f815 {
+    display: none !important;
+}
+
+/* Related Products ("Complete The Look") Heading & Grid */
+.elementor-60 .elementor-element.elementor-element-21f8698b .elementor-heading-title {
+    font-family: "Philosopher", serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+}
+
 
