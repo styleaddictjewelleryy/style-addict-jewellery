@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.3.0
+ * Version: 3.4.0
  */
 
 /* ==========================================================================
@@ -810,10 +810,51 @@ p,
     color: #2D1F1B !important;
 }
 
+/* Default / Regular Price */
 .woocommerce ul.products li.product .price,
-.woocommerce div.product p.price {
-    color: #B55D44 !important;
+.woocommerce div.product p.price,
+.woocommerce div.product .price,
+.elementor-wc-products ul.products li.product .price {
+    color: #2D1F1B !important;
     font-weight: 600 !important;
+}
+
+/* Original Regular Price (Strikethrough & Muted) */
+.woocommerce ul.products li.product .price del,
+.woocommerce div.product p.price del,
+.woocommerce div.product .price del,
+.elementor-wc-products ul.products li.product .price del,
+.price del,
+.price del .woocommerce-Price-amount,
+.price del bdi {
+    color: #928480 !important;
+    opacity: 0.75 !important;
+    font-weight: 400 !important;
+    font-size: 0.9em !important;
+    text-decoration: line-through !important;
+    margin-right: 6px !important;
+}
+
+/* Offer / Sale Price (Primary Red, Bold, Clean No Underline) */
+.woocommerce ul.products li.product .price ins,
+.woocommerce div.product p.price ins,
+.woocommerce div.product .price ins,
+.elementor-wc-products ul.products li.product .price ins,
+.woocommerce ul.products li.product .price ins .woocommerce-Price-amount,
+.woocommerce div.product p.price ins .woocommerce-Price-amount,
+.woocommerce div.product .price ins .woocommerce-Price-amount,
+.elementor-wc-products ul.products li.product .price ins .woocommerce-Price-amount,
+.woocommerce ul.products li.product .price ins bdi,
+.woocommerce div.product p.price ins bdi,
+.woocommerce div.product .price ins bdi,
+.elementor-wc-products ul.products li.product .price ins bdi,
+.price ins,
+.price ins .woocommerce-Price-amount,
+.price ins bdi {
+    color: #D44332 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 1.05em !important;
 }
 
 
