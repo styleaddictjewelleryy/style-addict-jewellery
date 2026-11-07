@@ -269,14 +269,22 @@ add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
 add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
 
 /**
- * Style Addict Custom Luxury Styles Enqueue
+ * Style Addict Custom Luxury Styles & Interactions Enqueue
  */
-function style_addict_enqueue_custom_styles() {
+function style_addict_enqueue_custom_assets() {
 	wp_enqueue_style(
 		'style-addict-custom-luxury',
 		get_template_directory_uri() . '/custom-style.css',
 		[],
 		time()
 	);
+
+	wp_enqueue_script(
+		'style-addict-custom-interactions',
+		get_template_directory_uri() . '/custom-script.js',
+		[ 'jquery' ],
+		time(),
+		true
+	);
 }
-add_action( 'wp_enqueue_scripts', 'style_addict_enqueue_custom_styles', 999 );
+add_action( 'wp_enqueue_scripts', 'style_addict_enqueue_custom_assets', 999 );
