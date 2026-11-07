@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.9.0
+ * Version: 3.10.0
  */
 
 /* ==========================================================================
@@ -1765,6 +1765,248 @@ p,
         font-size: 18px !important;
     }
 }
+
+/* ==========================================================================
+   12. LUXURY MINI-CART DRAWER, CART PAGE & CHECKOUT PAGE ENHANCEMENTS
+   ========================================================================== */
+
+/* 12.1 Slide-Out Mini Cart Drawer */
+.elementor-menu-cart__main {
+    background: #FAF7F5 !important;
+    box-shadow: -8px 0 36px rgba(45, 31, 27, 0.15) !important;
+    border-left: 1px solid rgba(181, 93, 68, 0.15) !important;
+}
+
+.elementor-menu-cart__close-button {
+    color: #4A352F !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-menu-cart__close-button:hover {
+    color: #D44332 !important;
+    transform: rotate(90deg) !important;
+}
+
+/* Complimentary Shipping Banner in Side Cart */
+.sa-cart-shipping-banner {
+    background: rgba(181, 93, 68, 0.08) !important;
+    border: 1px dashed rgba(181, 93, 68, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    margin: 12px 0 16px 0 !important;
+    text-align: center !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12.5px !important;
+    color: #382B27 !important;
+}
+
+/* Individual Cart Items in Drawer */
+.elementor-menu-cart__product {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(181, 93, 68, 0.12) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 4px 12px rgba(45, 31, 27, 0.03) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.elementor-menu-cart__product:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(181, 93, 68, 0.12) !important;
+}
+
+.elementor-menu-cart__product-image img {
+    border-radius: 8px !important;
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+}
+
+.elementor-menu-cart__product-name,
+.elementor-menu-cart__product-name a {
+    font-family: "Philosopher", serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    transition: color 0.2s ease !important;
+}
+
+.elementor-menu-cart__product-name a:hover {
+    color: #D44332 !important;
+}
+
+.elementor-menu-cart__product-price {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #D44332 !important;
+}
+
+.elementor-menu-cart__subtotal {
+    border-top: 1px solid rgba(181, 93, 68, 0.2) !important;
+    padding-top: 14px !important;
+    margin-top: 14px !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+}
+
+.elementor-menu-cart__subtotal .woocommerce-Price-amount {
+    color: #D44332 !important;
+    font-size: 20px !important;
+}
+
+/* Side Cart Footer Buttons */
+.elementor-menu-cart__footer-buttons {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+}
+
+.elementor-menu-cart__footer-buttons a.elementor-button--view-cart {
+    background: transparent !important;
+    border: 2px solid #B55D44 !important;
+    color: #B55D44 !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    transition: all 0.25s ease !important;
+}
+
+.elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover {
+    background: #B55D44 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+}
+
+.elementor-menu-cart__footer-buttons a.elementor-button--checkout {
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    color: #FFFFFF !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.3) !important;
+    text-align: center !important;
+    transition: all 0.25s ease !important;
+}
+
+.elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover {
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 12.2 WooCommerce Cart Page Polish */
+.woocommerce-cart .shop_table.cart {
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 24px rgba(45, 31, 27, 0.03) !important;
+    background: #FFFFFF !important;
+}
+
+.woocommerce-cart .shop_table.cart th {
+    background-color: #FAF7F5 !important;
+    color: #2D1F1B !important;
+    font-family: "Philosopher", serif !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+}
+
+.woocommerce-cart .cart_totals {
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    border-radius: 14px !important;
+    background: #FFFFFF !important;
+    padding: 24px !important;
+    box-shadow: 0 6px 24px rgba(45, 31, 27, 0.03) !important;
+}
+
+.woocommerce-cart .cart_totals h2 {
+    font-family: "Philosopher", serif !important;
+    font-size: 24px !important;
+    color: #2D1F1B !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+    padding-bottom: 10px !important;
+}
+
+/* 12.3 WooCommerce Checkout Page Polish */
+.woocommerce-checkout .woocommerce-billing-fields h3,
+.woocommerce-checkout .woocommerce-additional-fields h3,
+.woocommerce-checkout #order_review_heading {
+    font-family: "Philosopher", serif !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 20px !important;
+}
+
+.woocommerce-checkout .woocommerce-checkout-review-order {
+    background: #FAF7F5 !important;
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    box-shadow: 0 6px 24px rgba(45, 31, 27, 0.04) !important;
+}
+
+.woocommerce-checkout .shop_table.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout .shop_table.woocommerce-checkout-review-order-table td {
+    border-color: rgba(181, 93, 68, 0.12) !important;
+}
+
+.woocommerce-checkout .woocommerce-checkout-review-order-table .order-total .amount {
+    color: #D44332 !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+.woocommerce-checkout #place_order {
+    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    border-radius: 30px !important;
+    height: 52px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 22px rgba(181, 93, 68, 0.35) !important;
+    transition: all 0.3s ease !important;
+}
+
+.woocommerce-checkout #place_order:hover {
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    box-shadow: 0 8px 28px rgba(212, 67, 50, 0.45) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 12.4 Checkout Trust Badges Container */
+.sa-checkout-trust {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px 20px !important;
+    margin-top: 18px !important;
+    padding: 14px 16px !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    border-radius: 12px !important;
+}
+
+.sa-trust-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12px !important;
+    color: #4A3E3B !important;
+}
+
+.sa-trust-icon {
+    font-size: 15px !important;
+}
+
 
 
 

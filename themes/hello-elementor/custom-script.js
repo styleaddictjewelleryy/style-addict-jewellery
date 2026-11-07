@@ -365,5 +365,57 @@
 
         initFooterPolicies();
         setTimeout(initFooterPolicies, 400);
+
+        /* ======================================================================
+           5. LUXURY SIDE-CART DRAWER & CHECKOUT ENHANCEMENTS
+           ====================================================================== */
+        function initCartEnhancements() {
+            // 5.1 Free shipping callout in side cart drawer
+            var $drawer = $('.elementor-menu-cart__main');
+            if ($drawer.length && !$('#sa-cart-shipping-banner').length) {
+                var shippingBanner = 
+                    '<div id="sa-cart-shipping-banner" class="sa-cart-shipping-banner">' +
+                        '<span>✨ <strong>Complimentary Insured Shipping</strong> on all orders</span>' +
+                    '</div>';
+                var $closeBtn = $drawer.find('.elementor-menu-cart__close-button');
+                if ($closeBtn.length) {
+                    $closeBtn.after(shippingBanner);
+                } else {
+                    $drawer.prepend(shippingBanner);
+                }
+            }
+
+            // 5.2 Trust Badges below Place Order on Checkout Page
+            if ($('body').hasClass('woocommerce-checkout') && !$('#sa-checkout-trust').length) {
+                var trustHTML = 
+                    '<div id="sa-checkout-trust" class="sa-checkout-trust">' +
+                        '<div class="sa-trust-item">' +
+                            '<span class="sa-trust-icon">🔒</span>' +
+                            '<span><strong>256-Bit SSL</strong> Encrypted Checkout</span>' +
+                        '</div>' +
+                        '<div class="sa-trust-item">' +
+                            '<span class="sa-trust-icon">💎</span>' +
+                            '<span><strong>100% Insured</strong> Transit Delivery</span>' +
+                        '</div>' +
+                        '<div class="sa-trust-item">' +
+                            '<span class="sa-trust-icon">🛡️</span>' +
+                            '<span><strong>RBI-Authorized</strong> Secure Gateways</span>' +
+                        '</div>' +
+                    '</div>';
+                
+                var $placeOrderBtn = $('#place_order');
+                if ($placeOrderBtn.length) {
+                    $placeOrderBtn.after(trustHTML);
+                } else {
+                    $('#order_review').append(trustHTML);
+                }
+            }
+        }
+
+        initCartEnhancements();
+        $(document).on('added_to_cart removed_from_cart updated_cart_totals updated_checkout', initCartEnhancements);
+        $(document).on('click', '.elementor-menu-cart__toggle_button, .elementor-menu-cart__toggle', function () {
+            setTimeout(initCartEnhancements, 100);
+        });
     });
 })(jQuery);
