@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.10.0
+ * Version: 3.10.1
  */
 
 /* ==========================================================================
@@ -2006,6 +2006,78 @@ p,
 .sa-trust-icon {
     font-size: 15px !important;
 }
+
+/* 12.5 Wishlist Page Luxury Card Styling */
+.tinv-wishlist.woocommerce {
+    max-width: 1040px !important;
+    margin: 40px auto !important;
+    padding: 36px 30px !important;
+    background: #FFFFFF !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    box-shadow: 0 8px 32px rgba(45, 31, 27, 0.04) !important;
+    box-sizing: border-box !important;
+}
+
+.tinv-wishlist .tinv-header h2 {
+    font-family: "Philosopher", serif !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+}
+
+.tinv-wishlist table.tinv-table {
+    border: 1px solid rgba(181, 93, 68, 0.15) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.tinv-wishlist table.tinv-table th {
+    background: #FAF7F5 !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.18) !important;
+}
+
+.tinv-wishlist .product-name a {
+    font-family: "Philosopher", serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    transition: color 0.2s ease !important;
+}
+
+.tinv-wishlist .product-name a:hover {
+    color: #D44332 !important;
+}
+
+.tinv-wishlist .product-price .amount {
+    color: #D44332 !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+.tinv-wishlist .wishlist-empty {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 16px !important;
+    color: #4A3E3B !important;
+    padding: 30px 20px !important;
+    text-align: center !important;
+}
+
+@media (max-width: 767px) {
+    .tinv-wishlist.woocommerce {
+        margin: 20px 14px !important;
+        padding: 20px 14px !important;
+        border-radius: 12px !important;
+    }
+}
+
 
 
 
