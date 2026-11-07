@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.7.0
+ * Version: 3.7.1
  */
 
 /* ==========================================================================
@@ -837,29 +837,40 @@ p,
     text-decoration: none !important;
 }
 
-/* Strikethrough Regular / Original Price (Clear, Visible & Legible Site-Wide) */
+/* Strikethrough Regular / Original Price (A Little Smaller & Crisp Legibility Site-Wide) */
 .price del,
+.woocommerce ul.products li.product .price del,
+.woocommerce div.product p.price del,
+.woocommerce div.product .price del,
+.elementor-wc-products ul.products li.product .price del,
+.elementor-products-grid .price del,
+.products .product .price del {
+    color: #6E625E !important;
+    opacity: 1 !important;
+    font-weight: 500 !important;
+    font-size: 13px !important; /* Proportional slightly smaller size for product cards */
+    text-decoration: line-through !important;
+    text-decoration-color: #8E827E !important;
+    margin-right: 6px !important;
+    display: inline-block !important;
+}
+
 .price del *,
 .price del .woocommerce-Price-amount,
 .price del .woocommerce-Price-currencySymbol,
 .price del bdi,
-.woocommerce ul.products li.product .price del,
 .woocommerce ul.products li.product .price del *,
-.woocommerce div.product p.price del,
 .woocommerce div.product p.price del *,
-.woocommerce div.product .price del,
 .woocommerce div.product .price del *,
-.elementor-wc-products ul.products li.product .price del,
 .elementor-wc-products ul.products li.product .price del *,
-.elementor-60 .elementor-element.elementor-element-298c0c30 .price del,
-.elementor-60 .elementor-element.elementor-element-298c0c30 .price del * {
+.elementor-products-grid .price del *,
+.products .product .price del * {
     color: #6E625E !important;
     opacity: 1 !important;
     font-weight: 500 !important;
-    font-size: 0.88em !important;
+    font-size: inherit !important;
     text-decoration: line-through !important;
     text-decoration-color: #8E827E !important;
-    margin-right: 6px !important;
 }
 
 
@@ -1336,9 +1347,17 @@ p,
     margin: 8px 0 12px 0 !important;
 }
 
-.elementor-60 .elementor-element.elementor-element-298c0c30 .price del,
+.elementor-60 .elementor-element.elementor-element-298c0c30 .price del {
+    font-size: 15px !important; /* Slightly smaller than main 26px price, highly elegant */
+    color: #6E625E !important;
+    opacity: 1 !important;
+    font-weight: 500 !important;
+    text-decoration: line-through !important;
+    text-decoration-color: #8E827E !important;
+}
+
 .elementor-60 .elementor-element.elementor-element-298c0c30 .price del * {
-    font-size: 18px !important;
+    font-size: inherit !important;
     color: #6E625E !important;
     opacity: 1 !important;
     font-weight: 500 !important;
