@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.13.0
+ * Version: 3.14.0
  */
 
 /* ==========================================================================
@@ -2156,14 +2156,14 @@ body.page-id-686 .page-content strong {
     font-weight: 700 !important;
 }
 
-body.sa-policy-active-page .page-content a,
-body.privacy-policy .page-content a,
-body.page-id-3 .page-content a,
-body.page-id-674 .page-content a,
-body.page-id-656 .page-content a,
-body.page-id-678 .page-content a,
-body.page-id-686 .page-content a,
-.sa-policy-page a {
+body.sa-policy-active-page .page-content a:not(.sa-support-btn),
+body.privacy-policy .page-content a:not(.sa-support-btn),
+body.page-id-3 .page-content a:not(.sa-support-btn),
+body.page-id-674 .page-content a:not(.sa-support-btn),
+body.page-id-656 .page-content a:not(.sa-support-btn),
+body.page-id-678 .page-content a:not(.sa-support-btn),
+body.page-id-686 .page-content a:not(.sa-support-btn),
+.sa-policy-page a:not(.sa-support-btn) {
     color: #D44332 !important;
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
@@ -2171,8 +2171,8 @@ body.page-id-686 .page-content a,
     transition: color 0.2s ease !important;
 }
 
-body.sa-policy-active-page .page-content a:hover,
-.sa-policy-page a:hover {
+body.sa-policy-active-page .page-content a:not(.sa-support-btn):hover,
+.sa-policy-page a:not(.sa-support-btn):hover {
     color: #B55D44 !important;
 }
 
@@ -2226,39 +2226,66 @@ body.sa-policy-active-page .page-content a:hover,
     gap: 12px !important;
 }
 
-.sa-support-btn {
+.sa-support-btn,
+body.sa-policy-active-page .page-content a.sa-support-btn,
+body .sa-policy-support-card a.sa-support-btn {
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
-    padding: 9px 20px !important;
+    padding: 10px 22px !important;
     border-radius: 50px !important;
+    font-family: "Montserrat", -apple-system, sans-serif !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
     transition: all 0.25s ease !important;
 }
 
-.sa-support-btn--email {
+.sa-support-btn span {
+    display: inline-block !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+
+/* Email Button: Vibrant Red pill with Crisp White Text */
+.sa-support-btn--email,
+body.sa-policy-active-page .page-content a.sa-support-btn--email,
+body .sa-policy-support-card a.sa-support-btn--email {
     background: #D44332 !important;
     color: #FFFFFF !important;
-    box-shadow: 0 4px 12px rgba(212, 67, 50, 0.25) !important;
+    text-decoration: none !important;
+    border: 1px solid transparent !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.28) !important;
 }
 
-.sa-support-btn--email:hover {
+.sa-support-btn--email:hover,
+body.sa-policy-active-page .page-content a.sa-support-btn--email:hover,
+body .sa-policy-support-card a.sa-support-btn--email:hover {
     background: #B55D44 !important;
     color: #FFFFFF !important;
+    text-decoration: none !important;
     transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(181, 93, 68, 0.35) !important;
 }
 
-.sa-support-btn--phone {
+/* Phone Button: Clean White Pill with Elegant Border */
+.sa-support-btn--phone,
+body.sa-policy-active-page .page-content a.sa-support-btn--phone,
+body .sa-policy-support-card a.sa-support-btn--phone {
     background: #FFFFFF !important;
     color: #2D1F1B !important;
-    border: 1px solid rgba(181, 93, 68, 0.25) !important;
+    text-decoration: none !important;
+    border: 1px solid rgba(181, 93, 68, 0.3) !important;
 }
 
-.sa-support-btn--phone:hover {
+.sa-support-btn--phone:hover,
+body.sa-policy-active-page .page-content a.sa-support-btn--phone:hover,
+body .sa-policy-support-card a.sa-support-btn--phone:hover {
+    background: #FAF7F5 !important;
     border-color: #D44332 !important;
     color: #D44332 !important;
+    text-decoration: none !important;
     transform: translateY(-1px) !important;
 }
 
