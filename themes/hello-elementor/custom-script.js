@@ -171,7 +171,14 @@
            ====================================================================== */
         function initSwarovskiProductAccordions() {
             if (!$('body').hasClass('single-product')) return;
-            if ($('#sa-product-accordions').length) return;
+            // If an old accordion exists (e.g. with Shipping & Returns), remove it to rebuild cleanly with Description, Features, Care
+            if ($('#sa-product-accordions').length) {
+                if ($('#sa-product-accordions:contains("Shipping")').length || !$('#sa-product-accordions:contains("Features")').length) {
+                    $('#sa-product-accordions').remove();
+                } else {
+                    return;
+                }
+            }
 
             var $rightColumn = $('.elementor-60 .elementor-element.elementor-element-7ca7d0d5 .elementor-widget-wrap');
             if (!$rightColumn.length) {
@@ -248,63 +255,135 @@
                 }
             } catch (e) {}
 
-            // 3.2 Extract description content from WooCommerce tabs
+            // 3.3 Dynamic Segmentation: Parse Description, Features, and Care from product description
             var $descPanel = $('#tab-description');
-            var descHTML = '';
+            var parsed = {
+                description: '',
+                features: '',
+                care: ''
+            };
+
             if ($descPanel.length) {
                 var $clone = $descPanel.clone();
-                $clone.find('h2:first-child').remove();
-                descHTML = $clone.html().trim();
+                $clone.find('h2:first-child').remove(); // remove WooCommerce default heading
+
+                var descList = [];
+                var featureList = [];
+                var careList = [];
+
+                // Check all child blocks
+                var $blocks = $clone.find('p, ul, ol');
+                if (!$blocks.length) {
+                    $blocks = $clone.children();
+                }
+
+                $blocks.each(function () {
+                    var $el = $(this);
+                    var text = $el.text().trim();
+                    var html = $el.html() ? $el.html().trim() : '';
+
+                    if (!text && !html) return;
+
+                    // A) CARE SECTION DETECTION: Starts with or contains "Care:" or "Care Instructions:"
+                    if (/^\s*(?:<strong>)?Care(?:\s+Instructions)?\s*:/i.test(text) || 
+                        /^\s*(?:<strong>)?Care(?:\s+Instructions)?\s*:/i.test(html) ||
+                        text.toLowerCase().indexOf('care:') === 0) {
+                        var cleanCare = html.replace(/^\s*(?:<strong>)?Care(?:\s+Instructions)?\s*:\s*(?:<\/strong>)?/i, '').trim();
+                        careList.push('<p class="sa-care-text">' + (cleanCare || html) + '</p>');
+                        return;
+                    }
+
+                    // B) FEATURES SECTION DETECTION: <ul> / <ol> or text contains bullet points (*, •, -, –)
+                    if ($el.is('ul, ol')) {
+                        $el.find('li').each(function () {
+                            var liText = $(this).text().trim();
+                            var liHtml = $(this).html().trim();
+                            var colonIdx = liText.indexOf(':');
+                            if (colonIdx !== -1 && colonIdx < 35 && liHtml.indexOf('<strong') === -1) {
+                                var label = liText.substring(0, colonIdx).trim();
+                                var val = liHtml.substring(liHtml.indexOf(':') + 1).trim();
+                                liHtml = '<strong>' + label + ':</strong> ' + val;
+                            }
+                            featureList.push('<li><span class="sa-feature-bullet">&#9670;</span> <span>' + liHtml + '</span></li>');
+                        });
+                        return;
+                    }
+
+                    if (text.indexOf('*') !== -1 || text.indexOf('•') !== -1 || /(?:^|<br\s*\/?>)\s*[\*\•\-\–]\s*/i.test(html)) {
+                        var lines = html.split(/<br\s*\/?>|\n/);
+                        for (var i = 0; i < lines.length; i++) {
+                            var line = lines[i].trim();
+                            if (!line) continue;
+                            var cleanLine = line.replace(/^\s*[\*\•\-\–]\s*/, '').trim();
+                            if (!cleanLine) continue;
+
+                            var colonIdx = cleanLine.indexOf(':');
+                            if (colonIdx !== -1 && colonIdx < 35 && cleanLine.indexOf('<strong') === -1) {
+                                var key = cleanLine.substring(0, colonIdx).trim();
+                                var rest = cleanLine.substring(colonIdx + 1).trim();
+                                cleanLine = '<strong>' + key + ':</strong> ' + rest;
+                            }
+                            featureList.push('<li><span class="sa-feature-bullet">&#9670;</span> <span>' + cleanLine + '</span></li>');
+                        }
+                        return;
+                    }
+
+                    // C) Otherwise, it's DESCRIPTION (the introductory paragraphs above the bullets)
+                    descList.push('<p>' + html + '</p>');
+                });
+
+                if (descList.length) parsed.description = descList.join('');
+                if (featureList.length) parsed.features = '<ul class="sa-features-list">' + featureList.join('') + '</ul>';
+                if (careList.length) parsed.care = '<div class="sa-care-box">' + careList.join('') + '</div>';
             }
 
-            if (!descHTML) {
-                descHTML = '<p>Exquisite jewellery handcrafted with meticulous attention to detail, combining timeless royal heritage with modern luxury elegance. Crafted with premium high-grade stones and polished to a flawless lustrous finish.</p>';
+            // High-grade fallback defaults if any section is empty
+            if (!parsed.description) {
+                parsed.description = '<p>A captivating blend of colour and contemporary elegance, handcrafted with meticulous attention to detail to make a statement at festive celebrations, weddings, and special evenings.</p>';
+            }
+            if (!parsed.features) {
+                parsed.features = '<ul class="sa-features-list">' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Style:</strong> Handcrafted Statement Jewellery Set</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Finish:</strong> Premium Gold Plated Luxury Finish</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Features:</strong> Anti-Tarnished &amp; Skin Friendly</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Ideal For:</strong> Weddings, Festive Occasions, Celebrations &amp; Gifting</span></li>' +
+                '</ul>';
+            }
+            if (!parsed.care) {
+                parsed.care = '<div class="sa-care-box"><p class="sa-care-text">Avoid contact with perfume and water. Store in a jewellery box or pouch when not in use.</p></div>';
             }
 
-            // 3.3 Care & Maintenance Guide
-            var careHTML = '<ul class="sa-accordion-list">' +
-                '<li>Avoid direct contact with perfumes, deodorants, hairsprays, and lotions.</li>' +
-                '<li>Remove your jewellery before showering, swimming, or washing hands.</li>' +
-                '<li>Gently wipe each piece with a soft, lint-free microfiber cloth after every wear to preserve shine.</li>' +
-                '<li>Store separately in our signature velvet pouch or an airtight zip-lock bag to prevent moisture and oxidation.</li>' +
-                '</ul>';
-
-            // 3.4 Shipping & Returns
-            var shippingHTML = '<ul class="sa-accordion-list">' +
-                '<li><strong>Fast Insured Delivery:</strong> Orders dispatched within 24-48 hours. Delivery within 3-5 business days across India.</li>' +
-                '<li><strong>Luxury Signature Packaging:</strong> Arrives safely nestled in our premium Style Addict gift box.</li>' +
-                '<li><strong>Hassle-Free Exchange:</strong> 7-day easy exchange and return policy for unworn pieces with tags intact.</li>' +
-                '<li><strong>Complete Tracking:</strong> Real-time SMS and WhatsApp shipment updates provided upon dispatch.</li>' +
-                '</ul>';
-
-            // 3.5 Construct Swarovski-style Accordions HTML
+            // 3.4 Construct the 3 Segmented Dropdowns: Description, Features, and Care
             var accordionHTML = 
                 '<div id="sa-product-accordions" class="sa-product-accordions">' +
+                    '<!-- 1. Description Dropdown -->' +
                     '<div class="sa-accordion-item sa-accordion-active">' +
                         '<button type="button" class="sa-accordion-header" aria-expanded="true">' +
-                            '<span>Description &amp; Details</span>' +
+                            '<span>Description</span>' +
                             '<span class="sa-accordion-icon">&minus;</span>' +
                         '</button>' +
                         '<div class="sa-accordion-body" style="display: block;">' +
-                            '<div class="sa-accordion-content">' + descHTML + '</div>' +
+                            '<div class="sa-accordion-content sa-accordion-desc">' + parsed.description + '</div>' +
                         '</div>' +
                     '</div>' +
+                    '<!-- 2. Features Dropdown -->' +
                     '<div class="sa-accordion-item">' +
                         '<button type="button" class="sa-accordion-header" aria-expanded="false">' +
-                            '<span>Care &amp; Maintenance</span>' +
+                            '<span>Features</span>' +
                             '<span class="sa-accordion-icon">+</span>' +
                         '</button>' +
                         '<div class="sa-accordion-body" style="display: none;">' +
-                            '<div class="sa-accordion-content">' + careHTML + '</div>' +
+                            '<div class="sa-accordion-content sa-accordion-features">' + parsed.features + '</div>' +
                         '</div>' +
                     '</div>' +
+                    '<!-- 3. Care Dropdown -->' +
                     '<div class="sa-accordion-item">' +
                         '<button type="button" class="sa-accordion-header" aria-expanded="false">' +
-                            '<span>Shipping &amp; Returns</span>' +
+                            '<span>Care</span>' +
                             '<span class="sa-accordion-icon">+</span>' +
                         '</button>' +
                         '<div class="sa-accordion-body" style="display: none;">' +
-                            '<div class="sa-accordion-content">' + shippingHTML + '</div>' +
+                            '<div class="sa-accordion-content sa-accordion-care">' + parsed.care + '</div>' +
                         '</div>' +
                     '</div>' +
                 '</div>';

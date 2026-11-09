@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.11.0
+ * Version: 3.12.0
  */
 
 /* ==========================================================================
@@ -1699,6 +1699,57 @@ p,
     margin-bottom: 6px !important;
     color: #4A352F !important;
     line-height: 1.6 !important;
+}
+
+/* Segmented Dropdowns: Features List */
+.sa-features-list {
+    margin: 6px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.sa-features-list li {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 10px !important;
+    color: #4A352F !important;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sa-feature-bullet {
+    color: #D44332 !important;
+    font-size: 9px !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    top: -1px !important;
+}
+
+.sa-features-list li strong {
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+    font-size: 14.5px !important;
+}
+
+/* Segmented Dropdowns: Care Box */
+.sa-care-box {
+    background: #FAF7F5 !important;
+    border-left: 3.5px solid #D44332 !important;
+    padding: 14px 18px !important;
+    border-radius: 0 10px 10px 0 !important;
+    margin: 4px 0 0 0 !important;
+}
+
+.sa-care-text {
+    margin: 0 !important;
+    color: #4A352F !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
 }
 
 /* Hide duplicate bottom full-width flat tabs section (now replaced by the Swarovski right-column accordions) */
