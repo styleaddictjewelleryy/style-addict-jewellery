@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.12.0
+ * Version: 3.13.0
  */
 
 /* ==========================================================================
@@ -696,26 +696,168 @@ p,
 
 
 /* ==========================================================================
-   5. PRODUCT CARDS & VIBRANT WISHLIST BUTTON
+   5. PRODUCT CARDS & PROFESSIONAL WISHLIST BUTTON
    ========================================================================== */
 
-/* Add to Wishlist Button on Product Cards: Vibrant Color */
-.tinv-wishlist .tinvwl_add_to_wishlist_button,
-.tinvwl_add_to_wishlist_button,
-.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
-.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
-    color: #B55D44 !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    transition: color 0.3s ease, transform 0.2s ease !important;
+/* Universal Reset for Wishlist Button Wrappers (Prevents Oversized Boxes) */
+.tinv-wraper,
+.tinv-wraper.tinvwl-loop-button-wrapper,
+.woocommerce ul.products li.product .tinv-wraper,
+.products .product .tinv-wraper,
+.elementor-wc-products ul.products li.product .tinv-wraper {
+    display: block !important;
+    margin: 8px auto 0 auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    text-align: center !important;
 }
 
-.tinv-wishlist .tinvwl_add_to_wishlist_button:hover,
-.tinvwl_add_to_wishlist_button:hover,
-.tinvwl_add_to_wishlist_button:hover .tinvwl_add_to_wishlist-text,
-.tinvwl_add_to_wishlist_button:hover.tinvwl-icon-heart:before {
+.tinv-wraper .tinv-wishlist-clear {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tinv-wraper .tinvwl-tooltip {
+    display: none !important;
+}
+
+/* Professional Minimalist Wishlist Button on Product Loop Cards */
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button,
+.products .product a.tinvwl_add_to_wishlist_button,
+.elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button,
+.tinvwl_add_to_wishlist_button.tinvwl-loop {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 4px 8px !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    line-height: 1.4 !important;
+    color: #7A6862 !important;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2px !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: color 0.25s ease, transform 0.2s ease !important;
+}
+
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button:hover,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button:hover,
+.products .product a.tinvwl_add_to_wishlist_button:hover,
+.elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button:hover,
+.tinvwl_add_to_wishlist_button.tinvwl-loop:hover {
     color: #D44332 !important;
-    transform: scale(1.05) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: translateY(-1px) !important;
+}
+
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+.products .product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text {
+    color: inherit !important;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2px !important;
+}
+
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart:before {
+    font-size: 14px !important;
+    line-height: 1 !important;
+    color: inherit !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+}
+
+/* Active Wishlist State (Already added) */
+.tinvwl_add_to_wishlist_button.tinvwl-product-in-list,
+.tinvwl_add_to_wishlist_button.tinvwl-product-in-list .tinvwl_add_to_wishlist-text,
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-in-list:before {
+    color: #D44332 !important;
+    font-weight: 600 !important;
+}
+
+/* Single Product Page Wishlist Button */
+.single-product div.product form.cart .tinv-wraper,
+.single-product .summary .tinv-wraper {
+    display: inline-block !important;
+    margin: 12px 0 0 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+.single-product div.product form.cart .tinv-wraper a.tinvwl_add_to_wishlist_button,
+.single-product .summary .tinv-wraper a.tinvwl_add_to_wishlist_button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    background: #FAF7F5 !important;
+    border: 1px solid rgba(181, 93, 68, 0.25) !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    color: #7A6862 !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+}
+
+.single-product div.product form.cart .tinv-wraper a.tinvwl_add_to_wishlist_button:hover,
+.single-product .summary .tinv-wraper a.tinvwl_add_to_wishlist_button:hover {
+    background: #FFFFFF !important;
+    border-color: #D44332 !important;
+    color: #D44332 !important;
+    box-shadow: 0 4px 12px rgba(212, 67, 50, 0.12) !important;
+    transform: translateY(-1px) !important;
+}
+
+.single-product div.product form.cart .tinv-wraper a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+.single-product .summary .tinv-wraper a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text {
+    color: inherit !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+
+.single-product div.product form.cart .tinv-wraper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.single-product .summary .tinv-wraper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+    font-size: 15px !important;
+    color: inherit !important;
+    margin-right: 5px !important;
 }
 
 /* Clean Natural Containers (No borders, no box-shadows on generic columns) */
@@ -2441,7 +2583,8 @@ body.sa-policy-active-page .page-content a:hover,
 }
 
 /* 12.5 Wishlist Page Luxury Card Styling */
-.tinv-wishlist.woocommerce {
+.tinv-wishlist.woocommerce:not(.tinv-wraper),
+.page-id-330 .tinv-wishlist.woocommerce {
     max-width: 1040px !important;
     margin: 40px auto !important;
     padding: 36px 30px !important;
@@ -2452,7 +2595,7 @@ body.sa-policy-active-page .page-content a:hover,
     box-sizing: border-box !important;
 }
 
-.tinv-wishlist .tinv-header h2 {
+.tinv-wishlist:not(.tinv-wraper) .tinv-header h2 {
     font-family: "Philosopher", serif !important;
     font-size: 30px !important;
     font-weight: 700 !important;
@@ -2462,13 +2605,13 @@ body.sa-policy-active-page .page-content a:hover,
     border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
 }
 
-.tinv-wishlist table.tinv-table {
+.tinv-wishlist:not(.tinv-wraper) table.tinv-table {
     border: 1px solid rgba(181, 93, 68, 0.15) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
 }
 
-.tinv-wishlist table.tinv-table th {
+.tinv-wishlist:not(.tinv-wraper) table.tinv-table th {
     background: #FAF7F5 !important;
     font-family: "Philosopher", serif !important;
     font-size: 15px !important;
@@ -2477,7 +2620,7 @@ body.sa-policy-active-page .page-content a:hover,
     border-bottom: 2px solid rgba(181, 93, 68, 0.18) !important;
 }
 
-.tinv-wishlist .product-name a {
+.tinv-wishlist:not(.tinv-wraper) .product-name a {
     font-family: "Philosopher", serif !important;
     font-size: 16px !important;
     font-weight: 700 !important;
@@ -2485,17 +2628,17 @@ body.sa-policy-active-page .page-content a:hover,
     transition: color 0.2s ease !important;
 }
 
-.tinv-wishlist .product-name a:hover {
+.tinv-wishlist:not(.tinv-wraper) .product-name a:hover {
     color: #D44332 !important;
 }
 
-.tinv-wishlist .product-price .amount {
+.tinv-wishlist:not(.tinv-wraper) .product-price .amount {
     color: #D44332 !important;
     font-weight: 700 !important;
     font-size: 16px !important;
 }
 
-.tinv-wishlist .wishlist-empty {
+.tinv-wishlist:not(.tinv-wraper) .wishlist-empty {
     font-family: "Montserrat", sans-serif !important;
     font-size: 16px !important;
     color: #4A3E3B !important;
@@ -2504,7 +2647,8 @@ body.sa-policy-active-page .page-content a:hover,
 }
 
 @media (max-width: 767px) {
-    .tinv-wishlist.woocommerce {
+    .tinv-wishlist.woocommerce:not(.tinv-wraper),
+    .page-id-330 .tinv-wishlist.woocommerce {
         margin: 20px 14px !important;
         padding: 20px 14px !important;
         border-radius: 12px !important;
