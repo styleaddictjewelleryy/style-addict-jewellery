@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.14.0
+ * Version: 3.15.0
  */
 
 /* ==========================================================================
@@ -1088,6 +1088,55 @@ p,
 .elementor-element-6bc58925 .elementor-social-icon:hover svg {
     fill: #D44332 !important;
     color: #D44332 !important;
+}
+
+/* Footer Social Icons Wrapper Layout */
+.elementor-28 .elementor-element.elementor-element-37708728,
+.elementor-element-37708728 {
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+.elementor-element-37708728 .elementor-social-icons-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+}
+
+/* Second Instagram: Luxe Handle Badge */
+.sa-footer-social-luxe {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.sa-footer-social-luxe a.elementor-social-icon {
+    position: relative !important;
+}
+
+.sa-footer-social-luxe .sa-social-badge {
+    position: absolute !important;
+    top: -6px !important;
+    right: -10px !important;
+    background: linear-gradient(135deg, #D44332 0%, #B55D44 100%) !important;
+    color: #FFFFFF !important;
+    font-family: "Montserrat", -apple-system, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    padding: 1.5px 4.5px !important;
+    border-radius: 4px !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    box-shadow: 0 2px 6px rgba(212, 67, 50, 0.35) !important;
+    transition: all 0.25s ease !important;
+}
+
+.sa-footer-social-luxe a.elementor-social-icon:hover .sa-social-badge {
+    transform: translateY(-2px) scale(1.08) !important;
+    background: #D44332 !important;
 }
 
 /* Footer Copyright Text: Crisp & Vibrant */
