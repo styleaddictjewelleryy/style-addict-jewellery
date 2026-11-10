@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.16.0
+ * Version: 3.17.0
  */
 
 /* ==========================================================================
@@ -819,7 +819,7 @@ body.single-product form.cart .quantity {
 }
 
 body.single-product form.cart .quantity .qty {
-    height: 46px !important;
+    height: 48px !important;
     width: 65px !important;
     border-radius: 50px !important;
     border: 1.5px solid rgba(181, 93, 68, 0.28) !important;
@@ -836,7 +836,7 @@ body.single-product form.cart .quantity .qty {
 /* Add to Cart Button on PDP */
 body.single-product form.cart .single_add_to_cart_button,
 body.single-product form.cart button[type="submit"].button {
-    height: 46px !important;
+    height: 48px !important;
     padding: 0 28px !important;
     margin: 0 !important;
     border-radius: 50px !important;
@@ -880,8 +880,8 @@ body.single-product form.cart a.tinvwl_add_to_wishlist_button {
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    height: 46px !important;
-    min-height: 46px !important;
+    height: 48px !important;
+    min-height: 48px !important;
     padding: 0 22px !important;
     margin: 0 !important;
     box-sizing: border-box !important;
@@ -1412,7 +1412,7 @@ body.single-product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list {
     body:not(.rtl) .elementor-8 .elementor-element.elementor-element-1effde67,
     .elementor-8 .elementor-element.elementor-element-1effde67,
     .elementor-element.elementor-element-1effde67 {
-        left: -20px !important;
+        left: 10px !important;
         bottom: -50px !important;
         max-width: 300px !important;
     }
@@ -1813,6 +1813,7 @@ body.single-product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list {
 
 .sa-pincode-input {
     flex: 1 !important;
+    min-width: 0 !important;
     height: 38px !important;
     background: #FFFFFF !important;
     border: 1.5px solid rgba(181, 93, 68, 0.25) !important;
@@ -1884,21 +1885,22 @@ body.single-product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list {
 
 .elementor-60 .elementor-element.elementor-element-1a8255a .quantity .qty {
     height: 48px !important;
-    width: 62px !important;
-    border-radius: 8px !important;
-    border: 1px solid rgba(181, 93, 68, 0.3) !important;
+    width: 65px !important;
+    border-radius: 50px !important;
+    border: 1.5px solid rgba(181, 93, 68, 0.28) !important;
     background-color: #FAF7F5 !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
     color: #2D1F1B !important;
     text-align: center !important;
+    box-sizing: border-box !important;
 }
 
 .elementor-60 .elementor-element.elementor-element-1a8255a .cart button.single_add_to_cart_button,
 .elementor-60 .elementor-element.elementor-element-1a8255a .cart .button {
     height: 48px !important;
     padding: 0 32px !important;
-    border-radius: 30px !important;
+    border-radius: 50px !important;
     background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
     color: #FFFFFF !important;
     font-size: 15px !important;
@@ -2829,6 +2831,337 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
         border-radius: 12px !important;
     }
 }
+
+/* ==========================================================================
+   13. SITE-WIDE COMPREHENSIVE RESPONSIVENESS (MOBILE & TABLET EXCELLENCE)
+   ========================================================================== */
+
+/* 13.1 Shop & Product Loop Grids on Mobile (< 768px) */
+@media (max-width: 767px) {
+    /* Tighten grid gap to maximize product image and title space */
+    .woocommerce ul.products,
+    .elementor-wc-products ul.products,
+    .products.columns-2,
+    .products.columns-3,
+    .products.columns-4 {
+        grid-column-gap: 10px !important;
+        grid-row-gap: 16px !important;
+        gap: 16px 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Product Cards: reduce horizontal padding so content fits naturally */
+    .woocommerce ul.products li.product,
+    .elementor-wc-products ul.products li.product,
+    .products .product {
+        padding: 8px 6px 14px 6px !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Product Thumbnail */
+    .woocommerce ul.products li.product a img,
+    .elementor-wc-products ul.products li.product a img,
+    .products .product a img {
+        border-radius: 8px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Title clamp: 2 lines max, uniform card heights */
+    .woocommerce ul.products li.product .woocommerce-loop-product__title,
+    .woocommerce ul.products li.product h2,
+    .elementor-wc-products ul.products li.product .woocommerce-loop-product__title,
+    .products .product .woocommerce-loop-product__title {
+        font-size: 13px !important;
+        line-height: 1.35 !important;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        text-align: center !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        min-height: 35px !important;
+    }
+
+    /* Price row: Flex wrap, centered, comfortable gap */
+    .woocommerce ul.products li.product .price,
+    .elementor-wc-products ul.products li.product .price,
+    .products .product .price {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 3px 6px !important;
+        font-size: 13.5px !important;
+        margin: 4px 0 8px 0 !important;
+    }
+
+    .woocommerce ul.products li.product .price del,
+    .elementor-wc-products ul.products li.product .price del,
+    .products .product .price del {
+        font-size: 12px !important;
+    }
+
+    .woocommerce ul.products li.product .price ins,
+    .elementor-wc-products ul.products li.product .price ins,
+    .products .product .price ins {
+        font-size: 14.5px !important;
+    }
+
+    /* Add to cart loop button: compact, sleek full-width pill */
+    .woocommerce ul.products li.product .button.add_to_cart_button,
+    .woocommerce ul.products li.product .button,
+    .elementor-wc-products ul.products li.product .button {
+        width: 100% !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        border-radius: 50px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        padding: 0 8px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Wishlist link in loop: subtle spacing */
+    .woocommerce ul.products li.product .tinv-wraper,
+    .elementor-wc-products ul.products li.product .tinv-wraper,
+    .products .product .tinv-wraper {
+        margin: 6px auto 0 auto !important;
+    }
+
+    .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button,
+    .elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button,
+    .products .product a.tinvwl_add_to_wishlist_button {
+        font-size: 11.5px !important;
+        padding: 2px 4px !important;
+    }
+}
+
+/* 13.2 Product Detail Page (PDP) Mobile Responsiveness (< 768px) */
+@media (max-width: 767px) {
+    /* Scale title gracefully */
+    .woocommerce div.product .product_title,
+    .elementor-60 .elementor-element-3172e272 .elementor-heading-title {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Scale related products section heading */
+    .elementor-60 .elementor-element-21f8698b .elementor-heading-title {
+        font-size: 22px !important;
+    }
+
+    /* PDP Price container */
+    .elementor-60 .elementor-element.elementor-element-298c0c30 .price {
+        font-size: 22px !important;
+        margin: 6px 0 10px 0 !important;
+    }
+
+    .elementor-60 .elementor-element.elementor-element-298c0c30 .price ins {
+        font-size: 22px !important;
+    }
+
+    .elementor-60 .elementor-element.elementor-element-298c0c30 .price del {
+        font-size: 14px !important;
+    }
+
+    /* Pincode availability checker container */
+    .sa-pincode-checker {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 12px 14px !important;
+    }
+
+    .sa-pincode-btn {
+        padding: 0 16px !important;
+        font-size: 12.5px !important;
+    }
+
+    /* Accordion headers & body */
+    .sa-accordion-header {
+        font-size: 16px !important;
+        padding: 14px 2px !important;
+    }
+
+    .sa-accordion-body {
+        font-size: 13.5px !important;
+        line-height: 1.6 !important;
+        padding: 10px 2px 16px 2px !important;
+    }
+}
+
+/* 13.3 Slide-Out Mini-Cart Drawer on Small Screens */
+@media (max-width: 767px) {
+    .elementor-menu-cart__main {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .elementor-menu-cart__container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .elementor-menu-cart__footer-buttons {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .elementor-menu-cart__footer-buttons a.elementor-button {
+        width: 100% !important;
+        padding: 11px 16px !important;
+        font-size: 13.5px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* 13.4 WooCommerce Cart Page Mobile Polish (< 768px) */
+@media (max-width: 767px) {
+    .woocommerce-cart table.cart {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .woocommerce-cart table.cart td.actions {
+        padding: 14px 10px !important;
+    }
+
+    .woocommerce-cart table.cart td.actions .coupon {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 12px !important;
+    }
+
+    .woocommerce-cart table.cart td.actions .coupon .input-text {
+        width: 100% !important;
+        height: 44px !important;
+        border-radius: 50px !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .woocommerce-cart table.cart td.actions .coupon .button {
+        width: 100% !important;
+        height: 44px !important;
+        border-radius: 50px !important;
+        padding: 0 20px !important;
+    }
+
+    .woocommerce-cart table.cart td.actions .button[name="update_cart"] {
+        width: 100% !important;
+        height: 44px !important;
+        border-radius: 50px !important;
+    }
+
+    .woocommerce-cart .cart_totals {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+    }
+
+    .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+        width: 100% !important;
+        height: 48px !important;
+        border-radius: 50px !important;
+        font-size: 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* 13.5 WooCommerce Checkout Page Mobile Polish (< 768px) */
+@media (max-width: 767px) {
+    .woocommerce-checkout .woocommerce-checkout-review-order {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+    }
+
+    .woocommerce-checkout #place_order {
+        height: 48px !important;
+        font-size: 15.5px !important;
+    }
+
+    .sa-checkout-trust {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 12px 14px !important;
+    }
+}
+
+/* 13.6 Wishlist Page Mobile Table Touch Scrolling (< 768px) */
+@media (max-width: 767px) {
+    .tinv-wishlist.woocommerce:not(.tinv-wraper),
+    .page-id-330 .tinv-wishlist.woocommerce {
+        margin: 20px 10px !important;
+        padding: 18px 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .tinv-wishlist:not(.tinv-wraper) table.tinv-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+/* 13.7 Footer 3-Column Mobile Centering & Alignment (< 768px) */
+@media (max-width: 767px) {
+    .elementor-28 .elementor-element.elementor-element-538bbf77,
+    .elementor-28 .elementor-element.elementor-element-738f02be,
+    .elementor-28 .elementor-element.elementor-element-64c7b07a {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: 14px !important;
+    }
+
+    .elementor-28 .elementor-element.elementor-element-37708728 {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .elementor-28 .elementor-element.elementor-element-37708728 .elementor-social-icons-wrapper {
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    .elementor-28 .elementor-element-503537d2,
+    .elementor-28 .elementor-element-503537d2 .elementor-heading-title,
+    .elementor-28 .elementor-element-503537d2 div {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* 13.8 Ultra-Compact Top Announcement Bar on Small Screens (< 480px) */
+@media (max-width: 480px) {
+    .elementor-26 .elementor-element.elementor-element-41ce45a8 .elementor-heading-title {
+        font-size: 10.5px !important;
+        letter-spacing: 0.1px !important;
+        padding: 1px 0 !important;
+    }
+}
+
 
 
 

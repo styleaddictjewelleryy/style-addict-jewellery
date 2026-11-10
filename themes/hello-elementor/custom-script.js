@@ -655,5 +655,36 @@
         $(document).on('click', '.elementor-menu-cart__toggle_button, .elementor-menu-cart__toggle', function () {
             setTimeout(initCartEnhancements, 100);
         });
+
+        /* ======================================================================
+           6. MOBILE NAVIGATION DRAWER ENHANCEMENT (Wishlist & Account Links)
+           ====================================================================== */
+        function initMobileMenuEnhancements() {
+            var $mobileNavs = $('.elementor-26 .elementor-nav-menu--dropdown, .elementor-element-7b53a35a .elementor-nav-menu--dropdown');
+            $mobileNavs.each(function () {
+                var $menu = $(this);
+                if (!$menu.find('#sa-mobile-menu-divider').length) {
+                    var extraLinksHTML = 
+                        '<li id="sa-mobile-menu-divider" class="menu-item menu-item-type-custom menu-item-object-custom sa-mobile-menu-divider" style="border-top: 1px solid rgba(181, 93, 68, 0.2); margin: 8px 0 4px 0; padding: 0;"></li>' +
+                        '<li class="menu-item menu-item-type-custom menu-item-object-custom sa-mobile-nav-item">' +
+                            '<a href="/wishlist/" class="elementor-item elementor-item-anchor" style="display: flex; align-items: center; gap: 8px; color: #2D1F1B; font-weight: 500; padding: 10px 0;">' +
+                                '<span style="color: #D44332; font-size: 16px; line-height: 1;">&#9825;</span> My Wishlist' +
+                            '</a>' +
+                        '</li>' +
+                        '<li class="menu-item menu-item-type-custom menu-item-object-custom sa-mobile-nav-item">' +
+                            '<a href="/my-account/" class="elementor-item elementor-item-anchor" style="display: flex; align-items: center; gap: 8px; color: #2D1F1B; font-weight: 500; padding: 10px 0;">' +
+                                '<span style="color: #B55D44; font-size: 16px; line-height: 1;">&#128100;</span> My Account' +
+                            '</a>' +
+                        '</li>';
+                    $menu.append(extraLinksHTML);
+                }
+            });
+        }
+
+        initMobileMenuEnhancements();
+        $(document).on('click', '.elementor-menu-toggle', function () {
+            setTimeout(initMobileMenuEnhancements, 50);
+            setTimeout(initMobileMenuEnhancements, 250);
+        });
     });
 })(jQuery);
