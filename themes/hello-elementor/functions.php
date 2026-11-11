@@ -895,7 +895,7 @@ add_action( 'init', 'style_addict_migrate_faq_whatsapp_link', 99 );
  * One-time cleanup: move the Contact / Contact Us page to Trash and remove it from navigation menus.
  */
 function style_addict_remove_contact_page_and_nav() {
-	if ( get_option( 'style_addict_contact_page_removed_v1' ) ) {
+	if ( get_option( 'style_addict_contact_page_removed_v2' ) ) {
 		return;
 	}
 
@@ -932,7 +932,10 @@ function style_addict_remove_contact_page_and_nav() {
 	}
 
 	flush_rewrite_rules( false );
-	update_option( 'style_addict_contact_page_removed_v1', 1 );
+	do_action( 'nfd_purge_all' );
+	do_action( 'epc_purge' );
+	do_action( 'litespeed_purge_all' );
+	update_option( 'style_addict_contact_page_removed_v2', 1 );
 }
 add_action( 'init', 'style_addict_remove_contact_page_and_nav', 100 );
 
