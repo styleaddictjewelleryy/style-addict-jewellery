@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.22.0
+ * Version: 3.23.0
  */
 
 /* ==========================================================================
@@ -700,6 +700,74 @@ p,
    5. PRODUCT CARDS & PROFESSIONAL WISHLIST BUTTON
    ========================================================================== */
 
+/* Product Loop Cards: Full-Width Add to Cart (Crimson Default & Deep Ruby Hover) */
+.woocommerce ul.products li.product .woocommerce-loop-product__buttons,
+.products .product .woocommerce-loop-product__buttons,
+.elementor-wc-products ul.products li.product .woocommerce-loop-product__buttons {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__buttons .button,
+.woocommerce ul.products li.product a.button,
+.woocommerce ul.products li.product .button.add_to_cart_button,
+.products .product .woocommerce-loop-product__buttons .button,
+.products .product a.button,
+.products .product .button.add_to_cart_button,
+.elementor-wc-products ul.products li.product .woocommerce-loop-product__buttons .button,
+.elementor-wc-products ul.products li.product a.button,
+.elementor-wc-products ul.products li.product .button.add_to_cart_button {
+    width: 100% !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 6px 0 0 0 !important;
+    padding: 0 16px !important;
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background-color: #D44332 !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid transparent !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.32) !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__buttons .button:hover,
+.woocommerce ul.products li.product a.button:hover,
+.woocommerce ul.products li.product .button.add_to_cart_button:hover,
+.products .product .woocommerce-loop-product__buttons .button:hover,
+.products .product a.button:hover,
+.products .product .button.add_to_cart_button:hover,
+.elementor-wc-products ul.products li.product .woocommerce-loop-product__buttons .button:hover,
+.elementor-wc-products ul.products li.product a.button:hover,
+.elementor-wc-products ul.products li.product .button.add_to_cart_button:hover {
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    background-color: #8F1D14 !important;
+    color: #FFFFFF !important;
+    border-color: transparent !important;
+    box-shadow: 0 6px 20px rgba(143, 29, 20, 0.42) !important;
+    transform: translateY(-2px) !important;
+}
+
+.woocommerce ul.products li.product a.added_to_cart.wc-forward,
+.products .product a.added_to_cart.wc-forward,
+.elementor-wc-products ul.products li.product a.added_to_cart.wc-forward {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #D44332 !important;
+    text-decoration: underline !important;
+}
+
 /* Universal Reset for Wishlist Button Wrappers (Prevents Oversized Boxes) */
 .tinv-wraper,
 .tinv-wraper.tinvwl-loop-button-wrapper,
@@ -720,6 +788,14 @@ p,
     text-align: center !important;
 }
 
+.tinv-wraper.tinvwl-loop-button-wrapper,
+.woocommerce ul.products li.product .tinv-wraper,
+.products .product .tinv-wraper,
+.elementor-wc-products ul.products li.product .tinv-wraper {
+    width: 100% !important;
+    margin: 8px 0 0 0 !important;
+}
+
 .tinv-wraper .tinv-wishlist-clear {
     display: none !important;
     height: 0 !important;
@@ -731,33 +807,35 @@ p,
     display: none !important;
 }
 
-/* Professional Minimalist Wishlist Button on Product Loop Cards */
+/* Full-Width Red Rounded Stroke Wishlist Button on Product Loop Cards */
 .tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button,
 .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button,
 .products .product a.tinvwl_add_to_wishlist_button,
 .elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button,
 .tinvwl_add_to_wishlist_button.tinvwl-loop {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 5px !important;
+    width: 100% !important;
     background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
+    border: 1.5px solid #D44332 !important;
+    border-radius: 50px !important;
     box-shadow: none !important;
-    padding: 4px 8px !important;
-    margin: 0 auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    line-height: 1.4 !important;
-    color: #7A6862 !important;
+    padding: 0 14px !important;
+    margin: 0 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 1.2 !important;
+    color: #D44332 !important;
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 12.5px !important;
-    font-weight: 500 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
     letter-spacing: 0.2px !important;
     text-decoration: none !important;
     cursor: pointer !important;
-    transition: color 0.25s ease, transform 0.2s ease !important;
+    box-sizing: border-box !important;
+    transition: all 0.25s ease !important;
 }
 
 .tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button:hover,
@@ -765,10 +843,10 @@ p,
 .products .product a.tinvwl_add_to_wishlist_button:hover,
 .elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button:hover,
 .tinvwl_add_to_wishlist_button.tinvwl-loop:hover {
-    color: #D44332 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    color: #8F1D14 !important;
+    background: rgba(212, 67, 50, 0.08) !important;
+    border: 1.5px solid #8F1D14 !important;
+    box-shadow: 0 4px 12px rgba(212, 67, 50, 0.14) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -776,8 +854,8 @@ p,
 .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
 .products .product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text {
     color: inherit !important;
-    font-size: 12.5px !important;
-    font-weight: 500 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
     letter-spacing: 0.2px !important;
 }
 
@@ -798,6 +876,15 @@ p,
 }
 
 /* Active Wishlist State (Already added) */
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list,
+.products .product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list,
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-product-in-list {
+    background: #FFF2F0 !important;
+    border-color: #D44332 !important;
+    color: #D44332 !important;
+}
+
 .tinvwl_add_to_wishlist_button.tinvwl-product-in-list,
 .tinvwl_add_to_wishlist_button.tinvwl-product-in-list .tinvwl_add_to_wishlist-text,
 .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-in-list:before {
@@ -805,11 +892,18 @@ p,
     font-weight: 600 !important;
 }
 
-.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
-.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt {
-    width: auto !important;
-    height: auto !important;
-    padding: 4px 8px !important;
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
+.products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart.no-txt,
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt,
+.products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt,
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart-plus.no-txt {
+    width: 100% !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 14px !important;
 }
 
 .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before,
@@ -3025,18 +3119,40 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
         box-sizing: border-box !important;
     }
 
-    /* Wishlist link in loop: subtle spacing */
+    /* Wishlist link in loop: full-width compact red stroke pill */
     .woocommerce ul.products li.product .tinv-wraper,
     .elementor-wc-products ul.products li.product .tinv-wraper,
     .products .product .tinv-wraper {
-        margin: 6px auto 0 auto !important;
+        width: 100% !important;
+        margin: 6px 0 0 0 !important;
     }
 
     .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button,
     .elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button,
-    .products .product a.tinvwl_add_to_wishlist_button {
+    .products .product a.tinvwl_add_to_wishlist_button,
+    .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
+    .products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
+        width: 100% !important;
+        height: 36px !important;
+        min-height: 36px !important;
         font-size: 11.5px !important;
-        padding: 2px 4px !important;
+        padding: 0 8px !important;
+        border: 1.5px solid #D44332 !important;
+        border-radius: 50px !important;
+    }
+
+    .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+    .elementor-wc-products ul.products li.product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text,
+    .products .product a.tinvwl_add_to_wishlist_button .tinvwl_add_to_wishlist-text {
+        font-size: 11.5px !important;
+    }
+
+    .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+    .products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+    .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+    .products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before {
+        font-size: 22px !important;
+        margin-right: 4px !important;
     }
 }
 
