@@ -569,4 +569,262 @@ function style_addict_custom_sale_flash( $html, $post, $product ) {
 }
 add_filter( 'woocommerce_sale_flash', 'style_addict_custom_sale_flash', 20, 3 );
 
+/**
+ * Register "FAQs" Custom Post Type so admins can easily add/edit Q&As
+ * from WordPress Dashboard -> FAQs -> Add New.
+ */
+function style_addict_register_faq_cpt() {
+	register_post_type( 'sa_faq', [
+		'labels' => [
+			'name'               => 'FAQs',
+			'singular_name'      => 'FAQ',
+			'menu_name'          => 'FAQs',
+			'name_admin_bar'     => 'FAQ',
+			'add_new'            => 'Add New Question',
+			'add_new_item'       => 'Add New FAQ Question',
+			'edit_item'          => 'Edit FAQ Question',
+			'new_item'           => 'New FAQ Question',
+			'view_item'          => 'View FAQ',
+			'all_items'          => 'All FAQs',
+			'search_items'       => 'Search FAQs',
+			'not_found'          => 'No FAQs found.',
+			'not_found_in_trash' => 'No FAQs found in Trash.',
+		],
+		'public'              => false,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_rest'        => true,
+		'menu_position'       => 26,
+		'menu_icon'           => 'dashicons-editor-help',
+		'supports'            => [ 'title', 'editor', 'page-attributes' ],
+		'exclude_from_search' => true,
+		'publicly_queryable'  => false,
+	] );
+}
+add_action( 'init', 'style_addict_register_faq_cpt' );
+
+/**
+ * Customize Title placeholder inside "FAQs -> Add New" editor.
+ */
+function style_addict_faq_title_placeholder( $title, $post ) {
+	if ( isset( $post->post_type ) && 'sa_faq' === $post->post_type ) {
+		return 'Enter FAQ Question here...';
+	}
+	return $title;
+}
+add_filter( 'enter_title_here', 'style_addict_faq_title_placeholder', 10, 2 );
+
+/**
+ * Show "Order" column in Admin -> FAQs list table.
+ */
+function style_addict_faq_admin_columns( $columns ) {
+	$columns['menu_order'] = 'Order';
+	return $columns;
+}
+add_filter( 'manage_sa_faq_posts_columns', 'style_addict_faq_admin_columns' );
+
+function style_addict_faq_admin_column_content( $column, $post_id ) {
+	if ( 'menu_order' === $column ) {
+		echo (int) get_post_field( 'menu_order', $post_id );
+	}
+}
+add_action( 'manage_sa_faq_posts_custom_column', 'style_addict_faq_admin_column_content', 10, 2 );
+
+/**
+ * Auto-create the /faq/ page, seed starter FAQ items, and add FAQ link to the main navbar.
+ */
+function style_addict_setup_faq_page_and_menu() {
+	if ( get_option( 'style_addict_faq_v1_setup' ) ) {
+		return;
+	}
+
+	// 1. Ensure FAQ page exists
+	$faq_page    = get_page_by_path( 'faq' );
+	$faq_page_id = $faq_page ? $faq_page->ID : 0;
+
+	if ( ! $faq_page_id ) {
+		$created_id = wp_insert_post( [
+			'post_title'     => 'FAQ',
+			'post_name'      => 'faq',
+			'post_content'   => '[sa_faq_accordion]',
+			'post_status'    => 'publish',
+			'post_type'      => 'page',
+			'comment_status' => 'closed',
+			'ping_status'    => 'closed',
+		] );
+		if ( $created_id && ! is_wp_error( $created_id ) ) {
+			$faq_page_id = (int) $created_id;
+		}
+	}
+
+	// 2. Seed starter FAQs if none exist yet
+	$existing_faqs = get_posts( [
+		'post_type'      => 'sa_faq',
+		'post_status'    => 'any',
+		'posts_per_page' => 1,
+		'fields'         => 'ids',
+	] );
+
+	if ( empty( $existing_faqs ) ) {
+		$starter_faqs = [
+			[
+				'title'   => 'How long does it take to dispatch and deliver my order?',
+				'content' => '<p>Orders are dispatched within <strong>2&ndash;3 working days</strong> after order confirmation. Delivery across India typically takes 3&ndash;7 business days depending on your PIN code. You will receive tracking details via email, SMS, or WhatsApp once dispatched.</p>',
+				'order'   => 1,
+			],
+			[
+				'title'   => 'What are the shipping and Cash on Delivery (COD) charges?',
+				'content' => '<ul><li><strong>Free Shipping:</strong> Complimentary shipping on all orders above &#8377;499.</li><li><strong>Standard Shipping:</strong> &#8377;49 delivery charge on orders below &#8377;499.</li><li><strong>Cash on Delivery (COD):</strong> Available across serviceable PIN codes at an additional charge of &#8377;99.</li></ul>',
+				'order'   => 2,
+			],
+			[
+				'title'   => 'What is your Return and Exchange policy?',
+				'content' => '<p>Products are eligible for <strong>return within 3 days</strong> of delivery and <strong>exchange within 7 days</strong> of delivery.</p><p>All returned or exchanged items must be unused, in their original condition, with original tags and packaging intact.</p>',
+				'order'   => 3,
+			],
+			[
+				'title'   => 'How do I request a return, exchange, or report a damaged parcel?',
+				'content' => '<p>Please email our customer care concierge at <a href="mailto:styleaddictjewelleryy@gmail.com">styleaddictjewelleryy@gmail.com</a> or call <a href="tel:+919830836837">+91 98308 36837</a> (9 AM &ndash; 6 PM) with your Order ID, reason for return/exchange, and an unedited unboxing video or clear photos if reporting transit damage.</p>',
+				'order'   => 4,
+			],
+			[
+				'title'   => 'How should I care for my handcrafted gold-plated & Kundan jewellery?',
+				'content' => '<p>Our pieces are crafted with premium gold plating and anti-tarnish finishes. Avoid direct contact with perfume, water, hairspray, and harsh chemicals. Gently wipe with a soft dry cloth after every wear and store individually in a jewellery box or pouch.</p>',
+				'order'   => 5,
+			],
+			[
+				'title'   => 'Are online payments safe and encrypted on Style Addict Jewellery?',
+				'content' => '<p>Yes. Every online payment via UPI, Credit/Debit Card, or NetBanking is protected with 256-bit SSL encryption and processed through RBI-authorized, PCI-DSS compliant payment gateways.</p>',
+				'order'   => 6,
+			],
+		];
+
+		foreach ( $starter_faqs as $item ) {
+			wp_insert_post( [
+				'post_title'     => $item['title'],
+				'post_content'   => $item['content'],
+				'post_status'    => 'publish',
+				'post_type'      => 'sa_faq',
+				'menu_order'     => $item['order'],
+				'comment_status' => 'closed',
+				'ping_status'    => 'closed',
+			] );
+		}
+	}
+
+	// 3. Add FAQ link to main WordPress navigation menu(s) containing Shop / Contact
+	if ( $faq_page_id ) {
+		$menus = wp_get_nav_menus();
+		if ( ! empty( $menus ) && ! is_wp_error( $menus ) ) {
+			foreach ( $menus as $menu ) {
+				$items    = wp_get_nav_menu_items( $menu->term_id );
+				$has_faq  = false;
+				$is_main  = false;
+
+				if ( is_array( $items ) ) {
+					foreach ( $items as $item ) {
+						$url = isset( $item->url ) ? untrailingslashit( $item->url ) : '';
+						if ( (int) $item->object_id === $faq_page_id || preg_match( '#/faq$#i', $url ) || 0 === strcasecmp( trim( $item->title ), 'FAQ' ) ) {
+							$has_faq = true;
+						}
+						if ( preg_match( '#/(shop|contact|contact-us)$#i', $url ) ) {
+							$is_main = true;
+						}
+					}
+				}
+
+				if ( $is_main && ! $has_faq ) {
+					wp_update_nav_menu_item( $menu->term_id, 0, [
+						'menu-item-title'     => 'FAQ',
+						'menu-item-object'    => 'page',
+						'menu-item-object-id' => $faq_page_id,
+						'menu-item-type'      => 'post_type',
+						'menu-item-status'    => 'publish',
+					] );
+				}
+			}
+		}
+	}
+
+	update_option( 'style_addict_faq_v1_setup', 1 );
+}
+add_action( 'init', 'style_addict_setup_faq_page_and_menu', 25 );
+
+/**
+ * Render Interactive Luxury FAQ Accordion via [sa_faq_accordion] shortcode.
+ */
+function style_addict_faq_accordion_shortcode() {
+	$faqs = get_posts( [
+		'post_type'      => 'sa_faq',
+		'post_status'    => 'publish',
+		'posts_per_page' => -1,
+		'orderby'        => [
+			'menu_order' => 'ASC',
+			'date'       => 'ASC',
+		],
+	] );
+
+	ob_start();
+	?>
+	<div id="sa-faq-page-wrapper" class="sa-faq-page-wrapper">
+		<div class="sa-faq-header">
+			<div class="sa-policy-badge">
+				<span class="sa-sparkle">&#10022;</span> CUSTOMER CARE &amp; HELP CENTER <span class="sa-sparkle">&#10022;</span>
+			</div>
+			<h1 class="sa-faq-main-title">Frequently Asked Questions</h1>
+			<p class="sa-faq-subtitle">Everything you need to know about orders, insured delivery, handcrafted care, returns, and exchanges.</p>
+			<div class="sa-policy-divider">
+				<span class="sa-divider-line"></span>
+				<span class="sa-divider-gem">&#9830;</span>
+				<span class="sa-divider-line"></span>
+			</div>
+		</div>
+
+		<?php if ( ! empty( $faqs ) ) : ?>
+			<div class="sa-faq-accordion-list">
+				<?php foreach ( $faqs as $index => $faq ) :
+					$is_first    = ( 0 === $index );
+					$answer_html = wpautop( wp_kses_post( do_shortcode( $faq->post_content ) ) );
+				?>
+					<div class="sa-faq-item<?php echo $is_first ? ' sa-faq-active' : ''; ?>">
+						<button type="button" class="sa-faq-question" aria-expanded="<?php echo $is_first ? 'true' : 'false'; ?>">
+							<span class="sa-faq-q-text"><?php echo esc_html( get_the_title( $faq->ID ) ); ?></span>
+							<span class="sa-faq-icon" aria-hidden="true"><?php echo $is_first ? '&minus;' : '+'; ?></span>
+						</button>
+						<div class="sa-faq-answer" style="display: <?php echo $is_first ? 'block' : 'none'; ?>;">
+							<div class="sa-faq-answer-inner">
+								<?php echo $answer_html; ?>
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		<?php else : ?>
+			<div class="sa-faq-empty">
+				<p>Questions and answers will be updated shortly. Please check back soon or reach out to our concierge team below.</p>
+			</div>
+		<?php endif; ?>
+
+		<div class="sa-policy-support-card sa-faq-support-card">
+			<div class="sa-support-icon">&#128142;</div>
+			<div class="sa-support-body">
+				<h4>Still Have a Question?</h4>
+				<p>Our dedicated customer concierge team is always delighted to help with orders, styling advice, or policy inquiries.</p>
+				<div class="sa-support-links">
+					<a href="mailto:styleaddictjewelleryy@gmail.com" class="sa-support-btn sa-support-btn--email">
+						<span>&#9993;</span> styleaddictjewelleryy@gmail.com
+					</a>
+					<a href="tel:+919830836837" class="sa-support-btn sa-support-btn--phone">
+						<span>&#9742;</span> +91 98308 36837 (9 AM &ndash; 6 PM)
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+add_shortcode( 'sa_faq_accordion', 'style_addict_faq_accordion_shortcode' );
+
+
 

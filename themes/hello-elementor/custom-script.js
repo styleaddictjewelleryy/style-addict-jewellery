@@ -679,9 +679,41 @@
         });
 
         /* ======================================================================
-           6. MOBILE NAVIGATION DRAWER ENHANCEMENT (Wishlist & Account Links)
+           6. MOBILE NAVIGATION DRAWER ENHANCEMENT & FAQ NAV LINK SAFETY CHECK
            ====================================================================== */
+        function ensureNavbarFaqLink() {
+            var isFaqActive = window.location.pathname.replace(/\/$/, '') === '/faq';
+            var activeCls = isFaqActive ? ' elementor-item-active' : '';
+
+            // Desktop menu
+            var $desktopMenu = $('#menu-1-7b53a35a, .elementor-26 .elementor-nav-menu--main ul.elementor-nav-menu').first();
+            if ($desktopMenu.length && !$desktopMenu.find('a[href*="/faq"]').length) {
+                $desktopMenu.append(
+                    '<li class="menu-item menu-item-type-post_type menu-item-object-page sa-nav-faq-item">' +
+                        '<a href="/faq/" class="elementor-item' + activeCls + '">FAQ</a>' +
+                    '</li>'
+                );
+            }
+
+            // Mobile dropdown menu (insert before Wishlist divider if present)
+            var $mobileMenu = $('#menu-2-7b53a35a, .elementor-26 .elementor-nav-menu--dropdown').first();
+            if ($mobileMenu.length && !$mobileMenu.find('a[href*="/faq"]').length) {
+                var $faqLi = $(
+                    '<li class="menu-item menu-item-type-post_type menu-item-object-page sa-nav-faq-item">' +
+                        '<a href="/faq/" class="elementor-item' + activeCls + '">FAQ</a>' +
+                    '</li>'
+                );
+                var $divider = $mobileMenu.find('#sa-mobile-menu-divider');
+                if ($divider.length) {
+                    $divider.before($faqLi);
+                } else {
+                    $mobileMenu.append($faqLi);
+                }
+            }
+        }
+
         function initMobileMenuEnhancements() {
+            ensureNavbarFaqLink();
             var $mobileNavs = $('.elementor-26 .elementor-nav-menu--dropdown, .elementor-element-7b53a35a .elementor-nav-menu--dropdown');
             $mobileNavs.each(function () {
                 var $menu = $(this);
@@ -708,5 +740,37 @@
             setTimeout(initMobileMenuEnhancements, 50);
             setTimeout(initMobileMenuEnhancements, 250);
         });
+
+        /* ======================================================================
+           7. FAQ PAGE INTERACTIVE ACCORDION
+           ====================================================================== */
+        function initFaqPageInteractions() {
+            var $faqWrapper = $('#sa-faq-page-wrapper');
+            if (!$faqWrapper.length) return;
+
+            $('body').addClass('sa-faq-active-page');
+
+            $faqWrapper.off('click.saFaq', '.sa-faq-question').on('click.saFaq', '.sa-faq-question', function (e) {
+                e.preventDefault();
+                var $btn = $(this);
+                var $item = $btn.closest('.sa-faq-item');
+                var $answer = $item.find('.sa-faq-answer');
+                var isExpanded = $btn.attr('aria-expanded') === 'true';
+
+                if (isExpanded) {
+                    $answer.slideUp(240);
+                    $btn.attr('aria-expanded', 'false');
+                    $item.removeClass('sa-faq-active');
+                    $btn.find('.sa-faq-icon').text('+');
+                } else {
+                    $answer.slideDown(260);
+                    $btn.attr('aria-expanded', 'true');
+                    $item.addClass('sa-faq-active');
+                    $btn.find('.sa-faq-icon').html('&minus;');
+                }
+            });
+        }
+
+        initFaqPageInteractions();
     });
 })(jQuery);

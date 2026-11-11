@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.21.0
+ * Version: 3.22.0
  */
 
 /* ==========================================================================
@@ -65,6 +65,7 @@ body.woocommerce-page {
 .elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item {
     color: #2D1F1B !important;
     font-weight: 500 !important;
+    white-space: nowrap !important;
     transition: color 0.3s ease !important;
 }
 
@@ -3254,6 +3255,222 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
         padding: 1px 0 !important;
     }
 }
+
+/* ==========================================================================
+   14. LUXURY FAQ PAGE & INTERACTIVE ACCORDION STYLING
+   ========================================================================== */
+
+/* Hide redundant default page title header on FAQ page when our centered card header is active */
+body.sa-faq-active-page .page-header,
+body.sa-faq-active-page main.site-main > .page-header {
+    display: none !important;
+}
+
+body.sa-faq-active-page main.site-main {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.sa-faq-page-wrapper {
+    max-width: 900px !important;
+    margin: 40px auto 72px auto !important;
+    padding: 48px 44px !important;
+    background: #FFFFFF !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(181, 93, 68, 0.14) !important;
+    box-shadow: 0 12px 40px rgba(45, 31, 27, 0.05) !important;
+    box-sizing: border-box !important;
+}
+
+.sa-faq-header {
+    text-align: center !important;
+    margin-bottom: 36px !important;
+}
+
+.sa-faq-main-title {
+    font-family: "Philosopher", serif !important;
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin: 14px 0 10px 0 !important;
+    line-height: 1.2 !important;
+}
+
+.sa-faq-subtitle {
+    font-family: "Plus Jakarta Sans", "Montserrat", sans-serif !important;
+    font-size: 15px !important;
+    color: #6E625E !important;
+    max-width: 600px !important;
+    margin: 0 auto 22px auto !important;
+    line-height: 1.6 !important;
+}
+
+.sa-faq-accordion-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+}
+
+.sa-faq-item {
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    border-radius: 14px !important;
+    background: #FFFFFF !important;
+    overflow: hidden !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease !important;
+}
+
+.sa-faq-item:hover {
+    border-color: rgba(181, 93, 68, 0.38) !important;
+    box-shadow: 0 6px 20px rgba(45, 31, 27, 0.04) !important;
+}
+
+.sa-faq-item.sa-faq-active {
+    border-color: rgba(212, 67, 50, 0.4) !important;
+    background: #FAF7F5 !important;
+    box-shadow: 0 8px 24px rgba(181, 93, 68, 0.08) !important;
+}
+
+.sa-faq-question {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    padding: 20px 24px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    color: #2D1F1B !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    transition: color 0.25s ease !important;
+}
+
+.sa-faq-item.sa-faq-active .sa-faq-question,
+.sa-faq-question:hover {
+    color: #D44332 !important;
+}
+
+.sa-faq-icon {
+    flex-shrink: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(181, 93, 68, 0.1) !important;
+    color: #B55D44 !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
+}
+
+.sa-faq-item.sa-faq-active .sa-faq-icon {
+    background: #D44332 !important;
+    color: #FFFFFF !important;
+}
+
+.sa-faq-answer {
+    padding: 0 24px 20px 24px !important;
+}
+
+.sa-faq-answer-inner {
+    border-top: 1px solid rgba(181, 93, 68, 0.14) !important;
+    padding-top: 14px !important;
+    color: #4A352F !important;
+    font-family: "Plus Jakarta Sans", "Montserrat", sans-serif !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+}
+
+.sa-faq-answer-inner p {
+    margin: 0 0 10px 0 !important;
+    color: #4A352F !important;
+}
+
+.sa-faq-answer-inner p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.sa-faq-answer-inner ul,
+.sa-faq-answer-inner ol {
+    margin: 8px 0 10px 18px !important;
+    padding: 0 !important;
+}
+
+.sa-faq-answer-inner li {
+    margin-bottom: 6px !important;
+    color: #4A352F !important;
+}
+
+.sa-faq-answer-inner a {
+    color: #D44332 !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+.sa-faq-empty {
+    text-align: center !important;
+    padding: 36px 20px !important;
+    color: #6E625E !important;
+    font-size: 15px !important;
+    background: #FAF7F5 !important;
+    border-radius: 14px !important;
+}
+
+.sa-faq-support-card {
+    margin-top: 40px !important;
+}
+
+@media (max-width: 767px) {
+    .sa-faq-page-wrapper {
+        margin: 20px 6px 48px 6px !important;
+        padding: 28px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .sa-faq-main-title {
+        font-size: 27px !important;
+    }
+
+    .sa-faq-subtitle {
+        font-size: 13.5px !important;
+    }
+
+    .sa-faq-question {
+        padding: 16px 16px !important;
+        font-size: 16.5px !important;
+        gap: 12px !important;
+    }
+
+    .sa-faq-icon {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 16px !important;
+    }
+
+    .sa-faq-answer {
+        padding: 0 16px 16px 16px !important;
+    }
+
+    .sa-faq-answer-inner {
+        font-size: 13.5px !important;
+        line-height: 1.65 !important;
+    }
+}
+
 
 
 
