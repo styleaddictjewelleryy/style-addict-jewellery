@@ -529,3 +529,44 @@ function style_addict_footer_social_icons( $content, $widget ) {
 }
 add_filter( 'elementor/widget/render_content', 'style_addict_footer_social_icons', 10, 2 );
 
+/**
+ * Lucrative luxury Sale badge showing exact % OFF dynamically on all discounted products.
+ */
+function style_addict_custom_sale_flash( $html, $post, $product ) {
+	if ( ! $product instanceof WC_Product ) {
+		return $html;
+	}
+
+	$percentage = 0;
+
+	if ( $product->is_type( 'variable' ) ) {
+		$prices = $product->get_variation_prices();
+		if ( ! empty( $prices['regular_price'] ) && ! empty( $prices['sale_price'] ) ) {
+			foreach ( $prices['regular_price'] as $key => $regular_price ) {
+				$sale_price = isset( $prices['sale_price'][ $key ] ) ? (float) $prices['sale_price'][ $key ] : 0;
+				$reg_val    = (float) $regular_price;
+				if ( $reg_val > 0 && $sale_price > 0 && $sale_price < $reg_val ) {
+					$pct = (int) round( ( ( $reg_val - $sale_price ) / $reg_val ) * 100 );
+					if ( $pct > $percentage ) {
+						$percentage = $pct;
+					}
+				}
+			}
+		}
+	} else {
+		$regular = (float) $product->get_regular_price();
+		$sale    = (float) $product->get_sale_price();
+		if ( $regular > 0 && $sale > 0 && $sale < $regular ) {
+			$percentage = (int) round( ( ( $regular - $sale ) / $regular ) * 100 );
+		}
+	}
+
+	if ( $percentage > 0 ) {
+		return '<span class="onsale sa-sale-badge"><span class="sa-sale-star">&#10022;</span> ' . esc_html( $percentage ) . '% OFF</span>';
+	}
+
+	return '<span class="onsale sa-sale-badge"><span class="sa-sale-star">&#10022;</span> SALE</span>';
+}
+add_filter( 'woocommerce_sale_flash', 'style_addict_custom_sale_flash', 20, 3 );
+
+

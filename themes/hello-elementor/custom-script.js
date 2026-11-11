@@ -171,12 +171,28 @@
            ====================================================================== */
         function initSwarovskiProductAccordions() {
             if (!$('body').hasClass('single-product')) return;
-            // If an old accordion exists (e.g. with Shipping & Returns), remove it to rebuild cleanly with Description, Features, Care
+            // Rebuild only if missing Features or the Shipping and Returns dropdown
             if ($('#sa-product-accordions').length) {
-                if ($('#sa-product-accordions:contains("Shipping")').length || !$('#sa-product-accordions:contains("Features")').length) {
+                if (!$('#sa-product-accordions:contains("Features")').length || !$('#sa-product-accordions:contains("Shipping and Returns")').length) {
                     $('#sa-product-accordions').remove();
                 } else {
                     return;
+                }
+            }
+
+            // Enhance PDP Sale Badge with live savings percentage
+            var $pdpSaleBadge = $('.elementor-60 .elementor-element-3ed3e3c0');
+            if ($pdpSaleBadge.length) {
+                var $priceWrap = $('.elementor-60 .elementor-element-298c0c30 .price, .entry-summary .price').first();
+                var delText = $priceWrap.find('del').text().replace(/[^0-9.]/g, '');
+                var insText = $priceWrap.find('ins').text().replace(/[^0-9.]/g, '');
+                var regPrice = parseFloat(delText);
+                var salePrice = parseFloat(insText);
+                if (regPrice > 0 && salePrice > 0 && salePrice < regPrice) {
+                    var discountPct = Math.round(((regPrice - salePrice) / regPrice) * 100);
+                    if (discountPct > 0) {
+                        $pdpSaleBadge.find('.elementor-heading-title').html('<span class="sa-sale-star">&#10022;</span> ' + discountPct + '% OFF &bull; LIMITED OFFER');
+                    }
                 }
             }
 

@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.20.0
+ * Version: 3.21.0
  */
 
 /* ==========================================================================
@@ -1133,6 +1133,107 @@ body.single-product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list {
     text-decoration-color: #8E827E !important;
 }
 
+/* 5.1 Lucrative Luxury Sale Badges Across All Product Cards */
+.woocommerce ul.products li.product,
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link,
+.elementor-wc-products ul.products li.product,
+.elementor-wc-products ul.products li.product a.woocommerce-LoopProduct-link {
+    position: relative !important;
+}
+
+.woocommerce span.onsale,
+.woocommerce ul.products li.product span.onsale,
+.woocommerce ul.products li.product .onsale,
+.elementor-wc-products ul.products li.product span.onsale,
+.elementor .elementor-element.elementor-wc-products ul.products li.product span.onsale,
+.products .product span.onsale,
+span.onsale.sa-sale-badge {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    left: auto !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 5px 12px !important;
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #D44332 0%, #9E231B 100%) !important;
+    background-color: #D44332 !important;
+    border: 1px solid rgba(255, 224, 178, 0.55) !important;
+    color: #FFFFFF !important;
+    font-family: "Montserrat", "Plus Jakarta Sans", sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.7px !important;
+    line-height: 1.25 !important;
+    text-transform: uppercase !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.38), 0 1px 3px rgba(0, 0, 0, 0.14) !important;
+    z-index: 10 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.woocommerce ul.products li.product:hover span.onsale,
+.elementor-wc-products ul.products li.product:hover span.onsale {
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 6px 18px rgba(212, 67, 50, 0.48), 0 2px 6px rgba(0, 0, 0, 0.16) !important;
+}
+
+.sa-sale-star {
+    color: #FFE4B5 !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+}
+
+/* Glossy Diagonal Shimmer Sweep */
+.woocommerce ul.products li.product span.onsale::after,
+.elementor-wc-products ul.products li.product span.onsale::after,
+span.onsale.sa-sale-badge::after,
+.elementor-60 .elementor-element.elementor-element-3ed3e3c0 > .elementor-widget-container::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -120% !important;
+    width: 60% !important;
+    height: 100% !important;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.38) 50%, transparent 100%) !important;
+    transform: skewX(-22deg) !important;
+    animation: saSaleShimmer 4.2s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+
+@keyframes saSaleShimmer {
+    0%, 55% { left: -120%; }
+    85%, 100% { left: 160%; }
+}
+
+@media (max-width: 767px) {
+    .woocommerce ul.products li.product span.onsale,
+    .woocommerce ul.products li.product .onsale,
+    .elementor-wc-products ul.products li.product span.onsale,
+    .elementor .elementor-element.elementor-wc-products ul.products li.product span.onsale,
+    .products .product span.onsale {
+        top: 6px !important;
+        right: 6px !important;
+        padding: 3.5px 8px !important;
+        font-size: 9.5px !important;
+        letter-spacing: 0.4px !important;
+        gap: 3px !important;
+    }
+
+    .sa-sale-star {
+        font-size: 8.5px !important;
+    }
+}
+
 
 /* ==========================================================================
    6. FOOTER ENHANCEMENTS (VIBRANT SOCIAL ICONS & COPYRIGHT)
@@ -1672,22 +1773,31 @@ body.single-product a.tinvwl_add_to_wishlist_button.tinvwl-product-in-list {
     margin-bottom: 8px !important;
 }
 
-/* Single Product "Sale!" Badge */
+/* Single Product "Sale!" / "% OFF" Badge */
 .elementor-60 .elementor-element.elementor-element-3ed3e3c0 > .elementor-widget-container {
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
-    border-radius: 6px !important;
-    padding: 4px 14px !important;
-    display: inline-block !important;
-    box-shadow: 0 3px 10px rgba(181, 93, 68, 0.25) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(135deg, #D44332 0%, #9E231B 100%) !important;
+    border: 1px solid rgba(255, 224, 178, 0.55) !important;
+    border-radius: 50px !important;
+    padding: 5px 15px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.35) !important;
     margin-bottom: 12px !important;
 }
 
 .elementor-60 .elementor-element.elementor-element-3ed3e3c0 .elementor-heading-title {
     color: #FFFFFF !important;
-    font-size: 12px !important;
+    font-family: "Montserrat", "Plus Jakarta Sans", sans-serif !important;
+    font-size: 11.5px !important;
     font-weight: 700 !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 1px !important;
     text-transform: uppercase !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin: 0 !important;
 }
 
 /* Single Product Price Container */
