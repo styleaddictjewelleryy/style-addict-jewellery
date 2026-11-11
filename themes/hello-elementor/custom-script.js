@@ -442,23 +442,6 @@
                 
                 $copyrightCol.prepend(policiesHTML);
             }
-
-            // Also add Quick Policy Links to Store Column in the footer
-            var $storeCol = $('.elementor-element-314f1659 .elementor-widget-wrap');
-            if ($storeCol.length && !$('#sa-footer-store-policies').length) {
-                var storePoliciesHTML = 
-                    '<div id="sa-footer-store-policies" class="sa-footer-store-policies">' +
-                        '<h6 class="sa-footer-subheading">Quick Policies</h6>' +
-                        '<ul class="sa-footer-policy-list">' +
-                            '<li><a href="/privacy-policy/">Privacy Policy</a></li>' +
-                            '<li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>' +
-                            '<li><a href="/shipping-delivery-policy/">Shipping &amp; Delivery</a></li>' +
-                            '<li><a href="/refund-and-return-policy/">Refund &amp; Return Policy</a></li>' +
-                            '<li><a href="/cancellation-policy/">Cancellation Policy</a></li>' +
-                        '</ul>' +
-                    '</div>';
-                $storeCol.append(storePoliciesHTML);
-            }
         }
 
         initFooterPolicies();
