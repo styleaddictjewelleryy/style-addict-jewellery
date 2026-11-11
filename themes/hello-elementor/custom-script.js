@@ -353,7 +353,20 @@
                 parsed.care = '<div class="sa-care-box"><p class="sa-care-text">Avoid contact with perfume and water. Store in a jewellery box or pouch when not in use.</p></div>';
             }
 
-            // 3.4 Construct the 3 Segmented Dropdowns: Description, Features, and Care
+            // 3.4 Construct the 4 Accordions: Description, Features, Care, and Shipping and Returns
+            var shippingReturnsHTML =
+                '<ul class="sa-features-list">' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Dispatch:</strong> Orders are dispatched within 2&ndash;3 working days.</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Free Shipping:</strong> Free shipping on all orders above &#8377;499.</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Shipping Charges:</strong> &#8377;49 delivery charge on orders below &#8377;499.</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Cash on Delivery:</strong> COD is available at an additional charge of &#8377;99.</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Returns:</strong> Products are eligible for return within 3 days of delivery.</span></li>' +
+                    '<li><span class="sa-feature-bullet">&#9670;</span> <span><strong>Exchanges:</strong> Products are eligible for exchange within 7 days of delivery.</span></li>' +
+                '</ul>' +
+                '<div class="sa-care-box sa-shipping-note">' +
+                    '<p class="sa-care-text">All products must be unused, in their original condition, with original tags and packaging intact.</p>' +
+                '</div>';
+
             var accordionHTML = 
                 '<div id="sa-product-accordions" class="sa-product-accordions">' +
                     '<!-- 1. Description Dropdown -->' +
@@ -384,6 +397,16 @@
                         '</button>' +
                         '<div class="sa-accordion-body" style="display: none;">' +
                             '<div class="sa-accordion-content sa-accordion-care">' + parsed.care + '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<!-- 4. Shipping and Returns Dropdown (Static across all products) -->' +
+                    '<div class="sa-accordion-item">' +
+                        '<button type="button" class="sa-accordion-header" aria-expanded="false">' +
+                            '<span>Shipping and Returns</span>' +
+                            '<span class="sa-accordion-icon">+</span>' +
+                        '</button>' +
+                        '<div class="sa-accordion-body" style="display: none;">' +
+                            '<div class="sa-accordion-content sa-accordion-shipping">' + shippingReturnsHTML + '</div>' +
                         '</div>' +
                     '</div>' +
                 '</div>';
