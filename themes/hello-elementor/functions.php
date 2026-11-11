@@ -727,7 +727,7 @@ function style_addict_setup_faq_page_and_menu() {
 						if ( (int) $item->object_id === $faq_page_id || preg_match( '#/faq$#i', $url ) || 0 === strcasecmp( trim( $item->title ), 'FAQ' ) ) {
 							$has_faq = true;
 						}
-						if ( preg_match( '#/(shop|contact|contact-us)$#i', $url ) ) {
+						if ( preg_match( '#/shop$#i', $url ) ) {
 							$is_main = true;
 						}
 					}
@@ -890,6 +890,90 @@ function style_addict_migrate_faq_whatsapp_link() {
 	update_option( 'style_addict_faq_wa_migrated_v1', 1 );
 }
 add_action( 'init', 'style_addict_migrate_faq_whatsapp_link', 99 );
+
+/**
+ * One-time cleanup: move the Contact / Contact Us page to Trash and remove it from navigation menus.
+ */
+function style_addict_remove_contact_page_and_nav() {
+	if ( get_option( 'style_addict_contact_page_removed_v1' ) ) {
+		return;
+	}
+
+	$contact_page_ids = [];
+	foreach ( [ 'contact-us', 'contact' ] as $slug ) {
+		$page = get_page_by_path( $slug, OBJECT, 'page' );
+		if ( $page && 'trash' !== $page->post_status ) {
+			$contact_page_ids[] = (int) $page->ID;
+			wp_trash_post( $page->ID );
+		} elseif ( $page ) {
+			$contact_page_ids[] = (int) $page->ID;
+		}
+	}
+
+	$menus = wp_get_nav_menus();
+	if ( ! empty( $menus ) && ! is_wp_error( $menus ) ) {
+		foreach ( $menus as $menu ) {
+			$items = wp_get_nav_menu_items( $menu->term_id );
+			if ( ! is_array( $items ) ) {
+				continue;
+			}
+			foreach ( $items as $item ) {
+				$url        = isset( $item->url ) ? untrailingslashit( $item->url ) : '';
+				$is_contact = in_array( (int) $item->object_id, $contact_page_ids, true )
+					|| preg_match( '#/(contact|contact-us)$#i', $url )
+					|| 0 === strcasecmp( trim( $item->title ), 'Contact' )
+					|| 0 === strcasecmp( trim( $item->title ), 'Contact Us' );
+
+				if ( $is_contact ) {
+					wp_delete_post( $item->ID, true );
+				}
+			}
+		}
+	}
+
+	flush_rewrite_rules( false );
+	update_option( 'style_addict_contact_page_removed_v1', 1 );
+}
+add_action( 'init', 'style_addict_remove_contact_page_and_nav', 100 );
+
+/**
+ * Redirect legacy /contact/ or /contact-us/ URLs cleanly to the home page once trashed.
+ */
+function style_addict_redirect_removed_contact_page() {
+	if ( ! is_404() || empty( $_SERVER['REQUEST_URI'] ) ) {
+		return;
+	}
+
+	$request_path = trim( wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH ), '/' );
+	if ( in_array( strtolower( $request_path ), [ 'contact', 'contact-us' ], true ) ) {
+		wp_safe_redirect( home_url( '/' ), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'style_addict_redirect_removed_contact_page' );
+
+/**
+ * Route any remaining Elementor button widgets pointing to the removed Contact page to WhatsApp.
+ */
+function style_addict_replace_contact_button_with_whatsapp( $content, $widget ) {
+	if ( is_object( $widget ) && method_exists( $widget, 'get_name' ) && 'button' === $widget->get_name() ) {
+		if ( preg_match( '#href=["\']https?://[^"\']*/contact(?:-us)?/?["\']#i', $content ) ) {
+			$content = preg_replace(
+				'#href=["\']https?://[^"\']*/contact(?:-us)?/?["\']#i',
+				'href="https://wa.me/917003563540" target="_blank" rel="noopener noreferrer"',
+				$content
+			);
+			$content = preg_replace(
+				'/(<span[^>]*class=["\'][^"\']*elementor-button-text[^"\']*["\'][^>]*>)\s*Contact(?:\s+Us)?\s*(<\/span>)/i',
+				'$1Chat on WhatsApp$2',
+				$content
+			);
+		}
+	}
+	return $content;
+}
+add_filter( 'elementor/widget/render_content', 'style_addict_replace_contact_button_with_whatsapp', 10, 2 );
+
 
 
 
