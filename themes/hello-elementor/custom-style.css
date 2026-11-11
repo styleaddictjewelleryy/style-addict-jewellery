@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.18.0
+ * Version: 3.19.0
  */
 
 /* ==========================================================================
@@ -783,11 +783,15 @@ p,
 .tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
 .woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
 .products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
-.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart:before {
-    font-size: 14px !important;
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart:before,
+.tinv-wraper.tinvwl-loop-button-wrapper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+.woocommerce ul.products li.product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+.products .product a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+.tinvwl_add_to_wishlist_button.tinvwl-loop.tinvwl-icon-heart-plus:before {
+    font-size: 28px !important;
     line-height: 1 !important;
     color: inherit !important;
-    margin-right: 4px !important;
+    margin-right: 6px !important;
     vertical-align: middle !important;
     display: inline-block !important;
 }
@@ -798,6 +802,19 @@ p,
 .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-in-list:before {
     color: #D44332 !important;
     font-weight: 600 !important;
+}
+
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt,
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt {
+    width: auto !important;
+    height: auto !important;
+    padding: 4px 8px !important;
+}
+
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before,
+.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before {
+    position: static !important;
+    margin: 0 !important;
 }
 
 /* Single Product Page (PDP) Cart Actions & Professional Wishlist Button */
@@ -919,8 +936,10 @@ body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop) .tinvwl_ad
 }
 
 body.single-product .tinv-wraper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
-body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop).tinvwl-icon-heart:before {
-    font-size: 16px !important;
+body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop).tinvwl-icon-heart:before,
+body.single-product .tinv-wraper a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop).tinvwl-icon-heart-plus:before {
+    font-size: 32px !important;
     line-height: 1 !important;
     color: inherit !important;
     margin: 0 !important;
