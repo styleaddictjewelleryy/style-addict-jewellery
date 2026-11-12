@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.26.0
+ * Version: 3.27.0
  */
 
 /* ==========================================================================
@@ -620,16 +620,15 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     text-shadow: none !important;
 }
 
-/* "Discover Collections" Section: Dark Luxury Background & Crisp White Text */
+/* "Discover Collections" Section: Preserve Background Image with Dark Overlay & Crisp White Text */
 .elementor-element.elementor-element-7e790f0 {
-    background: #1A1311 !important;
-    background: linear-gradient(135deg, #16100E 0%, #261B18 100%) !important;
+    background-color: #1A1311 !important;
     padding: 56px 20px !important;
 }
 
 .elementor-element.elementor-element-7e790f0 > .elementor-background-overlay {
-    background: transparent !important;
-    opacity: 0 !important;
+    background: linear-gradient(135deg, rgba(16, 11, 10, 0.74) 0%, rgba(28, 20, 18, 0.72) 100%) !important;
+    opacity: 1 !important;
 }
 
 .elementor-element.elementor-element-1c9ef285 .elementor-heading-title,
@@ -640,6 +639,7 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     line-height: 1.2 !important;
     letter-spacing: -0.5px !important;
     margin-bottom: 8px !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
 }
 
 .elementor-element.elementor-element-2b49b79b p,
