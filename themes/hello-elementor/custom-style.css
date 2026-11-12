@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.27.0
+ * Version: 3.28.0
  */
 
 /* ==========================================================================
@@ -526,6 +526,9 @@ button.elementor-button:not(.elementor-menu-cart__toggle_button),
 .elementor-widget-form .elementor-button,
 .elementor-widget-form button[type="submit"],
 .e-form__buttons button,
+.elementor-28 .elementor-button,
+.elementor-28 button[type="submit"],
+.elementor-28 .e-form__buttons button,
 /* WooCommerce Buttons */
 .woocommerce #respond input#submit,
 .woocommerce a.button,
@@ -574,6 +577,9 @@ button.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
 .elementor-widget-form .elementor-button:hover,
 .elementor-widget-form button[type="submit"]:hover,
 .e-form__buttons button:hover,
+.elementor-28 .elementor-button:hover,
+.elementor-28 button[type="submit"]:hover,
+.elementor-28 .e-form__buttons button:hover,
 /* WooCommerce Button Hover */
 .woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover,
@@ -672,15 +678,79 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
 }
 
 /* General Overlines & Subtitles */
-.elementor h6.elementor-heading-title:not(.elementor-element-b1a1a30 *),
+.elementor h6.elementor-heading-title:not(.elementor-element-b1a1a30 *):not(.elementor-element-2409f8e0 *),
 .elementor-element-1e28c3dc .elementor-heading-title,
-.elementor-widget-heading h6:not(.elementor-element-b1a1a30 *) {
+.elementor-widget-heading h6:not(.elementor-element-b1a1a30 *):not(.elementor-element-2409f8e0 *) {
     color: #D44332 !important;
     font-weight: 700 !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
     font-size: 13px !important;
     margin-bottom: 8px !important;
+}
+
+/* "Testimonials" Header & Carousel Sections: Dark Shade Over Background Image & Crisp White Text */
+.elementor-element.elementor-element-444ef619 {
+    background-color: #1A1311 !important;
+    padding: 56px 20px 44px 20px !important;
+}
+
+.elementor-element.elementor-element-444ef619 > .elementor-background-overlay {
+    background: linear-gradient(135deg, rgba(16, 11, 10, 0.74) 0%, rgba(28, 20, 18, 0.72) 100%) !important;
+    opacity: 1 !important;
+}
+
+.elementor-element.elementor-element-444ef619 .elementor-element-2409f8e0 h6.elementor-heading-title,
+.elementor-element.elementor-element-444ef619 .elementor-element-637bb5 .elementor-heading-title {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
+}
+
+.elementor-element.elementor-element-444ef619 .elementor-element-2c251c1 p,
+.elementor-element.elementor-element-444ef619 .elementor-element-2c251c1 span {
+    color: rgba(255, 255, 255, 0.9) !important;
+    opacity: 1 !important;
+}
+
+.elementor-element.elementor-element-7805f70d {
+    background: #1A1311 !important;
+    padding: 12px 20px 64px 20px !important;
+}
+
+.elementor-element.elementor-element-184332ac .elementor-testimonial {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 16px !important;
+    padding: 28px 24px !important;
+    opacity: 1 !important;
+}
+
+.elementor-element.elementor-element-184332ac .elementor-testimonial__text {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    font-style: normal !important;
+    line-height: 1.65 !important;
+}
+
+.elementor-element.elementor-element-184332ac .elementor-testimonial__name {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+.elementor-element.elementor-element-184332ac .elementor-testimonial__title {
+    color: rgba(255, 255, 255, 0.8) !important;
+    opacity: 1 !important;
+}
+
+.elementor-element.elementor-element-184332ac .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.45) !important;
+    opacity: 1 !important;
+}
+
+.elementor-element.elementor-element-184332ac .swiper-pagination-bullet-active {
+    background: #D44332 !important;
 }
 
 /* Main Section & Page Headlines */
@@ -965,11 +1035,17 @@ body.single-product form.cart .quantity .qty {
 
 /* Add to Cart Button on PDP */
 body.single-product form.cart .single_add_to_cart_button,
-body.single-product form.cart button[type="submit"].button {
+body.single-product form.cart button[type="submit"].button,
+body.single-product .elementor-add-to-cart .cart button.single_add_to_cart_button {
     height: 48px !important;
     padding: 0 28px !important;
     margin: 0 !important;
     border-radius: 50px !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background-color: #D44332 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(212, 67, 50, 0.32) !important;
     font-family: "Plus Jakarta Sans", sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -979,6 +1055,17 @@ body.single-product form.cart button[type="submit"].button {
     justify-content: center !important;
     box-sizing: border-box !important;
     white-space: nowrap !important;
+    transition: all 0.25s ease !important;
+}
+
+body.single-product form.cart .single_add_to_cart_button:hover,
+body.single-product form.cart button[type="submit"].button:hover,
+body.single-product .elementor-add-to-cart .cart button.single_add_to_cart_button:hover {
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    background-color: #8F1D14 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 22px rgba(143, 29, 20, 0.42) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* PDP Wishlist Container */
@@ -1002,7 +1089,7 @@ body.single-product .elementor-add-to-cart .tinv-wraper {
     box-sizing: border-box !important;
 }
 
-/* PDP Wishlist Button (Luxury Secondary Pill) */
+/* PDP Wishlist Button (Red Rounded Stroke Pill Matching Product Cards) */
 body.single-product .tinv-wraper a.tinvwl_add_to_wishlist_button,
 body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop),
 body.single-product form.cart a.tinvwl_add_to_wishlist_button {
@@ -1015,11 +1102,11 @@ body.single-product form.cart a.tinvwl_add_to_wishlist_button {
     padding: 0 22px !important;
     margin: 0 !important;
     box-sizing: border-box !important;
-    background: #FAF7F5 !important;
-    border: 1.5px solid rgba(181, 93, 68, 0.3) !important;
+    background: transparent !important;
+    border: 1.5px solid #D44332 !important;
     border-radius: 50px !important;
     box-shadow: none !important;
-    color: #7A6862 !important;
+    color: #D44332 !important;
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
@@ -1033,9 +1120,9 @@ body.single-product form.cart a.tinvwl_add_to_wishlist_button {
 body.single-product .tinv-wraper a.tinvwl_add_to_wishlist_button:hover,
 body.single-product a.tinvwl_add_to_wishlist_button:not(.tinvwl-loop):hover,
 body.single-product form.cart a.tinvwl_add_to_wishlist_button:hover {
-    background: #FFFFFF !important;
-    border-color: #D44332 !important;
-    color: #D44332 !important;
+    background: rgba(212, 67, 50, 0.08) !important;
+    border-color: #8F1D14 !important;
+    color: #8F1D14 !important;
     box-shadow: 0 4px 14px rgba(212, 67, 50, 0.14) !important;
     transform: translateY(-1px) !important;
 }
