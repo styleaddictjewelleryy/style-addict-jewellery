@@ -286,6 +286,15 @@ function style_addict_enqueue_custom_assets() {
 		time(),
 		true
 	);
+
+	wp_localize_script(
+		'style-addict-custom-interactions',
+		'saSearchConfig',
+		[
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'homeUrl' => home_url( '/' ),
+		]
+	);
 }
 add_action( 'wp_enqueue_scripts', 'style_addict_enqueue_custom_assets', 999 );
 
@@ -976,6 +985,79 @@ function style_addict_replace_contact_button_with_whatsapp( $content, $widget ) 
 	return $content;
 }
 add_filter( 'elementor/widget/render_content', 'style_addict_replace_contact_button_with_whatsapp', 10, 2 );
+
+/**
+ * Live AJAX product search endpoint for the navbar search bar.
+ */
+function style_addict_ajax_live_product_search() {
+	$term = isset( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : '';
+	$term = trim( $term );
+
+	$search_url = add_query_arg(
+		[
+			's'         => $term,
+			'post_type' => 'product',
+		],
+		home_url( '/' )
+	);
+
+	if ( function_exists( 'mb_strlen' ) ? mb_strlen( $term ) < 2 : strlen( $term ) < 2 ) {
+		wp_send_json_success( [
+			'items'     => [],
+			'searchUrl' => $search_url,
+		] );
+	}
+
+	$args = [
+		'post_type'      => 'product',
+		'post_status'    => 'publish',
+		's'              => $term,
+		'posts_per_page' => 6,
+		'no_found_rows'  => true,
+	];
+
+	if ( taxonomy_exists( 'product_visibility' ) ) {
+		$args['tax_query'] = [
+			[
+				'taxonomy' => 'product_visibility',
+				'field'    => 'name',
+				'terms'    => 'exclude-from-search',
+				'operator' => 'NOT IN',
+			],
+		];
+	}
+
+	$query = new WP_Query( $args );
+	$items = [];
+
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$product_id = get_the_ID();
+			$product    = function_exists( 'wc_get_product' ) ? wc_get_product( $product_id ) : null;
+			$thumb      = get_the_post_thumbnail_url( $product_id, 'woocommerce_thumbnail' );
+			if ( ! $thumb && function_exists( 'wc_placeholder_img_src' ) ) {
+				$thumb = wc_placeholder_img_src( 'woocommerce_thumbnail' );
+			}
+
+			$items[] = [
+				'id'    => $product_id,
+				'title' => html_entity_decode( get_the_title(), ENT_QUOTES, 'UTF-8' ),
+				'url'   => get_permalink( $product_id ),
+				'thumb' => $thumb ? $thumb : '',
+				'price' => $product ? wp_kses_post( $product->get_price_html() ) : '',
+			];
+		}
+		wp_reset_postdata();
+	}
+
+	wp_send_json_success( [
+		'items'     => $items,
+		'searchUrl' => $search_url,
+	] );
+}
+add_action( 'wp_ajax_sa_live_product_search', 'style_addict_ajax_live_product_search' );
+add_action( 'wp_ajax_nopriv_sa_live_product_search', 'style_addict_ajax_live_product_search' );
 
 
 

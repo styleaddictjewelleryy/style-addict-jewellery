@@ -774,5 +774,178 @@
         }
 
         initFaqPageInteractions();
+
+        /* ======================================================================
+           8. NAVBAR PRODUCT SEARCH BAR (DESKTOP INLINE + MOBILE/TABLET DRAWER)
+           ====================================================================== */
+        function initNavbarProductSearch() {
+            var $rightCol = $('.elementor-26 .elementor-element-557bf102 .elementor-widget-wrap').first();
+            var $headerNav = $('.elementor-26 .elementor-element-744fb543').first();
+            if (!$rightCol.length) return;
+
+            var homeUrl = (window.saSearchConfig && saSearchConfig.homeUrl) ? saSearchConfig.homeUrl : '/';
+            var ajaxUrl = (window.saSearchConfig && saSearchConfig.ajaxUrl) ? saSearchConfig.ajaxUrl : '/wp-admin/admin-ajax.php';
+            var searchSvg =
+                '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+                    '<circle cx="11" cy="11" r="7"></circle>' +
+                    '<line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
+                '</svg>';
+
+            function escHtml(str) {
+                return String(str || '').replace(/[&<>"']/g, function (ch) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+                });
+            }
+
+            function buildSearchForm(extraClass) {
+                return (
+                    '<form class="sa-nav-search-form ' + extraClass + '" role="search" method="get" action="' + escHtml(homeUrl) + '">' +
+                        '<input type="hidden" name="post_type" value="product" />' +
+                        '<input type="search" name="s" class="sa-nav-search-input" placeholder="Search jewellery..." autocomplete="off" aria-label="Search products" />' +
+                        '<button type="submit" class="sa-nav-search-submit" aria-label="Search products">' + searchSvg + '</button>' +
+                        '<div class="sa-nav-search-results" aria-live="polite" hidden></div>' +
+                    '</form>'
+                );
+            }
+
+            if (!$('#sa-nav-search-desktop').length) {
+                $rightCol.prepend(
+                    '<div id="sa-nav-search-desktop" class="sa-nav-search-desktop">' +
+                        buildSearchForm('sa-nav-search-form--desktop') +
+                    '</div>'
+                );
+            }
+
+            if (!$('#sa-nav-search-toggle').length) {
+                var $toggleBtn = $(
+                    '<button type="button" id="sa-nav-search-toggle" class="sa-nav-search-toggle" aria-label="Open product search" aria-expanded="false">' +
+                        searchSvg +
+                    '</button>'
+                );
+                var $cartWidget = $rightCol.find('.elementor-element-5d52351');
+                if ($cartWidget.length) {
+                    $cartWidget.before($toggleBtn);
+                } else {
+                    $rightCol.prepend($toggleBtn);
+                }
+            }
+
+            if ($headerNav.length && !$('#sa-nav-search-mobile-drawer').length) {
+                $headerNav.after(
+                    '<div id="sa-nav-search-mobile-drawer" class="sa-nav-search-mobile-drawer" hidden>' +
+                        '<div class="sa-nav-search-mobile-inner">' +
+                            buildSearchForm('sa-nav-search-form--mobile') +
+                        '</div>' +
+                    '</div>'
+                );
+            }
+
+            // Mobile/Tablet toggle
+            $(document).off('click.saSearchToggle', '#sa-nav-search-toggle').on('click.saSearchToggle', '#sa-nav-search-toggle', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $drawer = $('#sa-nav-search-mobile-drawer');
+                var isOpen = !$drawer.prop('hidden');
+                if (isOpen) {
+                    $drawer.prop('hidden', true).removeClass('is-open');
+                    $(this).attr('aria-expanded', 'false');
+                } else {
+                    $drawer.prop('hidden', false).addClass('is-open');
+                    $(this).attr('aria-expanded', 'true');
+                    setTimeout(function () {
+                        $drawer.find('.sa-nav-search-input').trigger('focus');
+                    }, 40);
+                }
+            });
+
+            // Live AJAX autocomplete per form instance
+            var searchTimers = {};
+            var activeRequests = {};
+
+            $(document).off('input.saLiveSearch', '.sa-nav-search-input').on('input.saLiveSearch', '.sa-nav-search-input', function () {
+                var $input = $(this);
+                var $form = $input.closest('.sa-nav-search-form');
+                var $results = $form.find('.sa-nav-search-results');
+                var formKey = $form.hasClass('sa-nav-search-form--mobile') ? 'mobile' : 'desktop';
+                var val = $.trim($input.val());
+
+                clearTimeout(searchTimers[formKey]);
+                if (activeRequests[formKey] && activeRequests[formKey].readyState !== 4) {
+                    activeRequests[formKey].abort();
+                }
+
+                if (val.length < 2) {
+                    $results.prop('hidden', true).empty();
+                    return;
+                }
+
+                searchTimers[formKey] = setTimeout(function () {
+                    $results.html('<div class="sa-nav-search-loading">Searching...</div>').prop('hidden', false);
+
+                    activeRequests[formKey] = $.getJSON(ajaxUrl, {
+                        action: 'sa_live_product_search',
+                        q: val
+                    }).done(function (res) {
+                        if (!res || !res.success || !res.data) {
+                            $results.prop('hidden', true).empty();
+                            return;
+                        }
+                        var items = res.data.items || [];
+                        var searchUrl = res.data.searchUrl || (homeUrl + '?s=' + encodeURIComponent(val) + '&post_type=product');
+
+                        if (!items.length) {
+                            $results.html(
+                                '<div class="sa-nav-search-empty">No jewellery found for &ldquo;' + escHtml(val) + '&rdquo;</div>'
+                            ).prop('hidden', false);
+                            return;
+                        }
+
+                        var html = '<div class="sa-nav-search-list">';
+                        for (var i = 0; i < items.length; i++) {
+                            var item = items[i];
+                            html +=
+                                '<a href="' + escHtml(item.url) + '" class="sa-nav-search-item">' +
+                                    (item.thumb ? '<img src="' + escHtml(item.thumb) + '" alt="' + escHtml(item.title) + '" class="sa-nav-search-thumb" loading="lazy" />' : '') +
+                                    '<div class="sa-nav-search-meta">' +
+                                        '<span class="sa-nav-search-title">' + escHtml(item.title) + '</span>' +
+                                        (item.price ? '<span class="sa-nav-search-price">' + item.price + '</span>' : '') +
+                                    '</div>' +
+                                '</a>';
+                        }
+                        html +=
+                            '</div>' +
+                            '<a href="' + escHtml(searchUrl) + '" class="sa-nav-search-all">View all results for &ldquo;' + escHtml(val) + '&rdquo; &rarr;</a>';
+
+                        $results.html(html).prop('hidden', false);
+                    }).fail(function (xhr, status) {
+                        if (status !== 'abort') {
+                            $results.prop('hidden', true).empty();
+                        }
+                    });
+                }, 240);
+            });
+
+            // Close dropdowns on outside click or Escape
+            $(document).off('click.saSearchClose').on('click.saSearchClose', function (e) {
+                var $t = $(e.target);
+                if (!$t.closest('.sa-nav-search-form').length) {
+                    $('.sa-nav-search-results').prop('hidden', true);
+                }
+                if (!$t.closest('#sa-nav-search-mobile-drawer, #sa-nav-search-toggle').length) {
+                    $('#sa-nav-search-mobile-drawer').prop('hidden', true).removeClass('is-open');
+                    $('#sa-nav-search-toggle').attr('aria-expanded', 'false');
+                }
+            });
+
+            $(document).off('keydown.saSearchEsc').on('keydown.saSearchEsc', function (e) {
+                if (e.key === 'Escape') {
+                    $('.sa-nav-search-results').prop('hidden', true);
+                    $('#sa-nav-search-mobile-drawer').prop('hidden', true).removeClass('is-open');
+                    $('#sa-nav-search-toggle').attr('aria-expanded', 'false');
+                }
+            });
+        }
+
+        initNavbarProductSearch();
     });
 })(jQuery);
