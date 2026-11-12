@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.30.0
+ * Version: 3.31.0
  */
 
 /* ==========================================================================
@@ -627,9 +627,17 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
 }
 
 /* "Discover Collections" Section: Preserve Background Image with Dark Overlay & Crisp White Text */
+html body .elementor-8 .elementor-element.elementor-element-7e790f0,
 .elementor-element.elementor-element-7e790f0 {
     background-color: #1A1311 !important;
-    padding: 56px 20px !important;
+    padding: 76px 20px 76px 20px !important;
+}
+
+/* Remove negative overlap on Featured Product section so Discover Collections has clean breathing room */
+html body .elementor-8 .elementor-element.elementor-element-1bea0457,
+.elementor-element.elementor-element-1bea0457 {
+    margin-top: 0 !important;
+    padding-top: 56px !important;
 }
 
 .elementor-element.elementor-element-7e790f0 > .elementor-background-overlay {
