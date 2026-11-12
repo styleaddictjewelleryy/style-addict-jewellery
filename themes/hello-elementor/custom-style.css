@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.29.0
+ * Version: 3.30.0
  */
 
 /* ==========================================================================
@@ -713,19 +713,40 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     opacity: 1 !important;
 }
 
+html body .elementor-8 .elementor-element.elementor-element-7805f70d,
 .elementor-element.elementor-element-7805f70d {
     background: #1A1311 !important;
     padding: 12px 20px 64px 20px !important;
 }
 
-.elementor-element.elementor-element-184332ac .elementor-testimonial {
-    background: rgba(255, 255, 255, 0.06) !important;
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-main-swiper .swiper-slide,
+.elementor-element.elementor-element-184332ac .swiper-slide {
+    background-color: #241A17 !important;
+    background: #241A17 !important;
     border: 1px solid rgba(255, 255, 255, 0.14) !important;
     border-radius: 16px !important;
     padding: 28px 24px !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28) !important;
+}
+
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial,
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__content,
+.elementor-element.elementor-element-184332ac .elementor-testimonial,
+.elementor-element.elementor-element-184332ac .elementor-testimonial__content {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
     opacity: 1 !important;
 }
 
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__content::after {
+    display: none !important;
+}
+
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__text,
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__text *,
 .elementor-element.elementor-element-184332ac .elementor-testimonial__text {
     color: #FFFFFF !important;
     opacity: 1 !important;
@@ -733,14 +754,26 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     line-height: 1.65 !important;
 }
 
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__name,
 .elementor-element.elementor-element-184332ac .elementor-testimonial__name {
     color: #FFFFFF !important;
     opacity: 1 !important;
     font-weight: 700 !important;
 }
 
+html body .elementor-8 .elementor-element.elementor-element-184332ac .elementor-testimonial__title,
 .elementor-element.elementor-element-184332ac .elementor-testimonial__title {
     color: rgba(255, 255, 255, 0.8) !important;
+    opacity: 1 !important;
+}
+
+html body .elementor-8 .elementor-element.elementor-element-184332ac .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    opacity: 1 !important;
+}
+
+html body .elementor-8 .elementor-element.elementor-element-184332ac .swiper-pagination-bullet-active {
+    background-color: #D44332 !important;
     opacity: 1 !important;
 }
 
@@ -1610,10 +1643,10 @@ span.onsale.sa-sale-badge::after,
     }
 }
 
-/* Footer Newsletter Input Field */
+/* Footer Newsletter Input Field & Submit Button */
 .elementor-field-group .elementor-field-textual {
-    background-color: #F8F5F2 !important;
-    border: 1px solid rgba(181, 93, 68, 0.25) !important;
+    background-color: #FAF7F5 !important;
+    border: 1px solid rgba(212, 67, 50, 0.25) !important;
     color: #2D1F1B !important;
     border-radius: 6px !important;
     padding: 10px 16px !important;
@@ -1624,6 +1657,22 @@ span.onsale.sa-sale-badge::after,
     border-color: #D44332 !important;
     box-shadow: 0 0 0 2px rgba(212, 67, 50, 0.15) !important;
     outline: none !important;
+}
+
+.elementor-element.elementor-element-738f990 .elementor-button[type="submit"] {
+    background-color: #D44332 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #D44332 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px !important;
+    transition: background-color 0.25s ease, transform 0.2s ease !important;
+}
+
+.elementor-element.elementor-element-738f990 .elementor-button[type="submit"]:hover {
+    background-color: #B83526 !important;
+    border-color: #B83526 !important;
+    transform: translateY(-1px) !important;
 }
 
 
