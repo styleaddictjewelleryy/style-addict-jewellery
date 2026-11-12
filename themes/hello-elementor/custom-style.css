@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.28.0
+ * Version: 3.29.0
  */
 
 /* ==========================================================================
@@ -4100,6 +4100,133 @@ a.sa-nav-search-all:hover {
         display: none !important;
     }
 }
+
+/* ==========================================================================
+   18. HOMEPAGE "WHY CHOOSE US" & "OUR VALUE" LUXURY THEME ALIGNMENT
+   ========================================================================== */
+
+/* Why Choose Us Section (7a5b8e21) */
+.elementor-element.elementor-element-7a5b8e21 {
+    background-color: #FAF7F5 !important;
+    padding: 64px 20px !important;
+}
+
+.elementor-element.elementor-element-7a5b8e21 .elementor-element-3f08c0a2 h6.elementor-heading-title {
+    color: #D44332 !important;
+}
+
+.elementor-element.elementor-element-7a5b8e21 .elementor-element-57380bb5 .elementor-heading-title {
+    color: #2D1F1B !important;
+}
+
+.elementor-element.elementor-element-7a5b8e21 .elementor-element-67b1b33d p,
+.elementor-element.elementor-element-7a5b8e21 .elementor-element-67b1b33d span {
+    color: #5C4D48 !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-element-53b39930 > .elementor-element-populated,
+.elementor-element.elementor-element-624094a8 .elementor-element-5cbb5489 > .elementor-element-populated,
+.elementor-element.elementor-element-624094a8 .elementor-element-58927911 > .elementor-element-populated {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(212, 67, 50, 0.14) !important;
+    border-radius: 16px !important;
+    padding: 32px 24px !important;
+    box-shadow: 0 8px 26px rgba(45, 31, 27, 0.05) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-element-53b39930 > .elementor-element-populated:hover,
+.elementor-element.elementor-element-624094a8 .elementor-element-5cbb5489 > .elementor-element-populated:hover,
+.elementor-element.elementor-element-624094a8 .elementor-element-58927911 > .elementor-element-populated:hover {
+    border-color: rgba(212, 67, 50, 0.36) !important;
+    box-shadow: 0 14px 34px rgba(212, 67, 50, 0.12) !important;
+    transform: translateY(-4px) !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-icon-box-icon .elementor-icon {
+    color: #D44332 !important;
+    background: rgba(212, 67, 50, 0.09) !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 14px !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-icon-box-icon svg {
+    fill: #D44332 !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-icon-box-title {
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+}
+
+.elementor-element.elementor-element-624094a8 .elementor-icon-box-description {
+    color: #5C4D48 !important;
+}
+
+/* Our Value Section (52fff74e) */
+.elementor-element.elementor-element-52fff74e {
+    background-color: #FFFFFF !important;
+    padding: 64px 20px !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-element-71ed2a95 > .elementor-element-populated {
+    background: #FAF7F5 !important;
+    border: 1px solid rgba(212, 67, 50, 0.14) !important;
+    border-radius: 20px !important;
+    padding: 36px 32px !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-element-4be36c5b h6.elementor-heading-title {
+    color: #D44332 !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-element-7d4d40 .elementor-heading-title {
+    color: #2D1F1B !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-element-2dc202b3 p,
+.elementor-element.elementor-element-52fff74e .elementor-element-2dc202b3 span {
+    color: #5C4D48 !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-element-82c2f6d .elementor-divider-separator {
+    border-top-color: rgba(212, 67, 50, 0.28) !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-widget-icon-box .elementor-icon,
+.elementor-element.elementor-element-52fff74e .elementor-widget-icon-box .elementor-icon i {
+    color: #D44332 !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-widget-icon-box .elementor-icon svg {
+    fill: #D44332 !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-widget-icon-box .elementor-icon-box-title {
+    color: #2D1F1B !important;
+    font-weight: 700 !important;
+}
+
+.elementor-element.elementor-element-52fff74e .elementor-widget-icon-box .elementor-icon-box-description {
+    color: #5C4D48 !important;
+}
+
+@media (max-width: 767px) {
+    .elementor-element.elementor-element-7a5b8e21,
+    .elementor-element.elementor-element-52fff74e {
+        padding: 44px 14px !important;
+    }
+
+    .elementor-element.elementor-element-52fff74e .elementor-element-71ed2a95 > .elementor-element-populated {
+        padding: 26px 20px !important;
+    }
+}
+
 
 
 
