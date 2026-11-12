@@ -1059,6 +1059,20 @@ function style_addict_ajax_live_product_search() {
 add_action( 'wp_ajax_sa_live_product_search', 'style_addict_ajax_live_product_search' );
 add_action( 'wp_ajax_nopriv_sa_live_product_search', 'style_addict_ajax_live_product_search' );
 
+/**
+ * One-time cache purge for v3.26.0 crimson primary & Discover Collections dark theme update.
+ */
+function style_addict_purge_cache_v326() {
+	if ( get_option( 'style_addict_cache_purged_v326' ) ) {
+		return;
+	}
+	do_action( 'nfd_purge_all' );
+	do_action( 'epc_purge' );
+	do_action( 'litespeed_purge_all' );
+	update_option( 'style_addict_cache_purged_v326', 1 );
+}
+add_action( 'init', 'style_addict_purge_cache_v326', 105 );
+
 
 
 

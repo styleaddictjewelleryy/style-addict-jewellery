@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.25.0
+ * Version: 3.26.0
  */
 
 /* ==========================================================================
@@ -71,7 +71,7 @@ body.woocommerce-page {
 
 .elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item:hover,
 .elementor-26 .elementor-element.elementor-element-7b53a35a .elementor-nav-menu a.elementor-item.elementor-item-active {
-    color: #B55D44 !important;
+    color: #D44332 !important;
 }
 
 /* 2.1 SHOP DROPDOWN WITH ICON PREFIXES & LUXURY CARD STYLING */
@@ -120,22 +120,22 @@ body.woocommerce-page {
 /* Specific Dropdown Icon Prefixes */
 .elementor-nav-menu--dropdown .menu-item-153 a::before,
 .elementor-nav-menu--dropdown a[href*="pendant"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3c0 7 6 11 6 11s6-4 6-11'/%3E%3Ccircle cx='12' cy='18' r='3' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D44332' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3c0 7 6 11 6 11s6-4 6-11'/%3E%3Ccircle cx='12' cy='18' r='3' fill='%23D44332'/%3E%3C/svg%3E") !important;
 }
 
 .elementor-nav-menu--dropdown .menu-item-162 a::before,
 .elementor-nav-menu--dropdown a[href*="bracelet"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='12' rx='9' ry='6'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D44332' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='12' rx='9' ry='6'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23D44332'/%3E%3C/svg%3E") !important;
 }
 
 .elementor-nav-menu--dropdown .menu-item-163 a::before,
 .elementor-nav-menu--dropdown a[href*="ear-rings"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='11,11 8,17 14,17' fill='%23B55D44'/%3E%3Cpath d='M16 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='19,11 16,17 22,17' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D44332' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='11,11 8,17 14,17' fill='%23D44332'/%3E%3Cpath d='M16 4a3 3 0 0 1 3 3v4'/%3E%3Cpolygon points='19,11 16,17 22,17' fill='%23D44332'/%3E%3C/svg%3E") !important;
 }
 
 .elementor-nav-menu--dropdown .menu-item-333 a::before,
 .elementor-nav-menu--dropdown a[href*="jewellery-sets"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B55D44' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2' fill='%23B55D44'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D44332' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2' fill='%23D44332'/%3E%3C/svg%3E") !important;
 }
 
 /* 2.2 LOGO COLUMN (DEAD CENTER) */
@@ -338,7 +338,7 @@ body.woocommerce-page {
     margin: 0 !important;
     padding: 8px 18px !important;
     border-radius: 30px !important;
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     font-size: 13px !important;
     font-weight: 600 !important;
@@ -347,7 +347,7 @@ body.woocommerce-page {
     display: inline-flex !important;
     align-items: center !important;
     gap: 7px !important;
-    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.28) !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.28) !important;
     border: none !important;
     transition: all 0.3s ease !important;
 }
@@ -356,9 +356,9 @@ body.woocommerce-page {
 .elementor-26 .elementor-element.elementor-element-6a4d0c5 .elementor-button:hover,
 .elementor-26 .elementor-element.elementor-element-19add787 a.elementor-button:hover,
 .elementor-26 .elementor-element.elementor-element-19add787 .elementor-button:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
     color: #FFFFFF !important;
-    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(143, 29, 20, 0.4) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -513,8 +513,8 @@ body.woocommerce-page {
 
 
 /* ==========================================================================
-   3. SITE-WIDE BUTTON STYLING & VIBRANT RED HOVER
-      (Warm terracotta default -> Vibrant Red hover #D44332, not blackish)
+   3. SITE-WIDE BUTTON STYLING & CRIMSON PRIMARY THEME COLOR
+      (Crimson red primary #D44332 -> Deep ruby hover #8F1D14)
    ========================================================================== */
 
 /* All Buttons Default State */
@@ -539,11 +539,11 @@ button.elementor-button:not(.elementor-menu-cart__toggle_button),
 .tinv-wishlist .tinvwl-to-cart,
 .tinv-wishlist button.button,
 .tinv-wishlist a.button {
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
-    background-color: #B55D44 !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background-color: #D44332 !important;
     color: #FFFFFF !important;
     border-color: transparent !important;
-    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.25) !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.3) !important;
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
 }
 
@@ -562,7 +562,7 @@ button.elementor-button:not(.elementor-menu-cart__toggle_button),
     color: #FFFFFF !important;
 }
 
-/* All Buttons Hover State: VIBRANT LUXURY RED (Never blackish) */
+/* All Buttons Hover State: DEEP RUBY CRIMSON */
 .elementor-button:hover:not(.elementor-menu-cart__toggle_button),
 .elementor-button:focus:not(.elementor-menu-cart__toggle_button),
 a.elementor-button:hover:not(.elementor-menu-cart__toggle_button),
@@ -587,10 +587,10 @@ button.elementor-button:focus:not(.elementor-menu-cart__toggle_button),
 .tinv-wishlist .tinvwl-to-cart:hover,
 .tinv-wishlist button.button:hover,
 .tinv-wishlist a.button:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
-    background-color: #D44332 !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    background-color: #8F1D14 !important;
     color: #FFFFFF !important;
-    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(143, 29, 20, 0.42) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -604,8 +604,8 @@ html body .elementor .elementor-element.elementor-element-b1a1a30 .elementor-hea
 html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-title,
 .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-title,
 .elementor-element.elementor-element-b1a1a30 .elementor-heading-title {
-    background: #B55D44 !important;
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: #D44332 !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     display: inline-block !important;
     padding: 6px 16px !important;
@@ -615,15 +615,26 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
     text-transform: uppercase !important;
     font-size: 13px !important;
     line-height: 1.5 !important;
-    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.35) !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.35) !important;
     margin-bottom: 12px !important;
     text-shadow: none !important;
 }
 
-/* "Discover Collections" Header & Subtitle (Larger, bold and impactful) */
+/* "Discover Collections" Section: Dark Luxury Background & Crisp White Text */
+.elementor-element.elementor-element-7e790f0 {
+    background: #1A1311 !important;
+    background: linear-gradient(135deg, #16100E 0%, #261B18 100%) !important;
+    padding: 56px 20px !important;
+}
+
+.elementor-element.elementor-element-7e790f0 > .elementor-background-overlay {
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
 .elementor-element.elementor-element-1c9ef285 .elementor-heading-title,
 .elementor-element-1c9ef285 div.elementor-heading-title {
-    color: #2D1F1B !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
     font-size: 46px !important;
     line-height: 1.2 !important;
@@ -632,7 +643,14 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
 }
 
 .elementor-element.elementor-element-2b49b79b p,
-.elementor-element.elementor-element-2b49b79b span,
+.elementor-element.elementor-element-2b49b79b span {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    font-size: 20px !important;
+    letter-spacing: 0.2px !important;
+}
+
 .elementor-element.elementor-element-57865b09 p,
 .elementor-element.elementor-element-57865b09 span {
     color: #3D312E !important;
@@ -657,7 +675,7 @@ html body .elementor-element.elementor-element-b1a1a30 h6.elementor-heading-titl
 .elementor h6.elementor-heading-title:not(.elementor-element-b1a1a30 *),
 .elementor-element-1e28c3dc .elementor-heading-title,
 .elementor-widget-heading h6:not(.elementor-element-b1a1a30 *) {
-    color: #B55D44 !important;
+    color: #D44332 !important;
     font-weight: 700 !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
@@ -1359,8 +1377,8 @@ span.onsale.sa-sale-badge::after,
 .elementor-28 .elementor-icon-list-icon svg,
 .elementor-icon-list-icon i,
 .elementor-icon-list-icon svg {
-    color: #B55D44 !important;
-    fill: #B55D44 !important;
+    color: #D44332 !important;
+    fill: #D44332 !important;
 }
 
 .elementor-28 .elementor-icon-list-text,
@@ -1374,16 +1392,16 @@ span.onsale.sa-sale-badge::after,
 .elementor-element-37708728 .elementor-social-icon,
 .elementor-element-6bc58925 .elementor-social-icon {
     background-color: transparent !important;
-    color: #B55D44 !important;
-    fill: #B55D44 !important;
+    color: #D44332 !important;
+    fill: #D44332 !important;
     transition: all 0.3s ease !important;
 }
 
 .elementor-widget-social-icons .elementor-social-icon svg,
 .elementor-element-37708728 .elementor-social-icon svg,
 .elementor-element-6bc58925 .elementor-social-icon svg {
-    fill: #B55D44 !important;
-    color: #B55D44 !important;
+    fill: #D44332 !important;
+    color: #D44332 !important;
     width: 20px !important;
     height: 20px !important;
     transition: all 0.3s ease !important;
@@ -1392,16 +1410,16 @@ span.onsale.sa-sale-badge::after,
 .elementor-widget-social-icons .elementor-social-icon:hover,
 .elementor-element-37708728 .elementor-social-icon:hover,
 .elementor-element-6bc58925 .elementor-social-icon:hover {
-    color: #D44332 !important;
-    fill: #D44332 !important;
+    color: #8F1D14 !important;
+    fill: #8F1D14 !important;
     transform: scale(1.2) translateY(-2px) !important;
 }
 
 .elementor-widget-social-icons .elementor-social-icon:hover svg,
 .elementor-element-37708728 .elementor-social-icon:hover svg,
 .elementor-element-6bc58925 .elementor-social-icon:hover svg {
-    fill: #D44332 !important;
-    color: #D44332 !important;
+    fill: #8F1D14 !important;
+    color: #8F1D14 !important;
 }
 
 /* Footer Social Icons Wrapper Layout */
@@ -1433,7 +1451,7 @@ span.onsale.sa-sale-badge::after,
     position: absolute !important;
     top: -6px !important;
     right: -10px !important;
-    background: linear-gradient(135deg, #D44332 0%, #B55D44 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     font-family: "Montserrat", -apple-system, sans-serif !important;
     font-size: 8px !important;
@@ -1516,8 +1534,8 @@ span.onsale.sa-sale-badge::after,
 }
 
 .elementor-field-group .elementor-field-textual:focus {
-    border-color: #B55D44 !important;
-    box-shadow: 0 0 0 2px rgba(181, 93, 68, 0.15) !important;
+    border-color: #D44332 !important;
+    box-shadow: 0 0 0 2px rgba(212, 67, 50, 0.15) !important;
     outline: none !important;
 }
 
@@ -1753,11 +1771,11 @@ span.onsale.sa-sale-badge::after,
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger::before {
-    border-color: #B55D44 !important;
+    border-color: #D44332 !important;
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger::after {
-    background-color: #B55D44 !important;
+    background-color: #D44332 !important;
 }
 
 /* 2-Column Grid of 50% Width Thumbnails Below Main Image (Row 1: 2 images, Row 2: 2 images, etc.) */
@@ -1805,9 +1823,9 @@ span.onsale.sa-sale-badge::after,
 
 /* Thumbnail Hover State */
 .woocommerce div.product div.images .flex-control-thumbs li:hover {
-    border-color: #B55D44 !important;
+    border-color: #D44332 !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 10px 24px rgba(181, 93, 68, 0.2) !important;
+    box-shadow: 0 10px 24px rgba(212, 67, 50, 0.2) !important;
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li:hover img {
@@ -1822,10 +1840,10 @@ span.onsale.sa-sale-badge::after,
 
 .woocommerce div.product div.images .flex-control-thumbs li.flex-active-thumb,
 .woocommerce div.product div.images .flex-control-thumbs li:has(img.flex-active) {
-    border-color: #B55D44 !important;
-    outline: 2px solid #B55D44 !important;
+    border-color: #D44332 !important;
+    outline: 2px solid #D44332 !important;
     outline-offset: -2px !important;
-    box-shadow: 0 8px 22px rgba(181, 93, 68, 0.25) !important;
+    box-shadow: 0 8px 22px rgba(212, 67, 50, 0.25) !important;
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li.flex-active-thumb img,
@@ -1982,7 +2000,7 @@ span.onsale.sa-sale-badge::after,
 .sa-pincode-icon {
     display: inline-flex !important;
     align-items: center !important;
-    color: #B55D44 !important;
+    color: #D44332 !important;
 }
 
 .sa-pincode-form {
@@ -1996,7 +2014,7 @@ span.onsale.sa-sale-badge::after,
     min-width: 0 !important;
     height: 38px !important;
     background: #FFFFFF !important;
-    border: 1.5px solid rgba(181, 93, 68, 0.25) !important;
+    border: 1.5px solid rgba(212, 67, 50, 0.25) !important;
     border-radius: 20px !important;
     padding: 0 16px !important;
     font-family: "Montserrat", sans-serif !important;
@@ -2008,14 +2026,14 @@ span.onsale.sa-sale-badge::after,
 }
 
 .sa-pincode-input:focus {
-    border-color: #B55D44 !important;
-    box-shadow: 0 0 0 3px rgba(181, 93, 68, 0.12) !important;
+    border-color: #D44332 !important;
+    box-shadow: 0 0 0 3px rgba(212, 67, 50, 0.12) !important;
 }
 
 .sa-pincode-btn {
     height: 38px !important;
     padding: 0 20px !important;
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     font-family: "Montserrat", sans-serif !important;
     font-size: 13px !important;
@@ -2028,8 +2046,8 @@ span.onsale.sa-sale-badge::after,
 }
 
 .sa-pincode-btn:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
-    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.3) !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    box-shadow: 0 4px 14px rgba(143, 29, 20, 0.34) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -2081,21 +2099,21 @@ span.onsale.sa-sale-badge::after,
     height: 48px !important;
     padding: 0 32px !important;
     border-radius: 50px !important;
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     font-size: 15px !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
     border: none !important;
-    box-shadow: 0 4px 16px rgba(181, 93, 68, 0.3) !important;
+    box-shadow: 0 4px 16px rgba(212, 67, 50, 0.32) !important;
     transition: all 0.3s ease !important;
     flex: 1 1 200px !important;
 }
 
 .elementor-60 .elementor-element.elementor-element-1a8255a .cart button.single_add_to_cart_button:hover,
 .elementor-60 .elementor-element.elementor-element-1a8255a .cart .button:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
-    box-shadow: 0 6px 22px rgba(212, 67, 50, 0.4) !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    box-shadow: 0 6px 22px rgba(143, 29, 20, 0.42) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -2138,13 +2156,13 @@ span.onsale.sa-sale-badge::after,
     font-family: monospace, sans-serif !important;
     font-size: 22px !important;
     font-weight: 700 !important;
-    color: #B55D44 !important;
+    color: #D44332 !important;
     line-height: 1 !important;
     transition: color 0.25s ease !important;
 }
 
 .sa-accordion-header:hover .sa-accordion-icon {
-    color: #D44332 !important;
+    color: #8F1D14 !important;
 }
 
 .sa-accordion-body {
@@ -2511,7 +2529,7 @@ body.page-id-686 .page-content a:not(.sa-support-btn),
 
 body.sa-policy-active-page .page-content a:not(.sa-support-btn):hover,
 .sa-policy-page a:not(.sa-support-btn):hover {
-    color: #B55D44 !important;
+    color: #8F1D14 !important;
 }
 
 /* 11.10 Customer Support Card */
@@ -2600,11 +2618,11 @@ body .sa-policy-support-card a.sa-support-btn--email {
 .sa-support-btn--email:hover,
 body.sa-policy-active-page .page-content a.sa-support-btn--email:hover,
 body .sa-policy-support-card a.sa-support-btn--email:hover {
-    background: #B55D44 !important;
+    background: #8F1D14 !important;
     color: #FFFFFF !important;
     text-decoration: none !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 6px 18px rgba(181, 93, 68, 0.35) !important;
+    box-shadow: 0 6px 18px rgba(143, 29, 20, 0.38) !important;
 }
 
 /* WhatsApp Concierge Button: Official WhatsApp Green Pill with Crisp White Icon & Text */
@@ -2828,8 +2846,8 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
 
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart {
     background: transparent !important;
-    border: 2px solid #B55D44 !important;
-    color: #B55D44 !important;
+    border: 2px solid #D44332 !important;
+    color: #D44332 !important;
     border-radius: 30px !important;
     font-weight: 600 !important;
     text-align: center !important;
@@ -2837,25 +2855,25 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
 }
 
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover {
-    background: #B55D44 !important;
+    background: #D44332 !important;
     color: #FFFFFF !important;
     transform: translateY(-2px) !important;
 }
 
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout {
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     border-radius: 30px !important;
     font-weight: 600 !important;
     border: none !important;
-    box-shadow: 0 4px 14px rgba(181, 93, 68, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.3) !important;
     text-align: center !important;
     transition: all 0.25s ease !important;
 }
 
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
-    box-shadow: 0 6px 20px rgba(212, 67, 50, 0.4) !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    box-shadow: 0 6px 20px rgba(143, 29, 20, 0.4) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -2926,20 +2944,20 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
 }
 
 .woocommerce-checkout #place_order {
-    background: linear-gradient(135deg, #B55D44 0%, #A85038 100%) !important;
+    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     border-radius: 30px !important;
     height: 52px !important;
     font-size: 17px !important;
     font-weight: 700 !important;
     letter-spacing: 0.5px !important;
     color: #FFFFFF !important;
-    box-shadow: 0 6px 22px rgba(181, 93, 68, 0.35) !important;
+    box-shadow: 0 6px 22px rgba(212, 67, 50, 0.35) !important;
     transition: all 0.3s ease !important;
 }
 
 .woocommerce-checkout #place_order:hover {
-    background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
-    box-shadow: 0 8px 28px rgba(212, 67, 50, 0.45) !important;
+    background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    box-shadow: 0 8px 28px rgba(143, 29, 20, 0.45) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -3506,8 +3524,8 @@ body.sa-faq-active-page main.site-main {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: rgba(181, 93, 68, 0.1) !important;
-    color: #B55D44 !important;
+    background: rgba(212, 67, 50, 0.1) !important;
+    color: #D44332 !important;
     font-family: "Plus Jakarta Sans", sans-serif !important;
     font-size: 18px !important;
     font-weight: 600 !important;
@@ -3810,7 +3828,7 @@ a.sa-whatsapp-float:focus .sa-whatsapp-float-tooltip {
     border: none !important;
     border-radius: 50% !important;
     background: transparent !important;
-    color: #B55D44 !important;
+    color: #D44332 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -3905,7 +3923,7 @@ a.sa-nav-search-item:hover .sa-nav-search-title {
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #B55D44 !important;
+    color: #D44332 !important;
 }
 
 .sa-nav-search-price del {
