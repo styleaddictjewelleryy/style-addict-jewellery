@@ -35,3 +35,8 @@ wp-config-*.php
 /uploads/
 /cache/
 /upgrade/
+
+# Protect plugins folder: do not track newly added server plugins (e.g. Cashfree)
+plugins/cashfree*
+plugins/cashfree-payments-woo*
+plugins/*-cache/
