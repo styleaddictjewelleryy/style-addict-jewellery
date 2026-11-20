@@ -1066,7 +1066,11 @@ add_action( 'wp_ajax_nopriv_sa_live_product_search', 'style_addict_ajax_live_pro
  */
 function style_addict_enhance_thankyou_order_received_text( $text, $order ) {
 	if ( ! $order ) {
-		return $text;
+		// Fallback when order object is not passed
+		$order_id = isset( $GLOBALS['wp']->query_vars['order-received'] ) ? absint( $GLOBALS['wp']->query_vars['order-received'] ) : 0;
+		if ( $order_id ) {
+			$order = wc_get_order( $order_id );
+		}
 	}
 
 	if ( $order->has_status( 'failed' ) ) {
@@ -1092,7 +1096,8 @@ function style_addict_enhance_thankyou_order_received_text( $text, $order ) {
 		. '<path d="M20 33L28 41L45 23" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
 		. '</svg>';
 
-	$first_name = $order->get_billing_first_name();
+	$first_name = $order ? $order->get_billing_first_name() : '';
+	$email      = $order ? $order->get_billing_email() : '';
 	$greeting   = ! empty( $first_name ) ? 'Thank you, ' . esc_html( $first_name ) . '!' : 'Thank you for your order!';
 
 	$html  = '<div class="sa-order-status-banner sa-order-status-banner--success">';
@@ -1101,7 +1106,11 @@ function style_addict_enhance_thankyou_order_received_text( $text, $order ) {
 	$html .= '    <span class="sa-order-status-pill">&#10022; Payment Confirmed</span>';
 	$html .= '    <h2 class="sa-order-status-title">' . $greeting . '</h2>';
 	$html .= '    <p class="sa-order-status-subtitle">Your order has been received and is being prepared with utmost care.</p>';
-	$html .= '    <p class="sa-order-status-hint">A confirmation email has been sent to <strong>' . esc_html( $order->get_billing_email() ) . '</strong> with your invoice and shipping details.</p>';
+	if ( ! empty( $email ) ) {
+		$html .= '    <p class="sa-order-status-hint">A confirmation email has been sent to <strong>' . esc_html( $email ) . '</strong> with your invoice and shipping details.</p>';
+	} else {
+		$html .= '    <p class="sa-order-status-hint">A confirmation email has been sent to your billing address with your invoice and shipping details.</p>';
+	}
 	$html .= '  </div>';
 	$html .= '</div>';
 
