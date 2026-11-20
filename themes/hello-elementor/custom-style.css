@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.36.0
+ * Version: 3.37.0
  */
 
 /* ==========================================================================
@@ -3403,6 +3403,194 @@ ul.woocommerce-order-overview.order_details li.total strong {
         border-right: none !important;
         border-bottom: 1px solid rgba(181, 93, 68, 0.12) !important;
         padding-bottom: 10px !important;
+    }
+}
+
+/* ==========================================================================
+   12.4.2 ORDER DETAILS TABLE ENHANCEMENTS (PRODUCT NAME, PRICES & TOTALS)
+   ========================================================================== */
+
+/* Order Details Section Heading ("Order details") */
+.woocommerce-order-details__title,
+.woocommerce-order-details h2 {
+    font-family: "Philosopher", serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin: 36px 0 20px 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.2) !important;
+}
+
+/* Order Details Table Container */
+table.woocommerce-table--order-details,
+table.shop_table.order_details {
+    width: 100% !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 30px rgba(45, 31, 27, 0.05) !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    margin-bottom: 36px !important;
+}
+
+/* Table Header */
+table.woocommerce-table--order-details th,
+table.shop_table.order_details th {
+    background: #FAF7F5 !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    padding: 18px 24px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.18) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Table Rows & Cells */
+table.woocommerce-table--order-details td,
+table.shop_table.order_details td {
+    padding: 20px 24px !important;
+    border-bottom: 1px solid rgba(181, 93, 68, 0.12) !important;
+    color: #3F3330 !important;
+    font-size: 15.5px !important;
+}
+
+/* Product Name Link & Text: Crisp, Rich Luxury Bronze with Hover Accent */
+table.woocommerce-table--order-details td.product-name,
+table.woocommerce-table--order-details td.product-name a,
+table.shop_table.order_details td.product-name,
+table.shop_table.order_details td.product-name a,
+.woocommerce-table__product-name a,
+.woocommerce-table__line-item .product-name a {
+    color: #2D1F1B !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+    transition: color 0.25s ease !important;
+}
+
+table.woocommerce-table--order-details td.product-name a:hover,
+table.shop_table.order_details td.product-name a:hover,
+.woocommerce-table__product-name a:hover,
+.woocommerce-table__line-item .product-name a:hover {
+    color: #D44332 !important;
+}
+
+/* Quantity Multiplier ("× 1") */
+table.woocommerce-table--order-details .product-quantity,
+table.shop_table.order_details .product-quantity {
+    color: #8C7A75 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-left: 6px !important;
+}
+
+/* Product Total & Subtotals */
+table.woocommerce-table--order-details td.product-total,
+table.shop_table.order_details td.product-total {
+    font-family: "Mulish", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+}
+
+/* Table Footer / Summary Rows (Subtotal, Payment Method, Total) */
+table.woocommerce-table--order-details tfoot th,
+table.shop_table.order_details tfoot th {
+    background: #FAF7F5 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #4A3E3B !important;
+    text-transform: none !important;
+    border-top: 1px solid rgba(181, 93, 68, 0.12) !important;
+    padding: 16px 24px !important;
+}
+
+table.woocommerce-table--order-details tfoot td,
+table.shop_table.order_details tfoot td {
+    background: #FAF7F5 !important;
+    font-family: "Mulish", sans-serif !important;
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+    color: #2D1F1B !important;
+    border-top: 1px solid rgba(181, 93, 68, 0.12) !important;
+    padding: 16px 24px !important;
+}
+
+/* Grand Total Row */
+table.woocommerce-table--order-details tfoot tr:last-child th,
+table.woocommerce-table--order-details tfoot tr:last-child td,
+table.shop_table.order_details tfoot tr:last-child th,
+table.shop_table.order_details tfoot tr:last-child td {
+    background: #F5EFEB !important;
+    border-top: 2px solid rgba(181, 93, 68, 0.22) !important;
+    border-bottom: none !important;
+}
+
+table.woocommerce-table--order-details tfoot tr:last-child td .amount,
+table.shop_table.order_details tfoot tr:last-child td .amount {
+    color: #D44332 !important;
+    font-family: "Mulish", sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+}
+
+/* Customer / Billing Address Section in Thank You */
+.woocommerce-customer-details,
+section.woocommerce-customer-details {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(181, 93, 68, 0.18) !important;
+    border-radius: 16px !important;
+    padding: 28px 32px !important;
+    box-shadow: 0 8px 30px rgba(45, 31, 27, 0.05) !important;
+    margin-top: 36px !important;
+}
+
+.woocommerce-customer-details h2,
+.woocommerce-column__title {
+    font-family: "Philosopher", serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 2px solid rgba(181, 93, 68, 0.18) !important;
+}
+
+.woocommerce-customer-details address {
+    font-family: "Mulish", sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    color: #4A3E3B !important;
+    font-style: normal !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Mobile responsive for Order Details Table */
+@media (max-width: 767px) {
+    table.woocommerce-table--order-details th,
+    table.woocommerce-table--order-details td,
+    table.shop_table.order_details th,
+    table.shop_table.order_details td {
+        padding: 14px 16px !important;
+    }
+
+    table.woocommerce-table--order-details td.product-name a,
+    table.shop_table.order_details td.product-name a {
+        font-size: 16px !important;
+    }
+
+    .woocommerce-customer-details {
+        padding: 20px 18px !important;
     }
 }
 
