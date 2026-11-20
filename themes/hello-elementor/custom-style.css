@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.33.0
+ * Version: 3.34.0
  */
 
 /* ==========================================================================
@@ -3153,6 +3153,238 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
 
 .sa-trust-icon {
     font-size: 15px !important;
+}
+
+/* ==========================================================================
+   12.4.1 ORDER RECEIVED (THANK YOU) LUXURY HERO BANNER & STATUS BADGES
+   ========================================================================== */
+
+/* Outer notice container overrides */
+.woocommerce-notice.woocommerce-thankyou-order-received,
+.woocommerce-thankyou-order-received {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 20px 0 32px 0 !important;
+    font-size: 16px !important;
+    box-shadow: none !important;
+}
+
+.woocommerce-notice.woocommerce-thankyou-order-received::before {
+    display: none !important;
+}
+
+/* Success & Failed Luxury Status Card */
+.sa-order-status-banner {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 32px 36px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 14px 40px rgba(45, 31, 27, 0.08) !important;
+    overflow: hidden !important;
+    animation: saFadeSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes saFadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success Card Themes */
+.sa-order-status-banner--success {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 100%) !important;
+    border: 2px solid #86EFAC !important;
+    border-left: 8px solid #10B981 !important;
+}
+
+/* Failed Card Themes */
+.sa-order-status-banner--failed,
+.woocommerce-notice.woocommerce-thankyou-order-failed {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FEF2F2 100%) !important;
+    border: 2px solid #FCA5A5 !important;
+    border-left: 8px solid #DC2626 !important;
+    border-radius: 20px !important;
+    padding: 28px 32px !important;
+    box-shadow: 0 14px 40px rgba(220, 38, 38, 0.08) !important;
+    margin-bottom: 24px !important;
+}
+
+/* Animated SVG Icon Bubble */
+.sa-order-status-icon-wrap {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sa-order-status-icon {
+    width: 64px !important;
+    height: 64px !important;
+    display: block !important;
+    filter: drop-shadow(0 6px 16px rgba(16, 185, 129, 0.3)) !important;
+    animation: saPulseCheck 2.5s ease-in-out infinite !important;
+}
+
+.sa-order-status-failed {
+    filter: drop-shadow(0 6px 16px rgba(220, 38, 38, 0.3)) !important;
+    animation: none !important;
+}
+
+@keyframes saPulseCheck {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+/* Banner Content Typography */
+.sa-order-status-content {
+    flex: 1 !important;
+}
+
+.sa-order-status-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    color: #FFFFFF !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    padding: 4px 14px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28) !important;
+    margin-bottom: 8px !important;
+}
+
+.sa-order-status-title {
+    font-family: "Philosopher", serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #1F2937 !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.25 !important;
+}
+
+.sa-order-status-banner--failed .sa-order-status-title {
+    color: #991B1B !important;
+}
+
+.sa-order-status-subtitle {
+    font-family: "Mulish", sans-serif !important;
+    font-size: 17px !important;
+    color: #374151 !important;
+    font-weight: 600 !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.5 !important;
+}
+
+.sa-order-status-hint {
+    font-family: "Mulish", sans-serif !important;
+    font-size: 14px !important;
+    color: #6B7280 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+}
+
+.sa-order-status-hint strong {
+    color: #1F2937 !important;
+    font-weight: 700 !important;
+}
+
+/* Order Overview Details Bar Polish */
+.woocommerce ul.order_details,
+ul.woocommerce-order-overview.order_details {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: 16px !important;
+    background: #FAF7F5 !important;
+    border: 1px solid rgba(181, 93, 68, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 24px 28px !important;
+    margin: 28px 0 36px 0 !important;
+    box-shadow: 0 6px 20px rgba(45, 31, 27, 0.04) !important;
+    list-style: none !important;
+}
+
+ul.woocommerce-order-overview.order_details li {
+    border-right: 1px solid rgba(181, 93, 68, 0.18) !important;
+    border-bottom: none !important;
+    padding: 0 16px 0 0 !important;
+    margin: 0 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    color: #8C7A75 !important;
+    font-weight: 600 !important;
+}
+
+ul.woocommerce-order-overview.order_details li:last-child {
+    border-right: none !important;
+}
+
+ul.woocommerce-order-overview.order_details li strong {
+    display: block !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #2D1F1B !important;
+    text-transform: none !important;
+    margin-top: 6px !important;
+    word-break: break-word !important;
+}
+
+ul.woocommerce-order-overview.order_details li.total strong {
+    color: #D44332 !important;
+    font-size: 20px !important;
+}
+
+/* Mobile Responsiveness for Order Received Card */
+@media (max-width: 767px) {
+    .sa-order-status-banner {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 24px 20px !important;
+        gap: 16px !important;
+    }
+
+    .sa-order-status-title {
+        font-size: 24px !important;
+    }
+
+    .sa-order-status-subtitle {
+        font-size: 15px !important;
+    }
+
+    .sa-order-status-icon {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    ul.woocommerce-order-overview.order_details {
+        grid-template-columns: 1fr 1fr !important;
+        padding: 18px 16px !important;
+        gap: 14px !important;
+    }
+
+    ul.woocommerce-order-overview.order_details li {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(181, 93, 68, 0.12) !important;
+        padding-bottom: 10px !important;
+    }
 }
 
 /* 12.5 Wishlist Page Luxury Card Styling */

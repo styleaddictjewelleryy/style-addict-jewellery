@@ -1060,6 +1060,56 @@ add_action( 'wp_ajax_sa_live_product_search', 'style_addict_ajax_live_product_se
 add_action( 'wp_ajax_nopriv_sa_live_product_search', 'style_addict_ajax_live_product_search' );
 
 /**
+ * Enhance the WooCommerce Order Received (Thank You) message with luxurious styling,
+ * vibrant animated icons (green check for success / red warning for failure),
+ * and clear confirmation text.
+ */
+function style_addict_enhance_thankyou_order_received_text( $text, $order ) {
+	if ( ! $order ) {
+		return $text;
+	}
+
+	if ( $order->has_status( 'failed' ) ) {
+		$icon_svg = '<svg class="sa-order-status-icon sa-order-status-failed" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+			. '<circle cx="32" cy="32" r="30" fill="#FEE2E2" stroke="#DC2626" stroke-width="3"/>'
+			. '<path d="M22 22L42 42M42 22L22 42" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>'
+			. '</svg>';
+
+		$html  = '<div class="sa-order-status-banner sa-order-status-banner--failed">';
+		$html .= '  <div class="sa-order-status-icon-wrap">' . $icon_svg . '</div>';
+		$html .= '  <div class="sa-order-status-content">';
+		$html .= '    <h2 class="sa-order-status-title">Payment Unsuccessful</h2>';
+		$html .= '    <p class="sa-order-status-subtitle">Unfortunately, your payment could not be completed. Your order has not been charged.</p>';
+		$html .= '    <p class="sa-order-status-hint">Please attempt payment again below or choose an alternate payment method.</p>';
+		$html .= '  </div>';
+		$html .= '</div>';
+		return $html;
+	}
+
+	// Success / Processing / Completed
+	$icon_svg = '<svg class="sa-order-status-icon sa-order-status-success" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+		. '<circle cx="32" cy="32" r="30" fill="#ECFDF5" stroke="#10B981" stroke-width="3"/>'
+		. '<path d="M20 33L28 41L45 23" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
+		. '</svg>';
+
+	$first_name = $order->get_billing_first_name();
+	$greeting   = ! empty( $first_name ) ? 'Thank you, ' . esc_html( $first_name ) . '!' : 'Thank you for your order!';
+
+	$html  = '<div class="sa-order-status-banner sa-order-status-banner--success">';
+	$html .= '  <div class="sa-order-status-icon-wrap">' . $icon_svg . '</div>';
+	$html .= '  <div class="sa-order-status-content">';
+	$html .= '    <span class="sa-order-status-pill">&#10022; Payment Confirmed</span>';
+	$html .= '    <h2 class="sa-order-status-title">' . $greeting . '</h2>';
+	$html .= '    <p class="sa-order-status-subtitle">Your order has been received and is being prepared with utmost care.</p>';
+	$html .= '    <p class="sa-order-status-hint">A confirmation email has been sent to <strong>' . esc_html( $order->get_billing_email() ) . '</strong> with your invoice and shipping details.</p>';
+	$html .= '  </div>';
+	$html .= '</div>';
+
+	return $html;
+}
+add_filter( 'woocommerce_thankyou_order_received_text', 'style_addict_enhance_thankyou_order_received_text', 20, 2 );
+
+/**
  * One-time cache purge for v3.26.0 crimson primary & Discover Collections dark theme update.
  */
 function style_addict_purge_cache_v326() {
