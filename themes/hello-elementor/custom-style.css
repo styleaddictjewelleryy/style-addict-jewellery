@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.34.0
+ * Version: 3.35.0
  */
 
 /* ==========================================================================
@@ -3159,9 +3159,49 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
    12.4.1 ORDER RECEIVED (THANK YOU) LUXURY HERO BANNER & STATUS BADGES
    ========================================================================== */
 
-/* Outer notice container overrides */
-.woocommerce-notice.woocommerce-thankyou-order-received,
-.woocommerce-thankyou-order-received {
+/* Outer notice container overrides & Default Pure-CSS Card styling */
+.woocommerce-notice.woocommerce-thankyou-order-received:not(:has(.sa-order-status-banner)),
+.woocommerce-thankyou-order-received:not(:has(.sa-order-status-banner)) {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 100%) !important;
+    border: 2px solid #86EFAC !important;
+    border-left: 8px solid #10B981 !important;
+    border-radius: 20px !important;
+    padding: 26px 32px !important;
+    margin: 20px 0 32px 0 !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #1F2937 !important;
+    line-height: 1.35 !important;
+    box-shadow: 0 14px 40px rgba(16, 185, 129, 0.12) !important;
+    animation: saFadeSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Green Checkmark icon before standard notice if filter did not inject banner */
+.woocommerce-notice.woocommerce-thankyou-order-received:not(:has(.sa-order-status-banner))::before,
+.woocommerce-thankyou-order-received:not(:has(.sa-order-status-banner))::before {
+    content: '' !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    width: 48px !important;
+    height: 48px !important;
+    background-color: #ECFDF5 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-size: 26px 26px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 2.5px solid #10B981 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* When rich custom banner exists, strip container wrapper styles */
+.woocommerce-notice.woocommerce-thankyou-order-received:has(.sa-order-status-banner),
+.woocommerce-thankyou-order-received:has(.sa-order-status-banner) {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -3170,8 +3210,48 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
     box-shadow: none !important;
 }
 
-.woocommerce-notice.woocommerce-thankyou-order-received::before {
+.woocommerce-notice.woocommerce-thankyou-order-received:has(.sa-order-status-banner)::before,
+.woocommerce-thankyou-order-received:has(.sa-order-status-banner)::before {
     display: none !important;
+}
+
+/* Failed Notice pure-CSS fallback */
+.woocommerce-notice.woocommerce-thankyou-order-failed:not(:has(.sa-order-status-banner)),
+.woocommerce-thankyou-order-failed:not(:has(.sa-order-status-banner)) {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FEF2F2 100%) !important;
+    border: 2px solid #FCA5A5 !important;
+    border-left: 8px solid #DC2626 !important;
+    border-radius: 20px !important;
+    padding: 26px 32px !important;
+    margin: 20px 0 32px 0 !important;
+    font-family: "Philosopher", serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #991B1B !important;
+    line-height: 1.35 !important;
+    box-shadow: 0 14px 40px rgba(220, 38, 38, 0.12) !important;
+    animation: saFadeSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.woocommerce-notice.woocommerce-thankyou-order-failed:not(:has(.sa-order-status-banner))::before,
+.woocommerce-thankyou-order-failed:not(:has(.sa-order-status-banner))::before {
+    content: '' !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    width: 48px !important;
+    height: 48px !important;
+    background-color: #FEE2E2 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23DC2626' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E") !important;
+    background-size: 24px 24px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 2.5px solid #DC2626 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3) !important;
 }
 
 /* Success & Failed Luxury Status Card */
