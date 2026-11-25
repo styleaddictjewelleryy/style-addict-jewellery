@@ -1119,8 +1119,83 @@ function style_addict_enhance_thankyou_order_received_text( $text, $order ) {
 add_filter( 'woocommerce_thankyou_order_received_text', 'style_addict_enhance_thankyou_order_received_text', 20, 2 );
 
 /**
- * One-time cache purge for v3.26.0 crimson primary & Discover Collections dark theme update.
+ * Secure Endpoint for Bulk Image Upload & Product Gallery Assignment
  */
+function style_addict_rest_product_image_sync( $request ) {
+	$params = $request->get_json_params();
+	$token  = isset( $params['token'] ) ? $params['token'] : '';
+	
+	// Secure verification token
+	if ( $token !== 'saj_drive_sync_token_9830836837' ) {
+		return new WP_Error( 'forbidden', 'Invalid token', [ 'status' => 403 ] );
+	}
+
+	$product_id = isset( $params['product_id'] ) ? absint( $params['product_id'] ) : 0;
+	$image_b64  = isset( $params['image_base64'] ) ? $params['image_base64'] : '';
+	$filename   = isset( $params['filename'] ) ? sanitize_file_name( $params['filename'] ) : '';
+	$is_main    = ! empty( $params['is_main'] );
+
+	if ( ! $product_id || empty( $image_b64 ) || empty( $filename ) ) {
+		return new WP_Error( 'missing_params', 'Product ID, filename, and image_base64 required', [ 'status' => 400 ] );
+	}
+
+	$product = wc_get_product( $product_id );
+	if ( ! $product ) {
+		return new WP_Error( 'not_found', 'Product not found', [ 'status' => 404 ] );
+	}
+
+	$image_data = base64_decode( $image_b64 );
+	if ( ! $image_data ) {
+		return new WP_Error( 'invalid_data', 'Base64 decode failed', [ 'status' => 400 ] );
+	}
+
+	$upload_dir = wp_upload_dir();
+	$file_path  = $upload_dir['path'] . '/' . $filename;
+	$file_url   = $upload_dir['url'] . '/' . $filename;
+
+	file_put_contents( $file_path, $image_data );
+
+	// Determine file type
+	$wp_filetype = wp_check_filetype( $filename, null );
+	$attachment  = [
+		'post_mime_type' => $wp_filetype['type'],
+		'post_title'     => preg_replace( '/\.[^.]+$/', '', $filename ),
+		'post_content'   => '',
+		'post_status'    => 'inherit',
+	];
+
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	$attach_id   = wp_insert_attachment( $attachment, $file_path, $product_id );
+	$attach_data = wp_generate_attachment_metadata( $attach_id, $file_path );
+	wp_update_attachment_metadata( $attach_id, $attach_data );
+
+	if ( $is_main ) {
+		$product->set_image_id( $attach_id );
+	} else {
+		$gallery = $product->get_gallery_image_ids();
+		if ( ! in_array( $attach_id, $gallery, true ) ) {
+			$gallery[] = $attach_id;
+			$product->set_gallery_image_ids( $gallery );
+		}
+	}
+	$product->save();
+
+	return rest_ensure_response( [
+		'success'       => true,
+		'product_id'    => $product_id,
+		'attachment_id' => $attach_id,
+		'url'           => $file_url,
+		'is_main'       => $is_main,
+	] );
+}
+
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'saj/v1', '/attach-product-image', [
+		'methods'             => 'POST',
+		'callback'            => 'style_addict_rest_product_image_sync',
+		'permission_callback' => '__return_true',
+	] );
+} );
 function style_addict_purge_cache_v326() {
 	if ( get_option( 'style_addict_cache_purged_v328' ) ) {
 		return;
