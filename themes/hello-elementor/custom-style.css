@@ -2989,45 +2989,101 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
     color: #D44332 !important;
 }
 
-/* Side Cart Footer Buttons - Always Sticky at Bottom & Highly Visible */
+/* Side Cart Drawer & Footer Buttons - Always Sticky at Bottom & Highly Visible */
+.elementor-menu-cart__container {
+    z-index: 999999 !important;
+}
+
+.elementor-menu-cart__main {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    width: 380px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    padding: 16px 20px 20px 20px !important;
+    background: #FAF7F5 !important;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.16) !important;
+}
+
+.elementor-menu-cart__close-button {
+    flex: 0 0 auto !important;
+    margin-bottom: 6px !important;
+    cursor: pointer !important;
+}
+
+#sa-cart-shipping-banner.sa-cart-shipping-banner {
+    flex: 0 0 auto !important;
+    margin-bottom: 12px !important;
+}
+
 .elementor-menu-cart__main .widget_shopping_cart_content {
     display: flex !important;
     flex-direction: column !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    justify-content: space-between !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: flex-start !important;
 }
 
 .elementor-menu-cart__products {
     flex: 1 1 auto !important;
-    max-height: calc(100vh - 280px) !important;
+    min-height: 50px !important;
+    max-height: none !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    padding-right: 4px !important;
+    padding-right: 6px !important;
+    margin-bottom: 8px !important;
+}
+
+.elementor-menu-cart__products::-webkit-scrollbar {
+    width: 4px;
+}
+.elementor-menu-cart__products::-webkit-scrollbar-thumb {
+    background: rgba(181, 93, 68, 0.35);
+    border-radius: 4px;
 }
 
 .elementor-menu-cart__subtotal {
+    flex: 0 0 auto !important;
     border-top: 1px solid rgba(181, 93, 68, 0.2) !important;
-    padding-top: 14px !important;
-    margin-top: 14px !important;
+    padding: 12px 0 8px 0 !important;
+    margin: auto 0 0 0 !important; /* Locks subtotal & buttons to bottom */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     font-family: "Montserrat", sans-serif !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
     color: #2D1F1B !important;
 }
 
 .elementor-menu-cart__subtotal .woocommerce-Price-amount {
     color: #D44332 !important;
-    font-size: 20px !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
 }
 
 .elementor-menu-cart__footer-buttons {
+    flex: 0 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: 16px !important;
-    padding-top: 10px !important;
-    background: #FAF7F5 !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 8px 0 0 0 !important;
+    background: transparent !important;
 }
 
 /* Primary "Proceed to Checkout" Button */
@@ -3038,6 +3094,7 @@ a.elementor-button.elementor-button--checkout {
     justify-content: center !important;
     width: 100% !important;
     height: 48px !important;
+    min-height: 48px !important;
     background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
@@ -3054,6 +3111,7 @@ a.elementor-button.elementor-button--checkout {
     order: 1 !important; /* Prominent Checkout button on top */
     transition: all 0.25s ease !important;
     box-sizing: border-box !important;
+    cursor: pointer !important;
 }
 
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover,
@@ -3071,20 +3129,22 @@ a.elementor-button.elementor-button--view-cart {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    height: 42px !important;
+    height: 40px !important;
+    min-height: 40px !important;
     background: transparent !important;
-    border: 2px solid #D44332 !important;
+    border: 1.5px solid #D44332 !important;
     color: #D44332 !important;
     -webkit-text-fill-color: #D44332 !important;
     border-radius: 30px !important;
     font-family: "Montserrat", sans-serif !important;
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     font-weight: 600 !important;
     text-align: center !important;
     text-decoration: none !important;
     order: 2 !important;
     transition: all 0.25s ease !important;
     box-sizing: border-box !important;
+    cursor: pointer !important;
 }
 
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover,
@@ -3093,6 +3153,15 @@ a.elementor-button.elementor-button--view-cart:hover {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     transform: translateY(-2px) !important;
+}
+
+/* Hide floating WhatsApp button while cart drawer is open so it never overlaps or blocks buttons */
+body.elementor-menu-cart--shown a.sa-whatsapp-float,
+.elementor-menu-cart--shown ~ a.sa-whatsapp-float {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    transition: opacity 0.2s ease !important;
 }
 
 /* 12.2 WooCommerce Cart Page Polish */

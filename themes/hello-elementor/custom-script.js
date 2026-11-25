@@ -647,6 +647,26 @@
                 }
             }
 
+            // 5.1b Ensure Checkout button is always present & routes to checkout directly
+            if ($drawer.length) {
+                var $footer = $drawer.find('.elementor-menu-cart__footer-buttons');
+                var checkoutUrl = window.location.origin ? (window.location.origin + '/checkout/') : '/checkout/';
+                
+                if ($footer.length) {
+                    var $checkoutBtn = $footer.find('a.elementor-button--checkout');
+                    if (!$checkoutBtn.length) {
+                        $checkoutBtn = $(
+                            '<a href="' + checkoutUrl + '" class="elementor-button elementor-button--checkout elementor-size-md">' +
+                                '<span class="elementor-button-text">Checkout</span>' +
+                            '</a>'
+                        );
+                        $footer.prepend($checkoutBtn);
+                    } else {
+                        $checkoutBtn.attr('href', checkoutUrl);
+                    }
+                }
+            }
+
             // 5.2 Trust Badges below Place Order on Checkout Page
             if ($('body').hasClass('woocommerce-checkout') && !$('#sa-checkout-trust').length) {
                 var trustHTML = 
@@ -675,9 +695,29 @@
         }
 
         initCartEnhancements();
-        $(document).on('added_to_cart removed_from_cart updated_cart_totals updated_checkout', initCartEnhancements);
+        $(document).on('added_to_cart removed_from_cart updated_cart_totals updated_checkout wc_fragments_refreshed wc_fragments_loaded', function () {
+            setTimeout(initCartEnhancements, 50);
+            setTimeout(initCartEnhancements, 200);
+        });
+
         $(document).on('click', '.elementor-menu-cart__toggle_button, .elementor-menu-cart__toggle', function () {
-            setTimeout(initCartEnhancements, 100);
+            $('body').addClass('elementor-menu-cart--shown');
+            setTimeout(initCartEnhancements, 50);
+            setTimeout(initCartEnhancements, 250);
+        });
+
+        $(document).on('click', '.elementor-menu-cart__close-button, .elementor-menu-cart__container', function (e) {
+            if ($(e.target).hasClass('elementor-menu-cart__close-button') || $(e.target).hasClass('elementor-menu-cart__container')) {
+                $('body').removeClass('elementor-menu-cart--shown');
+            }
+        });
+
+        // Ensure clicking checkout button inside side-cart drawer always jumps directly to checkout
+        $(document).on('click', '.elementor-menu-cart__footer-buttons a.elementor-button--checkout', function (e) {
+            var url = $(this).attr('href') || '/checkout/';
+            if (url && url !== '#') {
+                window.location.href = url;
+            }
         });
 
         /* ======================================================================
