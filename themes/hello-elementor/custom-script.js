@@ -651,6 +651,7 @@
             if ($drawer.length) {
                 var $footer = $drawer.find('.elementor-menu-cart__footer-buttons');
                 var checkoutUrl = window.location.origin ? (window.location.origin + '/checkout/') : '/checkout/';
+                var cartUrl = window.location.origin ? (window.location.origin + '/cart/') : '/cart/';
                 
                 if ($footer.length) {
                     var $checkoutBtn = $footer.find('a.elementor-button--checkout');
@@ -663,6 +664,17 @@
                         $footer.prepend($checkoutBtn);
                     } else {
                         $checkoutBtn.attr('href', checkoutUrl);
+                        if (!$checkoutBtn.find('.elementor-button-text').length && !$checkoutBtn.text().trim()) {
+                            $checkoutBtn.html('<span class="elementor-button-text">Checkout</span>');
+                        }
+                    }
+
+                    var $viewCartBtn = $footer.find('a.elementor-button--view-cart');
+                    if ($viewCartBtn.length) {
+                        $viewCartBtn.attr('href', cartUrl);
+                        if (!$viewCartBtn.find('.elementor-button-text').length && !$viewCartBtn.text().trim()) {
+                            $viewCartBtn.html('<span class="elementor-button-text">View Cart</span>');
+                        }
                     }
                 }
             }
