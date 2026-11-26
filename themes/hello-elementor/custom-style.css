@@ -1,7 +1,7 @@
 /**
  * Style Addict Jewellery - Site-Wide Luxury Styling & Typography Enhancements
  * Theme: Hello Elementor
- * Version: 3.39.0
+ * Version: 3.40.0
  */
 
 /* ==========================================================================
@@ -264,7 +264,7 @@ body.woocommerce-page {
 
 .elementor-26 .elementor-element.elementor-element-5d52351 a#elementor-menu-cart__toggle_button,
 .elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle_button,
-.elementor-26 .elementor-element.elementor-element-5d52351 a.elementor-button {
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__toggle a.elementor-button {
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -3101,8 +3101,10 @@ body .sa-policy-support-card a.sa-support-btn--phone:hover {
     opacity: 1 !important;
 }
 
-/* Primary "Proceed to Checkout" Button */
-.elementor-menu-cart__footer-buttons a.elementor-button--checkout,
+/* Primary "Proceed to Checkout" Button in Side-Cart Drawer */
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout,
+.elementor-menu-cart__footer-buttons a.elementor-button.elementor-button--checkout,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout,
 a.elementor-button.elementor-button--checkout {
     display: flex !important;
     visibility: visible !important;
@@ -3113,6 +3115,7 @@ a.elementor-button.elementor-button--checkout {
     height: 48px !important;
     min-height: 48px !important;
     background: linear-gradient(135deg, #D44332 0%, #B8281E 100%) !important;
+    background-color: #D44332 !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     border-radius: 30px !important;
@@ -3129,8 +3132,13 @@ a.elementor-button.elementor-button--checkout {
     transition: all 0.25s ease !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
+    padding: 12px 20px !important;
 }
 
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout span,
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout .elementor-button-text,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout span,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout .elementor-button-text,
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout span,
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout .elementor-button-text {
     display: inline-block !important;
@@ -3145,22 +3153,29 @@ a.elementor-button.elementor-button--checkout {
     text-transform: uppercase !important;
 }
 
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover,
 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover,
 a.elementor-button.elementor-button--checkout:hover {
     background: linear-gradient(135deg, #8F1D14 0%, #6D140E 100%) !important;
+    background-color: #8F1D14 !important;
     box-shadow: 0 6px 22px rgba(143, 29, 20, 0.45) !important;
     transform: translateY(-2px) !important;
     color: #FFFFFF !important;
 }
 
-.elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover span,
-.elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover .elementor-button-text {
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover span,
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover .elementor-button-text,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover span,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--checkout:hover .elementor-button-text {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
 }
 
-/* Secondary "View Cart" Outline Button */
-.elementor-menu-cart__footer-buttons a.elementor-button--view-cart,
+/* Secondary "View Cart" Bordered Outline Button in Side-Cart Drawer */
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart,
+.elementor-menu-cart__footer-buttons a.elementor-button.elementor-button--view-cart,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart,
 a.elementor-button.elementor-button--view-cart {
     display: flex !important;
     visibility: visible !important;
@@ -3168,15 +3183,16 @@ a.elementor-button.elementor-button--view-cart {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    height: 40px !important;
-    min-height: 40px !important;
-    background: transparent !important;
-    border: 1.5px solid #D44332 !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    background: #FAF7F5 !important;
+    background-color: #FAF7F5 !important;
+    border: 2px solid #D44332 !important;
     color: #D44332 !important;
     -webkit-text-fill-color: #D44332 !important;
     border-radius: 30px !important;
     font-family: "Montserrat", sans-serif !important;
-    font-size: 13.5px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     text-align: center !important;
     text-decoration: none !important;
@@ -3184,8 +3200,14 @@ a.elementor-button.elementor-button--view-cart {
     transition: all 0.25s ease !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
 }
 
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart span,
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart .elementor-button-text,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart span,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart .elementor-button-text,
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart span,
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart .elementor-button-text {
     display: inline-block !important;
@@ -3194,20 +3216,27 @@ a.elementor-button.elementor-button--view-cart {
     color: #D44332 !important;
     -webkit-text-fill-color: #D44332 !important;
     font-family: "Montserrat", sans-serif !important;
-    font-size: 13.5px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
 }
 
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover,
 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover,
 a.elementor-button.elementor-button--view-cart:hover {
     background: #D44332 !important;
+    background-color: #D44332 !important;
+    border-color: #D44332 !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(212, 67, 50, 0.25) !important;
 }
 
-.elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover span,
-.elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover .elementor-button-text {
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover span,
+.elementor-menu-cart__main .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover .elementor-button-text,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover span,
+.elementor-26 .elementor-element.elementor-element-5d52351 .elementor-menu-cart__footer-buttons a.elementor-button--view-cart:hover .elementor-button-text {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
 }
